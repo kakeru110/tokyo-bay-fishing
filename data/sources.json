@@ -1,0 +1,87 @@
+{
+  "_comment": "東京湾岸 船宿ソース一覧(Phase 1: 6件)。port_lat/port_lonは出船港の座標(釣り場地名が未知語でフォールバックする際に使用)。",
+  "sources": [
+    {
+      "id": "hiraimaru",
+      "name": "品川ひらい丸",
+      "port": "品川",
+      "port_lat": 35.609,
+      "port_lon": 139.750,
+      "site_url": "https://hiraimaru.net",
+      "feed_url": "https://www.hiraimaru.net/feed/",
+      "category_url": "https://www.hiraimaru.net/category/Choka/",
+      "type": "wordpress_rss",
+      "parse_notes": "RSS description内に本文全体。魚種名 → サイズ(cm/kg) → 尾数(尾/杯/本/匹) → 「釣り場と水深」欄に地名+水深、という順で記載。1投稿に複数魚種(例: タチウオの天ビン/テンヤ別)が並ぶことがある。"
+    },
+    {
+      "id": "yoshinoya",
+      "name": "船宿吉野屋",
+      "port": "浦安",
+      "port_lat": 35.647,
+      "port_lon": 139.903,
+      "site_url": "https://www.funayado-yoshinoya.com",
+      "feed_url": "https://www.funayado-yoshinoya.com/blog/feed/",
+      "category_url": "https://www.funayado-yoshinoya.com/blog/",
+      "type": "wordpress_rss",
+      "parse_notes": "「魚種名　サイズ　尾数　釣り場　水深」という定型の並びがdescription内にそのまま入る。タイトルは日付のみのことが多く、日付は本文からも要確認。"
+    },
+    {
+      "id": "susumumaru",
+      "name": "進丸",
+      "port": "横浜・金沢八景",
+      "port_lat": 35.328,
+      "port_lon": 139.622,
+      "site_url": "https://susumumaru.com",
+      "feed_url": "https://susumumaru.com/blog/feed/",
+      "category_url": "https://susumumaru.com/blog/",
+      "type": "wordpress_rss",
+      "parse_notes": "タイトルが「2026.07.25.」のような日付形式。半日/1日で船が複数コースに分かれる投稿があり、コースごとに魚種・釣り場が分かれて書かれる。"
+    },
+    {
+      "id": "miyagawamaru",
+      "name": "宮川丸",
+      "port": "木更津",
+      "port_lat": 35.395,
+      "port_lon": 139.917,
+      "site_url": "https://www.miyagawamaru.co.jp",
+      "feed_url": "https://www.miyagawamaru.co.jp/feed/",
+      "type": "wordpress_rss",
+      "parse_notes": "出船予定と釣果が同じフィードに混在することがあるため、本文中に魚種・数量・釣り場の記載があるものだけを釣果として抽出する。"
+    },
+    {
+      "id": "itoyusen",
+      "name": "伊藤遊船",
+      "port": "船橋・市川",
+      "port_lat": 35.677,
+      "port_lon": 139.943,
+      "site_url": "https://itoyusen.com",
+      "feed_url": "https://itoyusen.com/report/feed/",
+      "category_url": "https://itoyusen.com/report/",
+      "type": "wordpress_rss",
+      "parse_notes": "数量が「厳しく…」「キロ級多数」のような定性表現のみで数値が入らない投稿がある。その場合はqty_min/maxをnullにしてraw_textに残す。木更津・富津方面のマダコ釣果が中心。"
+    },
+    {
+      "id": "kawasakimaru",
+      "name": "川崎丸",
+      "port": "富津",
+      "port_lat": 35.308,
+      "port_lon": 139.802,
+      "site_url": "https://www.kawasakimaru.jp",
+      "feed_url": "https://www.kawasakimaru.jp/feed/",
+      "category_url": "https://www.kawasakimaru.jp/blog/",
+      "type": "wordpress_html_fallback",
+      "parse_notes": "/blog/feed/は404、ルートの/feed/はitemが空になることがあるため、/blog/ページを直接HTML取得して投稿一覧をパースする。投稿タイトルが「【魚種】日付 タイトル」形式。"
+    }
+  ],
+  "phase2_candidates": [
+    {"name": "金沢八景 黒川丸", "note": "JS動的読込(fncGetList)で静的取得が困難"},
+    {"name": "山下丸", "port": "久里浜・久比里", "note": "PHPベース、RSSなし。釣りビジョン(fishing-v.jp)と連携"},
+    {"name": "平作丸", "port": "久里浜港", "note": "PHPベース、RSSなし"},
+    {"name": "中山丸", "port": "川崎", "note": "ぎょさん(gyosan.jp)経由配信、独自サイト構造"},
+    {"name": "鹿島丸", "port": "富津港", "note": "旧世代CGI、文字化けあり、釣り場名の記載自体が薄い"},
+    {"name": "深川吉野屋", "port": "東京・深川発", "note": "独自HTMLシステム、RSSなし"},
+    {"name": "一郎丸", "port": "横須賀市鴨居", "note": "独自HTML、投稿ごとに情報密度のばらつきが大きい"},
+    {"name": "ぎょさん(gyosan.jp)", "note": "関東近郊100隻以上が参加する釣果速報ポータル。将来的にここを横断取得すれば個別対応を減らせる可能性"},
+    {"name": "釣りビジョン(fishing-v.jp)", "note": "同様の共通釣果データベース型プラットフォーム。船宿ごとの参加有無・データ量にばらつきあり"}
+  ]
+}

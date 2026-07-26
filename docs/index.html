@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>東京湾 船釣り釣果マップ</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>🎣 東京湾 船釣り釣果マップ</h1>
+  <span class="meta" id="lastUpdated">読み込み中...</span>
+  <span class="meta">対象船宿: <span id="sourceCount">-</span>件 / レコード数: <span id="recordCount">-</span></span>
+</header>
+
+<div class="layout">
+  <aside class="panel">
+    <h2>期間</h2>
+    <div class="filter-group period-buttons" id="periodButtons">
+      <button data-days="7">直近7日</button>
+      <button data-days="14">直近14日</button>
+      <button data-days="30" class="active">直近30日</button>
+      <button data-days="9999">全期間</button>
+    </div>
+
+    <h2>魚種</h2>
+    <div class="filter-group chips" id="speciesChips"></div>
+
+    <h2>船宿</h2>
+    <div class="filter-group chips" id="funayadoChips"></div>
+  </aside>
+
+  <div class="main-col">
+    <div class="stats-row">
+      <div class="stat-card"><div class="num" id="statReports">-</div><div class="label">釣果報告数(表示中)</div></div>
+      <div class="stat-card"><div class="num" id="statGrounds">-</div><div class="label">釣り場数</div></div>
+      <div class="stat-card"><div class="num" id="statSpecies">-</div><div class="label">魚種数</div></div>
+      <div class="stat-card"><div class="num" id="statTopGround">-</div><div class="label">直近もっとも報告が多い釣り場</div></div>
+    </div>
+
+    <div id="map"></div>
+
+    <div class="panel charts-row">
+      <div>
+        <h2>魚種別 報告件数</h2>
+        <canvas id="speciesChart"></canvas>
+      </div>
+      <div>
+        <h2>日別 報告件数の推移</h2>
+        <canvas id="trendChart"></canvas>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>釣果一覧(表示中の絞り込み条件)</h2>
+      <div class="table-scroll">
+        <table class="report-table" id="reportTable">
+          <thead>
+            <tr>
+              <th>日付</th><th>船宿</th><th>魚種</th><th>サイズ</th><th>数量</th><th>釣り場</th><th>元記事</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  釣り場の緯度経度は各船宿の釣果テキストに記載された通称地名から概算で割り当てた近似値であり、実測GPS座標ではありません。
+  データは各船宿の公開ブログ・釣果情報を基に作成しています。
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
