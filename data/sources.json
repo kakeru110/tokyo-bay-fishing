@@ -71,17 +71,128 @@
       "category_url": "https://www.kawasakimaru.jp/blog/",
       "type": "wordpress_html_fallback",
       "parse_notes": "/blog/feed/は404、ルートの/feed/はitemが空になることがあるため、/blog/ページを直接HTML取得して投稿一覧をパースする。投稿タイトルが「【魚種】日付 タイトル」形式。"
+    },
+    {
+      "id": "dai3asanagimaru",
+      "name": "第三あさなぎ丸",
+      "port": "横浜・金沢八景",
+      "port_lat": 35.328,
+      "port_lon": 139.622,
+      "site_url": "https://dai3-asanagimaru.com",
+      "feed_url": "https://dai3-asanagimaru.com/feed/",
+      "category_url": "https://dai3-asanagimaru.com/archive/",
+      "type": "wordpress_rss",
+      "parse_notes": "RSS動作確認済み。ただし本文はサイズ表記が省略されがちで「トップ76匹！2番手56匹！」のような尾数中心の書き方。魚種はコース名(イサキ船等)から推定する必要がある投稿がある。"
+    },
+    {
+      "id": "kurokawamaru",
+      "name": "金沢八景 黒川丸",
+      "port": "横浜・金沢八景",
+      "port_lat": 35.328,
+      "port_lon": 139.622,
+      "site_url": "https://kurokawa-maru.com",
+      "feed_url": "https://kurokawa-maru.blogspot.com/feeds/posts/default",
+      "category_url": "https://kurokawa-maru.blogspot.com/",
+      "type": "blogspot_atom",
+      "parse_notes": "自サイト(kurokawa-maru.com)ではなくBlogspot(kurokawa-maru.blogspot.com)側に実データがある。/feeds/posts/defaultはAtom形式(RSS2ではない)だがWebFetchでそのまま読める。本文例:「走水沖60ｍで天秤釣り…65～115cm、2～26本」。"
+    },
+    {
+      "id": "tsurikou",
+      "name": "つり幸",
+      "port": "川崎",
+      "port_lat": 35.520,
+      "port_lon": 139.780,
+      "site_url": "https://www.tsurikou.com",
+      "category_url": "https://www.tsurikou.com/category/Realtime/1/",
+      "type": "gyosan_template_html",
+      "parse_notes": "「ぎょさん」系共通テンプレート(つり幸・ひらの丸・鈴福丸・中山丸で共通)。一覧は/category/Realtime/[page]/、個別記事は/search/RealtimeDetail/[ID]/。RSSなし、HTML直接パース。"
+    },
+    {
+      "id": "hiranomaru",
+      "name": "ひらの丸",
+      "port": "富津",
+      "port_lat": 35.308,
+      "port_lon": 139.802,
+      "site_url": "https://www.hiranomaru.net",
+      "category_url": "https://www.hiranomaru.net/category/Choka/",
+      "type": "gyosan_template_html",
+      "parse_notes": "「ぎょさん」系共通テンプレート。一覧/category/Choka/[page]/、個別/search/ChokaDetail/[ID]/。RSSなし。"
+    },
+    {
+      "id": "suzufukumaru",
+      "name": "鈴福丸",
+      "port": "久里浜",
+      "port_lat": 35.228,
+      "port_lon": 139.708,
+      "site_url": "https://www.suzufukumaru.com",
+      "category_url": "https://www.suzufukumaru.com/category/Choka/",
+      "type": "gyosan_template_html",
+      "parse_notes": "「ぎょさん」系共通テンプレート。RSSなし、HTML直接パース。"
+    },
+    {
+      "id": "nakayamamaru",
+      "name": "中山丸",
+      "port": "川崎",
+      "port_lat": 35.520,
+      "port_lon": 139.780,
+      "site_url": "https://www.nakayamamaru.com",
+      "category_url": "https://www.nakayamamaru.com/category/Choka/",
+      "type": "gyosan_template_html",
+      "parse_notes": "「ぎょさん」系共通テンプレート(フッターにロゴあり)。RSSなし。釣り場表記は「観音崎～走水」のように水深付きで比較的明瞭。"
+    },
+    {
+      "id": "iwataya",
+      "name": "岩田屋",
+      "port": "浦安",
+      "port_lat": 35.647,
+      "port_lon": 139.903,
+      "site_url": "https://iwataya-funayado.jp",
+      "category_url": "https://iwataya-funayado.jp/tsuribune_blog/",
+      "type": "wordpress_html_fallback",
+      "parse_notes": "WordPressだが/feed/はitemが空で実質機能しない。日付アーカイブ(/tsuribune_blog/date/YYYY/MM/DD/)からHTML直接取得。本文は「ターゲット◯◯ 数◯～◯杯 大きさ◯～◯kg」の順。釣り場名の記載は薄い。"
+    },
+    {
+      "id": "yamashitamaru",
+      "name": "山下丸",
+      "port": "久里浜・久比里",
+      "port_lat": 35.225,
+      "port_lon": 139.700,
+      "site_url": "https://yamashitamaru.jp",
+      "category_url": "https://yamashitamaru.jp/blog.php",
+      "type": "custom_php_html",
+      "parse_notes": "独自PHP、RSSなし。本文「魚種 サイズ 尾数」がシンプルに並ぶ。釣り場表記は「京急久里浜沖」で統一(fishing_grounds.jsonでは久里浜沖のエイリアスとして扱う)。"
+    },
+    {
+      "id": "heisakumaru",
+      "name": "平作丸",
+      "port": "久里浜港",
+      "port_lat": 35.228,
+      "port_lon": 139.708,
+      "site_url": "https://heisakumaru.jp",
+      "category_url": "https://heisakumaru.jp/blog.php",
+      "type": "custom_php_html",
+      "parse_notes": "山下丸と同様の独自PHP構造。RSSなし。コース名(ショートタチウオ船等)が魚種と併記される。"
+    },
+    {
+      "id": "ichiroumaru",
+      "name": "一郎丸",
+      "port": "横須賀市鴨居",
+      "port_lat": 35.263,
+      "port_lon": 139.677,
+      "site_url": "https://www.ichiroumaru.jp",
+      "category_url": "https://www.ichiroumaru.jp/result/",
+      "type": "custom_html_two_stage",
+      "parse_notes": "一覧(/result/、カード型・タイトルと日付のみ)→個別詳細(/result/detail.html?[ID])の2段階スクレイピングが必要。詳細ページに魚種・サイズ・数量・釣り場が明記される。RSSなし(/feed/は404)。"
     }
   ],
   "phase2_candidates": [
-    {"name": "金沢八景 黒川丸", "note": "JS動的読込(fncGetList)で静的取得が困難"},
-    {"name": "山下丸", "port": "久里浜・久比里", "note": "PHPベース、RSSなし。釣りビジョン(fishing-v.jp)と連携"},
-    {"name": "平作丸", "port": "久里浜港", "note": "PHPベース、RSSなし"},
-    {"name": "中山丸", "port": "川崎", "note": "ぎょさん(gyosan.jp)経由配信、独自サイト構造"},
-    {"name": "鹿島丸", "port": "富津港", "note": "旧世代CGI、文字化けあり、釣り場名の記載自体が薄い"},
-    {"name": "深川吉野屋", "port": "東京・深川発", "note": "独自HTMLシステム、RSSなし"},
-    {"name": "一郎丸", "port": "横須賀市鴨居", "note": "独自HTML、投稿ごとに情報密度のばらつきが大きい"},
+    {"name": "弁天屋", "port": "金沢八景", "note": "静的HTML、RSS無し。釣果本文(chouka.html)の実在テキストを取得できず未検証、要再調査"},
+    {"name": "関義丸", "port": "横須賀市走水港", "note": "B.CREATION系テンプレート(まる八と同系)。catch.htmlの本文取得を実証できず未検証"},
+    {"name": "釣り船まる八", "port": "大田区大森・平和島", "note": "関義丸と同系テンプレート。本文取得を実証できず未検証"},
+    {"name": "深川吉野屋", "port": "東京・深川発", "note": "独自HTMLシステム、RSSなし。クエリ文字列ページングで終端検知がやや面倒"},
+    {"name": "鹿島丸", "port": "富津港", "note": "旧世代CGI、文字化けあり、釣り場名の記載自体が薄い。深追い不要と判断"},
     {"name": "ぎょさん(gyosan.jp)", "note": "関東近郊100隻以上が参加する釣果速報ポータル。将来的にここを横断取得すれば個別対応を減らせる可能性"},
-    {"name": "釣りビジョン(fishing-v.jp)", "note": "同様の共通釣果データベース型プラットフォーム。船宿ごとの参加有無・データ量にばらつきあり"}
+    {"name": "釣りビジョン(fishing-v.jp)", "note": "同様の共通釣果データベース型プラットフォーム。船宿ごとの参加有無・データ量にばらつきあり"},
+    {"name": "東京湾船釣り速報(tokyobay-fishing.com)", "note": "船宿の釣果を自動集計する別の集約サービス。3つ目のポータル候補として要調査"}
   ]
 }
