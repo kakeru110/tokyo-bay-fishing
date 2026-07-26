@@ -18,16 +18,17 @@
   <aside class="panel">
     <h2>期間</h2>
     <div class="filter-group period-buttons" id="periodButtons">
+      <button data-days="0">今日</button>
       <button data-days="7">直近7日</button>
       <button data-days="14">直近14日</button>
       <button data-days="30" class="active">直近30日</button>
       <button data-days="9999">全期間</button>
     </div>
 
-    <h2>魚種</h2>
+    <h2>魚種 <span class="select-all-buttons"><button data-target="species" data-mode="all">全選択</button><button data-target="species" data-mode="none">全解除</button></span></h2>
     <div class="filter-group chips" id="speciesChips"></div>
 
-    <h2>船宿</h2>
+    <h2>船宿 <span class="select-all-buttons"><button data-target="funayado" data-mode="all">全選択</button><button data-target="funayado" data-mode="none">全解除</button></span></h2>
     <div class="filter-group chips" id="funayadoChips"></div>
   </aside>
 

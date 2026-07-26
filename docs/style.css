@@ -62,6 +62,21 @@ header .meta {
   letter-spacing: 0.05em;
 }
 
+.select-all-buttons {
+  text-transform: none;
+  letter-spacing: normal;
+  float: right;
+}
+.select-all-buttons button {
+  background: transparent;
+  border: none;
+  color: var(--accent);
+  font-size: 0.75rem;
+  cursor: pointer;
+  padding: 0 4px;
+  text-decoration: underline;
+}
+
 .filter-group {
   margin-bottom: 18px;
 }

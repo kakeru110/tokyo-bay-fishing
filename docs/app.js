@@ -21,7 +21,10 @@
   document.getElementById('recordCount').textContent = CATCHES.length;
 
   // --- Filter chip UI ---
+  const chipConfigs = {};
+
   function buildChips(containerId, values, activeSet, labelFn) {
+    chipConfigs[containerId] = { values, activeSet, labelFn };
     const container = document.getElementById(containerId);
     container.innerHTML = '';
     values.forEach(v => {
@@ -40,6 +43,18 @@
 
   buildChips('speciesChips', allSpecies, state.species);
   buildChips('funayadoChips', allFunayado, state.funayado, f => (SOURCES[f] && SOURCES[f].name) || f);
+
+  document.querySelectorAll('.select-all-buttons button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.dataset.target; // "species" | "funayado"
+      const containerId = target === 'species' ? 'speciesChips' : 'funayadoChips';
+      const cfg = chipConfigs[containerId];
+      cfg.activeSet.clear();
+      if (btn.dataset.mode === 'all') cfg.values.forEach(v => cfg.activeSet.add(v));
+      buildChips(containerId, cfg.values, cfg.activeSet, cfg.labelFn);
+      render();
+    });
+  });
 
   document.querySelectorAll('#periodButtons button').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -68,9 +83,16 @@
     return `${min}〜${max}${unit || ''}`;
   }
 
+  function todayJstStr() {
+    // JST = UTC+9, no DST
+    const jstNow = new Date(Date.now() + 9 * 3600000);
+    return jstNow.toISOString().slice(0, 10);
+  }
+
   function withinPeriod(dateStr) {
-    if (state.days >= 9999) return true;
     if (!dateStr) return false;
+    if (state.days === 0) return dateStr === todayJstStr();
+    if (state.days >= 9999) return true;
     const d = new Date(dateStr + 'T00:00:00+09:00');
     const now = new Date();
     const diffDays = (now - d) / 86400000;
