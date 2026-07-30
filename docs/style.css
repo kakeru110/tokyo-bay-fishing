@@ -160,6 +160,49 @@ header .meta {
 }
 .charts-row canvas { max-height: 260px; }
 
+.gear-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.gear-card {
+  display: block;
+  min-width: 160px;
+  padding: 10px 14px;
+  border: 1px solid var(--panel-border);
+  border-radius: 8px;
+  background: #14213a;
+  color: var(--text);
+  text-decoration: none;
+  transition: border-color 0.15s ease;
+}
+.gear-card:hover {
+  border-color: var(--accent2);
+}
+.gear-species {
+  font-size: 0.7rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 2px;
+}
+.gear-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.gear-cta {
+  font-size: 0.75rem;
+  color: var(--accent2);
+  margin-top: 4px;
+}
+
+.pr-disclosure {
+  margin-top: 10px;
+  font-size: 0.7rem;
+  color: var(--muted);
+}
+
 table.report-table {
   width: 100%;
   border-collapse: collapse;

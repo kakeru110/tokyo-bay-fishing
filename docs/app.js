@@ -2,6 +2,9 @@
   const CATCHES = window.CATCHES || [];
   const SOURCES = window.SOURCES || {};
   const GENERATED_AT = window.GENERATED_AT || null;
+  const GEAR_RECOMMENDATIONS = window.GEAR_RECOMMENDATIONS || {};
+  const GEAR_DEFAULT = window.GEAR_DEFAULT || [];
+  const AMAZON_ASSOCIATE_TAG = window.AMAZON_ASSOCIATE_TAG || "";
 
   const state = {
     days: 30,
@@ -99,6 +102,48 @@
     return diffDays >= -1 && diffDays <= state.days;
   }
 
+  function amazonSearchUrl(keyword) {
+    const params = new URLSearchParams({ k: keyword, tag: AMAZON_ASSOCIATE_TAG });
+    return `https://www.amazon.co.jp/s?${params.toString()}`;
+  }
+
+  function renderGearRecommendations(records) {
+    const container = document.getElementById('gearCards');
+    if (!container) return;
+
+    const speciesTotals = {};
+    records.forEach(r => { if (r.species) speciesTotals[r.species] = (speciesTotals[r.species] || 0) + 1; });
+    const topSpecies = Object.entries(speciesTotals)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 3)
+      .map(([sp]) => sp);
+
+    const items = [];
+    const seenKeywords = new Set();
+    topSpecies.forEach(sp => {
+      (GEAR_RECOMMENDATIONS[sp] || []).forEach(item => {
+        if (seenKeywords.has(item.keyword)) return;
+        seenKeywords.add(item.keyword);
+        items.push({ ...item, species: sp });
+      });
+    });
+    if (items.length === 0) {
+      GEAR_DEFAULT.forEach(item => {
+        if (seenKeywords.has(item.keyword)) return;
+        seenKeywords.add(item.keyword);
+        items.push(item);
+      });
+    }
+
+    container.innerHTML = items.map(item => `
+      <a class="gear-card" href="${amazonSearchUrl(item.keyword)}" target="_blank" rel="noopener sponsored">
+        ${item.species ? `<div class="gear-species">${item.species}</div>` : ''}
+        <div class="gear-label">${item.label}</div>
+        <div class="gear-cta">Amazonで見る →</div>
+      </a>
+    `).join('');
+  }
+
   function filteredRecords() {
     return CATCHES.filter(r =>
       withinPeriod(r.date) &&
@@ -124,6 +169,8 @@
     });
     document.getElementById('statGrounds').textContent = Object.keys(groundGroups).length;
     document.getElementById('statSpecies').textContent = new Set(records.map(r => r.species)).size;
+
+    renderGearRecommendations(records);
 
     let topGroundName = '-';
     let topCount = 0;
