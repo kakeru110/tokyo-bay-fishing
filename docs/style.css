@@ -51,6 +51,8 @@ header .meta {
 
 @media (max-width: 900px) {
   .layout { grid-template-columns: 1fr; }
+  .layout > aside { order: 2; }
+  .layout > .main-col { order: 1; }
 }
 
 .panel {
@@ -252,4 +254,32 @@ footer {
   padding: 10px 20px 24px;
   color: var(--muted);
   font-size: 0.75rem;
+}
+
+@media (max-width: 600px) {
+  header {
+    padding: 12px 14px;
+    gap: 6px 12px;
+  }
+  header h1 { font-size: 1.05rem; }
+  header .meta { font-size: 0.75rem; }
+
+  .layout { padding: 10px 12px; gap: 12px; }
+
+  .panel { padding: 12px; border-radius: 10px; }
+
+  .stats-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .stat-card { min-width: 0; padding: 8px 12px; }
+  .stat-card .num { font-size: 1.15rem; }
+
+  #map { height: 340px; }
+
+  .gear-cards { gap: 8px; }
+  .gear-card { min-width: 0; flex: 1 1 calc(50% - 8px); padding: 8px 10px; }
+
+  table.report-table { font-size: 0.75rem; }
 }
