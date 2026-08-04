@@ -217,8 +217,8 @@
 
       marker.bindPopup(`
         <div class="popup-title">${Array.from(g.names).join('・')}(報告${g.records.length}件)</div>
-        <div class="popup-row" style="color:#94a3b8">${speciesSummary}</div>
-        <hr style="border-color:#334155">
+        <div class="popup-row" style="color:#5c7188">${speciesSummary}</div>
+        <hr style="border-color:#d6e6f2">
         ${recent}
       `);
       markerLayer.addLayer(marker);
@@ -238,7 +238,7 @@
       options: {
         plugins: { legend: { display: false } },
         scales: {
-          x: { ticks: { color: '#3b5166' }, grid: { color: '#e1ecf5' } },
+          x: { ticks: { color: '#3b5166', autoSkip: true, maxRotation: 45, minRotation: 0 }, grid: { color: '#e1ecf5' } },
           y: { ticks: { color: '#3b5166' }, grid: { color: '#e1ecf5' } },
         },
       },
@@ -265,7 +265,16 @@
       options: {
         plugins: { legend: { display: false } },
         scales: {
-          x: { ticks: { color: '#3b5166', maxRotation: 60, minRotation: 45 }, grid: { color: '#e1ecf5' } },
+          x: {
+            ticks: {
+              color: '#3b5166',
+              maxRotation: 60,
+              minRotation: 45,
+              autoSkip: true,
+              maxTicksLimit: window.innerWidth < 600 ? 7 : 14,
+            },
+            grid: { color: '#e1ecf5' },
+          },
           y: { ticks: { color: '#3b5166' }, grid: { color: '#e1ecf5' }, beginAtZero: true },
         },
       },
