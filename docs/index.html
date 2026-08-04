@@ -16,15 +16,6 @@
 
 <div class="layout">
   <aside class="panel">
-    <h2>期間</h2>
-    <div class="filter-group period-buttons" id="periodButtons">
-      <button data-days="0">今日</button>
-      <button data-days="7">直近7日</button>
-      <button data-days="14">直近14日</button>
-      <button data-days="30" class="active">直近30日</button>
-      <button data-days="9999">全期間</button>
-    </div>
-
     <h2>魚種 <span class="select-all-buttons"><button data-target="species" data-mode="all">全選択</button><button data-target="species" data-mode="none">全解除</button></span></h2>
     <div class="filter-group chips" id="speciesChips"></div>
 
@@ -33,6 +24,17 @@
   </aside>
 
   <div class="main-col">
+    <div class="panel">
+      <h2>期間</h2>
+      <div class="filter-group period-buttons" id="periodButtons">
+        <button data-days="0">今日</button>
+        <button data-days="7">直近7日</button>
+        <button data-days="14">直近14日</button>
+        <button data-days="30" class="active">直近30日</button>
+        <button data-days="9999">全期間</button>
+      </div>
+    </div>
+
     <div class="stats-row">
       <div class="stat-card"><div class="num" id="statReports">-</div><div class="label">釣果報告数(表示中)</div></div>
       <div class="stat-card"><div class="num" id="statGrounds">-</div><div class="label">釣り場数</div></div>
@@ -53,12 +55,6 @@
       </div>
     </div>
 
-    <div class="panel" id="gearPanel">
-      <h2>🎣 おすすめ仕掛け・タックル(表示中の魚種から)</h2>
-      <div class="gear-cards" id="gearCards"></div>
-      <div class="pr-disclosure">PR: Amazonのアソシエイトとして、当サイトは適格販売により収入を得ています。</div>
-    </div>
-
     <div class="panel">
       <h2>釣果一覧(表示中の絞り込み条件)</h2>
       <div class="table-scroll">
@@ -71,6 +67,12 @@
           <tbody></tbody>
         </table>
       </div>
+    </div>
+
+    <div class="panel" id="gearPanel">
+      <h2>🎣 おすすめ仕掛け・タックル(表示中の魚種から)</h2>
+      <div class="gear-cards" id="gearCards"></div>
+      <div class="pr-disclosure">PR: Amazonのアソシエイトとして、当サイトは適格販売により収入を得ています。</div>
     </div>
   </div>
 </div>
