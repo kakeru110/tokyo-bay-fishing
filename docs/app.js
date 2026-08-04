@@ -189,10 +189,10 @@
       const radius = 6 + 18 * Math.sqrt(g.records.length / maxCount);
       const marker = L.circleMarker([g.lat, g.lon], {
         radius,
-        color: '#38bdf8',
+        color: '#eb6834',
         weight: 1,
-        fillColor: '#38bdf8',
-        fillOpacity: 0.55,
+        fillColor: '#eb6834',
+        fillOpacity: 0.6,
       });
 
       const speciesCounts = {};
@@ -233,13 +233,13 @@
       type: 'bar',
       data: {
         labels: speciesSorted.map(s => s[0]),
-        datasets: [{ label: '報告件数', data: speciesSorted.map(s => s[1]), backgroundColor: '#38bdf8' }],
+        datasets: [{ label: '報告件数', data: speciesSorted.map(s => s[1]), backgroundColor: '#2a78d6', borderRadius: 4 }],
       },
       options: {
         plugins: { legend: { display: false } },
         scales: {
-          x: { ticks: { color: '#e2e8f0' }, grid: { color: '#334155' } },
-          y: { ticks: { color: '#e2e8f0' }, grid: { color: '#334155' } },
+          x: { ticks: { color: '#3b5166' }, grid: { color: '#e1ecf5' } },
+          y: { ticks: { color: '#3b5166' }, grid: { color: '#e1ecf5' } },
         },
       },
     });
@@ -256,8 +256,8 @@
         datasets: [{
           label: '報告件数',
           data: days.map(d => dayTotals[d]),
-          borderColor: '#fbbf24',
-          backgroundColor: 'rgba(251,191,36,0.2)',
+          borderColor: '#eb6834',
+          backgroundColor: 'rgba(235,104,52,0.15)',
           fill: true,
           tension: 0.3,
         }],
@@ -265,8 +265,8 @@
       options: {
         plugins: { legend: { display: false } },
         scales: {
-          x: { ticks: { color: '#e2e8f0', maxRotation: 60, minRotation: 45 }, grid: { color: '#334155' } },
-          y: { ticks: { color: '#e2e8f0' }, grid: { color: '#334155' }, beginAtZero: true },
+          x: { ticks: { color: '#3b5166', maxRotation: 60, minRotation: 45 }, grid: { color: '#e1ecf5' } },
+          y: { ticks: { color: '#3b5166' }, grid: { color: '#e1ecf5' }, beginAtZero: true },
         },
       },
     });
