@@ -49,6 +49,15 @@ header .meta {
   padding: 16px 20px;
 }
 
+.layout > aside,
+.layout > .main-col {
+  min-width: 0;
+}
+
+.main-col > * {
+  min-width: 0;
+}
+
 @media (max-width: 900px) {
   .layout { grid-template-columns: 1fr; }
   .layout > aside { order: 2; }
