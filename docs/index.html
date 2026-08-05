@@ -5,7 +5,7 @@
 <title>東京湾 船釣り釣果マップ</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-<link rel="stylesheet" href="style.css?v=15">
+<link rel="stylesheet" href="style.css?v=16">
 </head>
 <body>
 <header>
@@ -53,22 +53,18 @@
       <span><span class="legend-dot legend-dot-fallback"></span>釣り場の記載なし(船宿の所在地で代用)</span>
     </div>
 
-    <div class="panel charts-row">
-      <div>
-        <h2>魚種別 報告件数</h2>
-        <canvas id="speciesChart"></canvas>
-      </div>
-      <div>
-        <h2>魚種別 サイズ(最小・平均・最大)</h2>
-        <canvas id="trendChart"></canvas>
-        <div class="chart-note">左軸=cm、右軸=kg(マダコ等)。単位が違うため高さの直接比較はできません</div>
-      </div>
+    <div class="panel">
+      <h2>魚種別 サイズ(最小・平均・最大)</h2>
+      <canvas id="trendChart"></canvas>
+      <div class="chart-note">左軸=cm、右軸=kg(マダコ等)。単位が違うため高さの直接比較はできません</div>
     </div>
 
     <div class="panel">
-      <h2>日別 サイズ(最小・平均・最大)</h2>
+      <h2>日別 サイズ(最小・平均・最大)
+        <select id="dailySizeSpecies" class="chart-select"></select>
+      </h2>
       <canvas id="dailySizeChart"></canvas>
-      <div class="chart-note">その日に報告された全魚種を合算した範囲(参考値)。左軸=cm、右軸=kg</div>
+      <div class="chart-note" id="dailySizeNote"></div>
     </div>
 
     <div class="panel">
@@ -102,6 +98,6 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
 <script src="data.js?v=11"></script>
 <script src="gear.js?v=8"></script>
-<script src="app.js?v=13"></script>
+<script src="app.js?v=14"></script>
 </body>
 </html>

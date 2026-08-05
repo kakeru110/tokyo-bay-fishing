@@ -12,6 +12,7 @@
     funayado: new Set(),
     sortKey: 'date',
     sortDir: 'desc',
+    dailySizeSpecies: null,
   };
 
   const allSpecies = Array.from(new Set(CATCHES.map(r => r.species).filter(Boolean))).sort();
@@ -98,6 +99,11 @@
     });
   });
 
+  document.getElementById('dailySizeSpecies').addEventListener('change', (e) => {
+    state.dailySizeSpecies = e.target.value;
+    render();
+  });
+
   // --- Sortable table headers ---
   function updateSortIndicators() {
     document.querySelectorAll('#reportTable thead th[data-sort]').forEach(th => {
@@ -149,7 +155,7 @@
   }).addTo(map);
   let markerLayer = L.layerGroup().addTo(map);
 
-  let speciesChart, trendChart, dailySizeChart;
+  let trendChart, dailySizeChart;
 
   function fmtRange(min, max, unit) {
     if (min == null && max == null) return '-';
@@ -340,24 +346,6 @@
       markerLayer.addLayer(marker);
     });
 
-    // --- species chart ---
-    const speciesChartData = speciesSorted.slice(0, 10);
-    if (speciesChart) speciesChart.destroy();
-    speciesChart = new Chart(document.getElementById('speciesChart'), {
-      type: 'bar',
-      data: {
-        labels: speciesChartData.map(s => s[0]),
-        datasets: [{ label: '報告件数', data: speciesChartData.map(s => s[1]), backgroundColor: '#2a78d6', borderRadius: 4 }],
-      },
-      options: {
-        plugins: { legend: { display: false } },
-        scales: {
-          x: { ticks: { color: '#3b5166', autoSkip: true, maxRotation: 45, minRotation: 0 }, grid: { color: '#e1ecf5' } },
-          y: { ticks: { color: '#3b5166' }, grid: { color: '#e1ecf5' } },
-        },
-      },
-    });
-
     // --- size range chart (per species: min / avg / max, cm left axis / kg right axis) ---
     function sizeRangeBucket(map, key, unit, lo, hi) {
       const entry = map[key] || (map[key] = {});
@@ -440,8 +428,7 @@
     });
     const sizeSpeciesOrder = speciesSorted
       .map(([sp]) => sp)
-      .filter(sp => sizeStatsBySpecies[sp])
-      .slice(0, 8);
+      .filter(sp => sizeStatsBySpecies[sp]);
 
     if (trendChart) trendChart.destroy();
     trendChart = new Chart(document.getElementById('trendChart'), {
@@ -458,44 +445,97 @@
       },
     });
 
-    // --- daily size range chart (all species combined per date, cm left / kg right) ---
-    const dailySizeStats = {};
-    records.forEach(r => {
-      if (!r.date) return;
-      if (r.size_unit !== 'cm' && r.size_unit !== 'kg') return;
-      const lo = r.size_min ?? r.size_max;
-      const hi = r.size_max ?? r.size_min;
-      if (lo == null || hi == null) return;
-      sizeRangeBucket(dailySizeStats, r.date, r.size_unit, lo, hi);
-    });
-    const dailySizeDates = Object.keys(dailySizeStats).sort();
+    // --- daily size range chart (single selected species, since mixing species per day isn't meaningful) ---
+    const dailySizeSelect = document.getElementById('dailySizeSpecies');
+    const dailySizeNote = document.getElementById('dailySizeNote');
+    if (!state.dailySizeSpecies || !sizeSpeciesOrder.includes(state.dailySizeSpecies)) {
+      state.dailySizeSpecies = sizeSpeciesOrder[0] || null;
+    }
+    dailySizeSelect.innerHTML = sizeSpeciesOrder
+      .map(sp => `<option value="${sp}"${sp === state.dailySizeSpecies ? ' selected' : ''}>${sp}</option>`)
+      .join('');
 
     if (dailySizeChart) dailySizeChart.destroy();
-    dailySizeChart = new Chart(document.getElementById('dailySizeChart'), {
-      data: {
-        labels: dailySizeDates,
-        datasets: buildSizeRangeDatasets(dailySizeDates, dailySizeStats),
-      },
-      options: {
-        plugins: {
-          legend: { display: true, position: 'top', labels: { color: '#3b5166', boxWidth: 12, font: { size: 10 } } },
-          tooltip: { callbacks: { label: sizeRangeTooltipLabel } },
-        },
-        scales: {
-          ...sizeRangeScales,
-          x: {
-            ticks: {
-              color: '#3b5166',
-              autoSkip: true,
-              maxRotation: 60,
-              minRotation: 45,
-              maxTicksLimit: window.innerWidth < 600 ? 7 : 14,
-            },
-            grid: { color: '#e1ecf5' },
+    const dailySelectedSpecies = state.dailySizeSpecies;
+    if (dailySelectedSpecies) {
+      const dailyStats = {};
+      let dailyUnit = null;
+      records.forEach(r => {
+        if (r.species !== dailySelectedSpecies || !r.date) return;
+        if (r.size_unit !== 'cm' && r.size_unit !== 'kg') return;
+        const lo = r.size_min ?? r.size_max;
+        const hi = r.size_max ?? r.size_min;
+        if (lo == null || hi == null) return;
+        dailyUnit = r.size_unit;
+        sizeRangeBucket(dailyStats, r.date, r.size_unit, lo, hi);
+      });
+      const dailyDates = Object.keys(dailyStats).sort();
+      dailySizeNote.textContent = dailyDates.length
+        ? `${dailySelectedSpecies}のサイズ推移(${dailyDates.length}日分)`
+        : `${dailySelectedSpecies}のサイズデータがありません`;
+
+      if (dailyDates.length && dailyUnit) {
+        const axisId = dailyUnit === 'cm' ? 'yCm' : 'yKg';
+        const color = dailyUnit === 'cm' ? '#2a78d6' : '#eb6834';
+        const fillColor = dailyUnit === 'cm' ? 'rgba(42,120,214,0.35)' : 'rgba(235,104,52,0.3)';
+        dailySizeChart = new Chart(document.getElementById('dailySizeChart'), {
+          data: {
+            labels: dailyDates,
+            datasets: [
+              {
+                type: 'bar',
+                label: `最小〜最大(${dailyUnit})`,
+                yAxisID: axisId,
+                data: dailyDates.map(d => [dailyStats[d][dailyUnit].min, dailyStats[d][dailyUnit].max]),
+                backgroundColor: fillColor,
+                borderColor: color,
+                borderWidth: 1,
+                borderRadius: 4,
+              },
+              {
+                type: 'line',
+                label: '平均',
+                yAxisID: axisId,
+                data: dailyDates.map(d => dailyStats[d][dailyUnit].sum / dailyStats[d][dailyUnit].count),
+                showLine: false,
+                pointStyle: 'circle',
+                pointRadius: 5,
+                pointBackgroundColor: '#123152',
+                pointBorderColor: '#ffffff',
+                pointBorderWidth: 1,
+              },
+            ],
           },
-        },
-      },
-    });
+          options: {
+            plugins: {
+              legend: { display: true, position: 'top', labels: { color: '#3b5166', boxWidth: 12, font: { size: 10 } } },
+              tooltip: {
+                callbacks: {
+                  label: (ctx) => ctx.dataset.type === 'line'
+                    ? `平均: ${ctx.raw.toFixed(1)}${dailyUnit}`
+                    : `最小〜最大: ${ctx.raw[0]}〜${ctx.raw[1]}${dailyUnit}`,
+                },
+              },
+            },
+            scales: {
+              x: {
+                ticks: {
+                  color: '#3b5166',
+                  autoSkip: true,
+                  maxRotation: 60,
+                  minRotation: 45,
+                  maxTicksLimit: window.innerWidth < 600 ? 7 : 14,
+                },
+                grid: { color: '#e1ecf5' },
+              },
+              [axisId]: { position: 'left', ticks: { color }, grid: { color: '#e1ecf5' }, title: { display: true, text: dailyUnit, color } },
+            },
+          },
+        });
+      }
+    } else {
+      dailySizeNote.textContent = 'サイズデータのある魚種がありません';
+    }
 
     // --- table ---
     const tbody = document.querySelector('#reportTable tbody');

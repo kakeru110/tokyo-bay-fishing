@@ -233,16 +233,20 @@ header .meta {
 .stat-card .num { font-size: 1.4rem; font-weight: 700; color: var(--text); }
 .stat-card .label { font-size: 0.75rem; color: var(--muted); }
 
-.charts-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-@media (max-width: 900px) {
-  .charts-row { grid-template-columns: 1fr; }
-}
-.charts-row canvas { max-height: 260px; }
+.panel canvas { max-height: 320px; }
 .chart-note { font-size: 0.7rem; color: var(--muted); margin-top: 6px; }
+.chart-select {
+  float: right;
+  font-size: 0.78rem;
+  padding: 3px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--panel-border);
+  background: var(--accent-soft);
+  color: var(--text);
+  text-transform: none;
+  letter-spacing: normal;
+  font-weight: 400;
+}
 
 .gear-cards {
   display: flex;
