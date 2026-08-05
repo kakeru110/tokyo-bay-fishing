@@ -129,7 +129,7 @@
       case 'species': return r.species || '';
       case 'size': { const v = r.size_max ?? r.size_min; return v == null ? -Infinity : v; }
       case 'qty': { const v = r.qty_max ?? r.qty_min; return v == null ? -Infinity : v; }
-      case 'ground': return r.ground_text || '';
+      case 'ground': return displayGroundLabel(r);
       default: return '';
     }
   }
@@ -173,6 +173,18 @@
     const now = new Date();
     const diffDays = (now - d) / 86400000;
     return diffDays >= -1 && diffDays <= state.days;
+  }
+
+  function displayGroundLabel(r) {
+    const port = (SOURCES[r.funayado] || {}).port;
+    if (!r.ground_text) return port ? `${port}港周辺` : '不明';
+    // Pier/breakwater fishing (各堤・桟橋 etc.) has no offshore ground name, so the
+    // pipeline falls back to the boat's home port coordinates; prefix the port name
+    // so "各堤" alone doesn't read as an unlabeled, ambiguous location.
+    if (r.geocode_match === 'fallback_port' && port && !r.ground_text.includes(port)) {
+      return `${port}港 ${r.ground_text}`;
+    }
+    return r.ground_text;
   }
 
   function amazonSearchUrl(keyword) {
@@ -261,8 +273,7 @@
       if (r.lat == null || r.lon == null) return;
       const key = groundKey(r);
       if (!groundGroups[key]) groundGroups[key] = { lat: r.lat, lon: r.lon, names: new Set(), records: [] };
-      const fallbackLabel = ((SOURCES[r.funayado] || {}).port ? `${SOURCES[r.funayado].port}港周辺` : '不明');
-      groundGroups[key].names.add(r.ground_text || fallbackLabel);
+      groundGroups[key].names.add(displayGroundLabel(r));
       groundGroups[key].records.push(r);
     });
     document.getElementById('statGrounds').textContent = Object.keys(groundGroups).length;
@@ -395,7 +406,7 @@
           <td>${r.species || '-'}</td>
           <td>${sizeCell}</td>
           <td>${fmtRange(r.qty_min, r.qty_max, r.qty_unit)}</td>
-          <td>${r.ground_text || '-'}</td>
+          <td>${displayGroundLabel(r)}</td>
           <td>${link}</td>
         `;
         tbody.appendChild(tr);
