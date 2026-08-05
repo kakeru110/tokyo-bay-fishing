@@ -188,6 +188,29 @@ header .meta {
   border: 1px solid var(--panel-border);
 }
 
+.map-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 8px;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+.legend-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+.legend-dot-real { background: #eb6834; }
+.legend-dot-fallback {
+  background: #94a3b8;
+  opacity: 0.6;
+  border: 1px dashed #64748b;
+}
+
 .main-col { display: flex; flex-direction: column; gap: 16px; }
 
 .stats-row {
@@ -316,6 +339,14 @@ table.report-table th.sorted::after {
 .popup-title { font-weight: 700; margin-bottom: 4px; color: var(--accent); }
 .popup-row { font-size: 0.8rem; margin-bottom: 2px; }
 .popup-row a { color: var(--accent2); font-weight: 600; }
+.popup-fallback-note {
+  color: #92603a;
+  background: #fdf3e8;
+  border-radius: 6px;
+  padding: 4px 6px;
+  margin-bottom: 6px;
+  font-size: 0.72rem;
+}
 
 footer {
   padding: 10px 20px 24px;

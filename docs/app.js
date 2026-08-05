@@ -295,13 +295,15 @@
     markerLayer.clearLayers();
     const maxCount = Math.max(1, ...Object.values(groundGroups).map(g => g.records.length));
     Object.values(groundGroups).forEach(g => {
+      const isFallback = g.records.every(r => r.geocode_match === 'fallback_port');
       const radius = 6 + 18 * Math.sqrt(g.records.length / maxCount);
       const marker = L.circleMarker([g.lat, g.lon], {
         radius,
-        color: '#eb6834',
-        weight: 1,
-        fillColor: '#eb6834',
-        fillOpacity: 0.6,
+        color: isFallback ? '#94a3b8' : '#eb6834',
+        weight: isFallback ? 2 : 1,
+        dashArray: isFallback ? '3,3' : null,
+        fillColor: isFallback ? '#94a3b8' : '#eb6834',
+        fillOpacity: isFallback ? 0.35 : 0.6,
       });
 
       const speciesCounts = {};
@@ -324,8 +326,13 @@
         })
         .join('');
 
+      const fallbackNote = isFallback
+        ? '<div class="popup-row popup-fallback-note">⚠ 釣り場の記載がなく、船宿の所在地で代用しています(実際の釣り場ではありません)</div>'
+        : '';
+
       marker.bindPopup(`
         <div class="popup-title">${Array.from(g.names).join('・')}(報告${g.records.length}件)</div>
+        ${fallbackNote}
         <div class="popup-row" style="color:#5c7188">${speciesSummary}</div>
         <hr style="border-color:#d6e6f2">
         ${recent}
