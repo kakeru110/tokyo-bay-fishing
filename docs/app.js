@@ -25,6 +25,14 @@
 
   // --- Filter chip UI ---
   const chipConfigs = {};
+  const countElIds = { speciesChips: 'speciesCount', funayadoChips: 'funayadoCount' };
+
+  function updateFilterCount(containerId) {
+    const countEl = document.getElementById(countElIds[containerId]);
+    const cfg = chipConfigs[containerId];
+    if (!countEl || !cfg) return;
+    countEl.textContent = `${cfg.activeSet.size}/${cfg.values.length}`;
+  }
 
   function buildChips(containerId, values, activeSet, labelFn) {
     chipConfigs[containerId] = { values, activeSet, labelFn };
@@ -38,10 +46,12 @@
       chip.addEventListener('click', () => {
         if (activeSet.has(v)) activeSet.delete(v); else activeSet.add(v);
         chip.classList.toggle('active');
+        updateFilterCount(containerId);
         render();
       });
       container.appendChild(chip);
     });
+    updateFilterCount(containerId);
   }
 
   buildChips('speciesChips', allSpecies, state.species);

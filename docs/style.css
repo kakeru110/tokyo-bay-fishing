@@ -81,39 +81,75 @@ header .meta {
 }
 
 .select-all-buttons {
-  text-transform: none;
-  letter-spacing: normal;
-  float: right;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin: 2px 0 6px;
 }
 .select-all-buttons button {
   background: transparent;
   border: none;
   color: var(--accent);
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   cursor: pointer;
   padding: 0 4px;
   text-decoration: underline;
 }
 
 .filter-group {
-  margin-bottom: 18px;
+  margin-bottom: 10px;
 }
 
 .filter-group .chips {
   display: flex;
   flex-wrap: wrap;
+  gap: 5px;
+}
+
+.filter-details {
+  margin-bottom: 8px;
+  border-top: 1px solid var(--panel-border);
+  padding-top: 8px;
+}
+.filter-details summary {
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  list-style: none;
+  display: flex;
+  align-items: center;
   gap: 6px;
+  padding: 2px 0;
+}
+.filter-details summary::-webkit-details-marker { display: none; }
+.filter-details summary::before {
+  content: '▸';
+  font-size: 0.65rem;
+  color: var(--muted);
+  transition: transform 0.15s ease;
+  display: inline-block;
+}
+.filter-details[open] summary::before {
+  transform: rotate(90deg);
+}
+.filter-count {
+  font-size: 0.72rem;
+  color: var(--muted);
+  font-weight: 400;
 }
 
 .chip {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  padding: 4px 10px;
+  padding: 3px 8px;
   border-radius: 999px;
   border: 1px solid var(--panel-border);
   background: var(--accent-soft);
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   cursor: pointer;
   user-select: none;
   color: var(--muted);
