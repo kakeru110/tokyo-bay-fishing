@@ -25,11 +25,17 @@
       <button data-days="9999">全期間</button>
     </div>
 
-    <h2>魚種 <span class="select-all-buttons"><button data-target="species" data-mode="all">全選択</button><button data-target="species" data-mode="none">全解除</button></span></h2>
-    <div class="filter-group chips" id="speciesChips"></div>
+    <details class="filter-details">
+      <summary>魚種 <span class="filter-count" id="speciesCount"></span></summary>
+      <div class="select-all-buttons"><button data-target="species" data-mode="all">全選択</button><button data-target="species" data-mode="none">全解除</button></div>
+      <div class="filter-group chips" id="speciesChips"></div>
+    </details>
 
-    <h2>船宿 <span class="select-all-buttons"><button data-target="funayado" data-mode="all">全選択</button><button data-target="funayado" data-mode="none">全解除</button></span></h2>
-    <div class="filter-group chips" id="funayadoChips"></div>
+    <details class="filter-details">
+      <summary>船宿 <span class="filter-count" id="funayadoCount"></span></summary>
+      <div class="select-all-buttons"><button data-target="funayado" data-mode="all">全選択</button><button data-target="funayado" data-mode="none">全解除</button></div>
+      <div class="filter-group chips" id="funayadoChips"></div>
+    </details>
   </aside>
 
   <div class="main-col">
