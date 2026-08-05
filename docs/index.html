@@ -61,8 +61,14 @@
       <div>
         <h2>魚種別 サイズ(最小・平均・最大)</h2>
         <canvas id="trendChart"></canvas>
-        <div class="chart-note">cm単位で記録されている魚種のみ対象(kg単位の魚種は対象外)</div>
+        <div class="chart-note">左軸=cm、右軸=kg(マダコ等)。単位が違うため高さの直接比較はできません</div>
       </div>
+    </div>
+
+    <div class="panel">
+      <h2>日別 サイズ(最小・平均・最大)</h2>
+      <canvas id="dailySizeChart"></canvas>
+      <div class="chart-note">その日に報告された全魚種を合算した範囲(参考値)。左軸=cm、右軸=kg</div>
     </div>
 
     <div class="panel">
@@ -96,6 +102,6 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
 <script src="data.js?v=11"></script>
 <script src="gear.js?v=8"></script>
-<script src="app.js?v=12"></script>
+<script src="app.js?v=13"></script>
 </body>
 </html>
