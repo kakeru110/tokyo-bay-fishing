@@ -60,8 +60,8 @@ header .meta {
 
 @media (max-width: 900px) {
   .layout { grid-template-columns: 1fr; }
-  .layout > aside { order: 2; }
-  .layout > .main-col { order: 1; }
+  .layout > aside { order: 1; }
+  .layout > .main-col { order: 2; }
 }
 
 .panel {
