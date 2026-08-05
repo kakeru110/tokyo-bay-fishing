@@ -5,7 +5,7 @@
 <title>東京湾 船釣り釣果マップ</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-<link rel="stylesheet" href="style.css?v=14">
+<link rel="stylesheet" href="style.css?v=15">
 </head>
 <body>
 <header>
@@ -59,8 +59,9 @@
         <canvas id="speciesChart"></canvas>
       </div>
       <div>
-        <h2>日別 報告件数の推移</h2>
+        <h2>魚種別 サイズ(最小・平均・最大)</h2>
         <canvas id="trendChart"></canvas>
+        <div class="chart-note">cm単位で記録されている魚種のみ対象(kg単位の魚種は対象外)</div>
       </div>
     </div>
 
@@ -95,6 +96,6 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
 <script src="data.js?v=11"></script>
 <script src="gear.js?v=8"></script>
-<script src="app.js?v=11"></script>
+<script src="app.js?v=12"></script>
 </body>
 </html>

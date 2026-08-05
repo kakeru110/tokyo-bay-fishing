@@ -242,6 +242,7 @@ header .meta {
   .charts-row { grid-template-columns: 1fr; }
 }
 .charts-row canvas { max-height: 260px; }
+.chart-note { font-size: 0.7rem; color: var(--muted); margin-top: 6px; }
 
 .gear-cards {
   display: flex;

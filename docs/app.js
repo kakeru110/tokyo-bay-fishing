@@ -358,38 +358,65 @@
       },
     });
 
-    // --- trend chart (per day) ---
-    const dayTotals = {};
-    records.forEach(r => { if (r.date) dayTotals[r.date] = (dayTotals[r.date] || 0) + 1; });
-    const days = Object.keys(dayTotals).sort();
+    // --- size range chart (per species: min / avg / max, cm only) ---
+    const sizeStatsBySpecies = {};
+    records.forEach(r => {
+      if (r.size_unit !== 'cm') return;
+      const lo = r.size_min ?? r.size_max;
+      const hi = r.size_max ?? r.size_min;
+      if (lo == null || hi == null) return;
+      const s = sizeStatsBySpecies[r.species] || (sizeStatsBySpecies[r.species] = { min: Infinity, max: -Infinity, sum: 0, count: 0 });
+      s.min = Math.min(s.min, lo);
+      s.max = Math.max(s.max, hi);
+      s.sum += (lo + hi) / 2;
+      s.count += 1;
+    });
+    const sizeSpeciesOrder = speciesSorted
+      .map(([sp]) => sp)
+      .filter(sp => sizeStatsBySpecies[sp])
+      .slice(0, 8);
+
     if (trendChart) trendChart.destroy();
     trendChart = new Chart(document.getElementById('trendChart'), {
-      type: 'line',
       data: {
-        labels: days,
-        datasets: [{
-          label: '報告件数',
-          data: days.map(d => dayTotals[d]),
-          borderColor: '#eb6834',
-          backgroundColor: 'rgba(235,104,52,0.15)',
-          fill: true,
-          tension: 0.3,
-        }],
+        labels: sizeSpeciesOrder,
+        datasets: [
+          {
+            type: 'bar',
+            label: '最小〜最大',
+            data: sizeSpeciesOrder.map(sp => [sizeStatsBySpecies[sp].min, sizeStatsBySpecies[sp].max]),
+            backgroundColor: 'rgba(42,120,214,0.35)',
+            borderColor: '#2a78d6',
+            borderWidth: 1,
+            borderRadius: 4,
+          },
+          {
+            type: 'line',
+            label: '平均',
+            data: sizeSpeciesOrder.map(sp => sizeStatsBySpecies[sp].sum / sizeStatsBySpecies[sp].count),
+            showLine: false,
+            pointStyle: 'circle',
+            pointRadius: 5,
+            pointBackgroundColor: '#eb6834',
+            pointBorderColor: '#ffffff',
+            pointBorderWidth: 1,
+          },
+        ],
       },
       options: {
-        plugins: { legend: { display: false } },
-        scales: {
-          x: {
-            ticks: {
-              color: '#3b5166',
-              maxRotation: 60,
-              minRotation: 45,
-              autoSkip: true,
-              maxTicksLimit: window.innerWidth < 600 ? 7 : 14,
+        plugins: {
+          legend: { display: true, position: 'top', labels: { color: '#3b5166', boxWidth: 12, font: { size: 11 } } },
+          tooltip: {
+            callbacks: {
+              label: (ctx) => ctx.datasetIndex === 0
+                ? `最小〜最大: ${ctx.raw[0]}〜${ctx.raw[1]}cm`
+                : `平均: ${ctx.raw.toFixed(1)}cm`,
             },
-            grid: { color: '#e1ecf5' },
           },
-          y: { ticks: { color: '#3b5166' }, grid: { color: '#e1ecf5' }, beginAtZero: true },
+        },
+        scales: {
+          x: { ticks: { color: '#3b5166', autoSkip: true, maxRotation: 45, minRotation: 0 }, grid: { color: '#e1ecf5' } },
+          y: { ticks: { color: '#3b5166' }, grid: { color: '#e1ecf5' }, title: { display: true, text: 'cm', color: '#3b5166' } },
         },
       },
     });
