@@ -286,6 +286,28 @@ table.report-table tbody tr:hover { background: var(--accent-soft); }
 .table-scroll { max-height: 340px; overflow: auto; }
 table.report-table a { color: var(--accent); text-decoration: none; }
 
+table.report-table th[data-sort] { cursor: pointer; user-select: none; }
+table.report-table th[data-sort]:hover { color: var(--accent2); }
+table.report-table th.sorted { color: var(--accent2); }
+table.report-table th.sorted::after {
+  content: attr(data-sort-arrow);
+  margin-left: 4px;
+  font-size: 0.7em;
+}
+
+.badge-big {
+  display: inline-block;
+  background: var(--accent2);
+  color: #ffffff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 999px;
+  margin-left: 4px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
 .leaflet-popup-content-wrapper {
   background: #ffffff;
   color: var(--text);
@@ -320,6 +342,7 @@ footer {
   }
   .stat-card { min-width: 0; padding: 8px 12px; }
   .stat-card .num { font-size: 1.15rem; }
+  .stats-row .stat-card:last-child:nth-child(odd) { grid-column: 1 / -1; }
 
   #map { height: 340px; }
 

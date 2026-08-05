@@ -10,12 +10,32 @@
     days: 30,
     species: new Set(),
     funayado: new Set(),
+    sortKey: 'date',
+    sortDir: 'desc',
   };
 
   const allSpecies = Array.from(new Set(CATCHES.map(r => r.species).filter(Boolean))).sort();
   const allFunayado = Array.from(new Set(CATCHES.map(r => r.funayado).filter(Boolean)));
   allSpecies.forEach(s => state.species.add(s));
   allFunayado.forEach(f => state.funayado.add(f));
+
+  // Per-species "大物" (notably large catch) threshold: 85th percentile of
+  // size_max (falling back to size_min) among that species' own records.
+  const speciesBigSizeThreshold = {};
+  {
+    const bySpecies = {};
+    CATCHES.forEach(r => {
+      const v = r.size_max ?? r.size_min;
+      if (v == null || !r.species) return;
+      (bySpecies[r.species] = bySpecies[r.species] || []).push(v);
+    });
+    Object.entries(bySpecies).forEach(([sp, vals]) => {
+      if (vals.length < 5) return;
+      vals.sort((a, b) => a - b);
+      const idx = Math.min(vals.length - 1, Math.floor(vals.length * 0.85));
+      speciesBigSizeThreshold[sp] = vals[idx];
+    });
+  }
 
   document.getElementById('lastUpdated').textContent = GENERATED_AT
     ? `最終更新: ${GENERATED_AT}`
@@ -77,6 +97,49 @@
       render();
     });
   });
+
+  // --- Sortable table headers ---
+  function updateSortIndicators() {
+    document.querySelectorAll('#reportTable thead th[data-sort]').forEach(th => {
+      const active = th.dataset.sort === state.sortKey;
+      th.classList.toggle('sorted', active);
+      th.dataset.sortArrow = active ? (state.sortDir === 'asc' ? '▲' : '▼') : '';
+    });
+  }
+
+  document.querySelectorAll('#reportTable thead th[data-sort]').forEach(th => {
+    th.addEventListener('click', () => {
+      const key = th.dataset.sort;
+      if (state.sortKey === key) {
+        state.sortDir = state.sortDir === 'asc' ? 'desc' : 'asc';
+      } else {
+        state.sortKey = key;
+        state.sortDir = (key === 'date' || key === 'size' || key === 'qty') ? 'desc' : 'asc';
+      }
+      updateSortIndicators();
+      render();
+    });
+  });
+  updateSortIndicators();
+
+  function sortValue(r, key) {
+    switch (key) {
+      case 'date': return r.date || '';
+      case 'funayado': return (SOURCES[r.funayado] || {}).name || r.funayado || '';
+      case 'species': return r.species || '';
+      case 'size': { const v = r.size_max ?? r.size_min; return v == null ? -Infinity : v; }
+      case 'qty': { const v = r.qty_max ?? r.qty_min; return v == null ? -Infinity : v; }
+      case 'ground': return r.ground_text || '';
+      default: return '';
+    }
+  }
+
+  function compareRecords(a, b) {
+    const va = sortValue(a, state.sortKey);
+    const vb = sortValue(b, state.sortKey);
+    const cmp = va < vb ? -1 : va > vb ? 1 : 0;
+    return state.sortDir === 'asc' ? cmp : -cmp;
+  }
 
   // --- Map setup ---
   const map = L.map('map').setView([35.45, 139.75], 10);
@@ -167,6 +230,31 @@
 
     // --- stats ---
     document.getElementById('statReports').textContent = records.length;
+
+    const speciesTotals = {};
+    records.forEach(r => { if (r.species) speciesTotals[r.species] = (speciesTotals[r.species] || 0) + 1; });
+    const speciesSorted = Object.entries(speciesTotals).sort((a, b) => b[1] - a[1]);
+
+    const avgSizeEl = document.getElementById('statAvgSize');
+    const avgSizeLabelEl = document.getElementById('statAvgSizeLabel');
+    if (avgSizeEl && avgSizeLabelEl) {
+      const topSpecies = speciesSorted[0] && speciesSorted[0][0];
+      const sizeVals = topSpecies
+        ? records
+            .filter(r => r.species === topSpecies && (r.size_min != null || r.size_max != null))
+            .map(r => (r.size_min != null && r.size_max != null) ? (r.size_min + r.size_max) / 2 : (r.size_min ?? r.size_max))
+        : [];
+      if (topSpecies && sizeVals.length) {
+        const avg = sizeVals.reduce((a, b) => a + b, 0) / sizeVals.length;
+        const unitRec = records.find(r => r.species === topSpecies && r.size_unit);
+        avgSizeEl.textContent = `${avg.toFixed(1)}${unitRec ? unitRec.size_unit : ''}`;
+        avgSizeLabelEl.textContent = `平均サイズ(${topSpecies})`;
+      } else {
+        avgSizeEl.textContent = '-';
+        avgSizeLabelEl.textContent = '平均サイズ';
+      }
+    }
+
     const groundKey = r => `${(r.lat ?? '').toFixed ? r.lat.toFixed(3) : r.lat},${(r.lon ?? '').toFixed ? r.lon.toFixed(3) : r.lon}`;
     const groundGroups = {};
     records.forEach(r => {
@@ -235,15 +323,13 @@
     });
 
     // --- species chart ---
-    const speciesTotals = {};
-    records.forEach(r => { speciesTotals[r.species] = (speciesTotals[r.species] || 0) + 1; });
-    const speciesSorted = Object.entries(speciesTotals).sort((a, b) => b[1] - a[1]).slice(0, 10);
+    const speciesChartData = speciesSorted.slice(0, 10);
     if (speciesChart) speciesChart.destroy();
     speciesChart = new Chart(document.getElementById('speciesChart'), {
       type: 'bar',
       data: {
-        labels: speciesSorted.map(s => s[0]),
-        datasets: [{ label: '報告件数', data: speciesSorted.map(s => s[1]), backgroundColor: '#2a78d6', borderRadius: 4 }],
+        labels: speciesChartData.map(s => s[0]),
+        datasets: [{ label: '報告件数', data: speciesChartData.map(s => s[1]), backgroundColor: '#2a78d6', borderRadius: 4 }],
       },
       options: {
         plugins: { legend: { display: false } },
@@ -295,16 +381,19 @@
     tbody.innerHTML = '';
     records
       .slice()
-      .sort((a, b) => (a.date < b.date ? 1 : -1))
+      .sort(compareRecords)
       .slice(0, 500)
       .forEach(r => {
         const tr = document.createElement('tr');
         const link = r.source_url ? `<a href="${r.source_url}" target="_blank" rel="noopener">元記事</a>` : '';
+        const sizeVal = r.size_max ?? r.size_min;
+        const isBig = sizeVal != null && speciesBigSizeThreshold[r.species] != null && sizeVal >= speciesBigSizeThreshold[r.species];
+        const sizeCell = fmtRange(r.size_min, r.size_max, r.size_unit) + (isBig ? ' <span class="badge-big">大物</span>' : '');
         tr.innerHTML = `
           <td>${r.date || '-'}</td>
           <td>${(SOURCES[r.funayado] || {}).name || r.funayado}</td>
           <td>${r.species || '-'}</td>
-          <td>${fmtRange(r.size_min, r.size_max, r.size_unit)}</td>
+          <td>${sizeCell}</td>
           <td>${fmtRange(r.qty_min, r.qty_max, r.qty_unit)}</td>
           <td>${r.ground_text || '-'}</td>
           <td>${link}</td>

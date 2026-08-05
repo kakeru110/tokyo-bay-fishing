@@ -5,7 +5,7 @@
 <title>東京湾 船釣り釣果マップ</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-<link rel="stylesheet" href="style.css?v=6">
+<link rel="stylesheet" href="style.css?v=8">
 </head>
 <body>
 <header>
@@ -44,6 +44,7 @@
       <div class="stat-card"><div class="num" id="statGrounds">-</div><div class="label">釣り場数</div></div>
       <div class="stat-card"><div class="num" id="statSpecies">-</div><div class="label">魚種数</div></div>
       <div class="stat-card"><div class="num" id="statTopGround">-</div><div class="label">直近もっとも報告が多い釣り場</div></div>
+      <div class="stat-card"><div class="num" id="statAvgSize">-</div><div class="label" id="statAvgSizeLabel">平均サイズ</div></div>
     </div>
 
     <div id="map"></div>
@@ -65,7 +66,7 @@
         <table class="report-table" id="reportTable">
           <thead>
             <tr>
-              <th>日付</th><th>船宿</th><th>魚種</th><th>サイズ</th><th>数量</th><th>釣り場</th><th>元記事</th>
+              <th data-sort="date">日付</th><th data-sort="funayado">船宿</th><th data-sort="species">魚種</th><th data-sort="size">サイズ</th><th data-sort="qty">数量</th><th data-sort="ground">釣り場</th><th>元記事</th>
             </tr>
           </thead>
           <tbody></tbody>
@@ -88,8 +89,8 @@
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
-<script src="data.js?v=7"></script>
-<script src="gear.js?v=6"></script>
-<script src="app.js?v=6"></script>
+<script src="data.js?v=8"></script>
+<script src="gear.js?v=8"></script>
+<script src="app.js?v=8"></script>
 </body>
 </html>
