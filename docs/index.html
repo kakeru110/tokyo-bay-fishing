@@ -76,6 +76,23 @@
     </div>
 
     <div class="panel">
+      <h2>潮名別 サイズ(最小・平均・最大)
+        <select id="tideSizeSpecies" class="chart-select"></select>
+      </h2>
+      <canvas id="tideSizeChart"></canvas>
+      <div class="chart-note" id="tideSizeNote"></div>
+    </div>
+
+    <div class="panel">
+      <h2>潮名別 数量(最小・平均・最大)
+        <select id="tideQtySpecies" class="chart-select"></select>
+      </h2>
+      <canvas id="tideQtyChart"></canvas>
+      <div class="chart-note" id="tideQtyNote"></div>
+      <div class="chart-note">潮名(大潮〜若潮)は tide736.net の走水地点データを日付と突き合わせたもの。期間が短いため参考値です</div>
+    </div>
+
+    <div class="panel">
       <h2>釣果一覧(表示中の絞り込み条件)</h2>
       <div class="table-scroll">
         <table class="report-table" id="reportTable">
@@ -104,8 +121,8 @@
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
-<script src="data.js?v=11"></script>
+<script src="data.js?v=12"></script>
 <script src="gear.js?v=8"></script>
-<script src="app.js?v=16"></script>
+<script src="app.js?v=17"></script>
 </body>
 </html>

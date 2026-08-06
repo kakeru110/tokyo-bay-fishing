@@ -14,6 +14,8 @@
     sortDir: 'desc',
     dailySizeSpecies: null,
     dailyQtySpecies: null,
+    tideSizeSpecies: null,
+    tideQtySpecies: null,
   };
 
   const allSpecies = Array.from(new Set(CATCHES.map(r => r.species).filter(Boolean))).sort();
@@ -110,6 +112,16 @@
     render();
   });
 
+  document.getElementById('tideSizeSpecies').addEventListener('change', (e) => {
+    state.tideSizeSpecies = e.target.value;
+    render();
+  });
+
+  document.getElementById('tideQtySpecies').addEventListener('change', (e) => {
+    state.tideQtySpecies = e.target.value;
+    render();
+  });
+
   // --- Sortable table headers ---
   function updateSortIndicators() {
     document.querySelectorAll('#reportTable thead th[data-sort]').forEach(th => {
@@ -161,7 +173,7 @@
   }).addTo(map);
   let markerLayer = L.layerGroup().addTo(map);
 
-  let trendChart, dailySizeChart, dailyQtyChart;
+  let trendChart, dailySizeChart, dailyQtyChart, tideSizeChart, tideQtyChart;
 
   function fmtRange(min, max, unit) {
     if (min == null && max == null) return '-';
@@ -451,35 +463,39 @@
       },
     });
 
-    // --- daily min/avg/max chart for a single selected species (size or qty) ---
-    // Mixing species together per day isn't meaningful (different species, different
-    // scales), so these charts always focus on one species at a time.
-    function renderSingleSpeciesRangeChart({ existingChart, canvasId, selectedSpecies, getRange }) {
+    // --- min/avg/max chart for a single selected species, grouped by date or tide phase ---
+    // Mixing species together isn't meaningful (different species, different scales),
+    // so these charts always focus on one species at a time.
+    function renderSingleSpeciesRangeChart({ existingChart, canvasId, selectedSpecies, getRange, groupKey, categoryOrder, rotateLabels }) {
       if (existingChart) existingChart.destroy();
-      if (!selectedSpecies) return { chart: null, dates: [] };
+      if (!selectedSpecies) return { chart: null, categories: [] };
       const stats = {};
       let unit = null;
       records.forEach(r => {
-        if (r.species !== selectedSpecies || !r.date) return;
+        if (r.species !== selectedSpecies) return;
+        const key = groupKey(r);
+        if (!key) return;
         const range = getRange(r);
         if (!range) return;
         const [lo, hi, u] = range;
         if (lo == null || hi == null) return;
         unit = u;
-        rangeBucket(stats, r.date, u, lo, hi);
+        rangeBucket(stats, key, u, lo, hi);
       });
-      const dates = Object.keys(stats).sort();
-      if (!dates.length || !unit) return { chart: null, dates };
+      const categories = categoryOrder
+        ? categoryOrder.filter(c => stats[c])
+        : Object.keys(stats).sort();
+      if (!categories.length || !unit) return { chart: null, categories };
 
       const color = '#2a78d6';
       const chart = new Chart(document.getElementById(canvasId), {
         data: {
-          labels: dates,
+          labels: categories,
           datasets: [
             {
               type: 'bar',
               label: `最小〜最大(${unit})`,
-              data: dates.map(d => [stats[d][unit].min, stats[d][unit].max]),
+              data: categories.map(c => [stats[c][unit].min, stats[c][unit].max]),
               backgroundColor: 'rgba(42,120,214,0.35)',
               borderColor: color,
               borderWidth: 1,
@@ -488,7 +504,7 @@
             {
               type: 'line',
               label: '平均',
-              data: dates.map(d => stats[d][unit].sum / stats[d][unit].count),
+              data: categories.map(c => stats[c][unit].sum / stats[c][unit].count),
               showLine: false,
               pointStyle: 'circle',
               pointRadius: 5,
@@ -511,20 +527,22 @@
           },
           scales: {
             x: {
-              ticks: {
-                color: '#3b5166',
-                autoSkip: true,
-                maxRotation: 60,
-                minRotation: 45,
-                maxTicksLimit: window.innerWidth < 600 ? 7 : 14,
-              },
+              ticks: rotateLabels === false
+                ? { color: '#3b5166' }
+                : {
+                    color: '#3b5166',
+                    autoSkip: true,
+                    maxRotation: 60,
+                    minRotation: 45,
+                    maxTicksLimit: window.innerWidth < 600 ? 7 : 14,
+                  },
               grid: { color: '#e1ecf5' },
             },
             y: { position: 'left', ticks: { color }, grid: { color: '#e1ecf5' }, title: { display: true, text: unit, color } },
           },
         },
       });
-      return { chart, dates };
+      return { chart, categories };
     }
 
     // 日別サイズ
@@ -541,6 +559,7 @@
         existingChart: dailySizeChart,
         canvasId: 'dailySizeChart',
         selectedSpecies: state.dailySizeSpecies,
+        groupKey: r => r.date,
         getRange: r => (r.size_unit === 'cm' || r.size_unit === 'kg')
           ? [r.size_min ?? r.size_max, r.size_max ?? r.size_min, r.size_unit]
           : null,
@@ -548,8 +567,8 @@
       dailySizeChart = result.chart;
       dailySizeNote.textContent = !state.dailySizeSpecies
         ? 'サイズデータのある魚種がありません'
-        : result.dates.length
-          ? `${state.dailySizeSpecies}のサイズ推移(${result.dates.length}日分)`
+        : result.categories.length
+          ? `${state.dailySizeSpecies}のサイズ推移(${result.categories.length}日分)`
           : `${state.dailySizeSpecies}のサイズデータがありません`;
     }
 
@@ -570,14 +589,71 @@
         existingChart: dailyQtyChart,
         canvasId: 'dailyQtyChart',
         selectedSpecies: state.dailyQtySpecies,
+        groupKey: r => r.date,
         getRange: r => r.qty_unit ? [r.qty_min ?? r.qty_max, r.qty_max ?? r.qty_min, r.qty_unit] : null,
       });
       dailyQtyChart = result.chart;
       dailyQtyNote.textContent = !state.dailyQtySpecies
         ? '数量データのある魚種がありません'
-        : result.dates.length
-          ? `${state.dailyQtySpecies}の数量推移(${result.dates.length}日分)`
+        : result.categories.length
+          ? `${state.dailyQtySpecies}の数量推移(${result.categories.length}日分)`
           : `${state.dailyQtySpecies}の数量データがありません`;
+    }
+
+    // 潮名別サイズ・数量(大潮/中潮/小潮/長潮/若潮)
+    const TIDE_ORDER = ['大潮', '中潮', '小潮', '長潮', '若潮'];
+    const tideSizeSelect = document.getElementById('tideSizeSpecies');
+    const tideSizeNote = document.getElementById('tideSizeNote');
+    if (!state.tideSizeSpecies || !sizeSpeciesOrder.includes(state.tideSizeSpecies)) {
+      state.tideSizeSpecies = sizeSpeciesOrder[0] || null;
+    }
+    tideSizeSelect.innerHTML = sizeSpeciesOrder
+      .map(sp => `<option value="${sp}"${sp === state.tideSizeSpecies ? ' selected' : ''}>${sp}</option>`)
+      .join('');
+    {
+      const result = renderSingleSpeciesRangeChart({
+        existingChart: tideSizeChart,
+        canvasId: 'tideSizeChart',
+        selectedSpecies: state.tideSizeSpecies,
+        groupKey: r => r.tide_title,
+        categoryOrder: TIDE_ORDER,
+        rotateLabels: false,
+        getRange: r => (r.size_unit === 'cm' || r.size_unit === 'kg')
+          ? [r.size_min ?? r.size_max, r.size_max ?? r.size_min, r.size_unit]
+          : null,
+      });
+      tideSizeChart = result.chart;
+      tideSizeNote.textContent = !state.tideSizeSpecies
+        ? 'サイズデータのある魚種がありません'
+        : result.categories.length
+          ? `${state.tideSizeSpecies}のサイズ(潮名別、1件あたり平均)`
+          : `${state.tideSizeSpecies}のサイズデータがありません`;
+    }
+
+    const tideQtySelect = document.getElementById('tideQtySpecies');
+    const tideQtyNote = document.getElementById('tideQtyNote');
+    if (!state.tideQtySpecies || !qtySpeciesOrder.includes(state.tideQtySpecies)) {
+      state.tideQtySpecies = qtySpeciesOrder[0] || null;
+    }
+    tideQtySelect.innerHTML = qtySpeciesOrder
+      .map(sp => `<option value="${sp}"${sp === state.tideQtySpecies ? ' selected' : ''}>${sp}</option>`)
+      .join('');
+    {
+      const result = renderSingleSpeciesRangeChart({
+        existingChart: tideQtyChart,
+        canvasId: 'tideQtyChart',
+        selectedSpecies: state.tideQtySpecies,
+        groupKey: r => r.tide_title,
+        categoryOrder: TIDE_ORDER,
+        rotateLabels: false,
+        getRange: r => r.qty_unit ? [r.qty_min ?? r.qty_max, r.qty_max ?? r.qty_min, r.qty_unit] : null,
+      });
+      tideQtyChart = result.chart;
+      tideQtyNote.textContent = !state.tideQtySpecies
+        ? '数量データのある魚種がありません'
+        : result.categories.length
+          ? `${state.tideQtySpecies}の数量(潮名別、1件あたり平均)`
+          : `${state.tideQtySpecies}の数量データがありません`;
     }
 
     // --- table ---
