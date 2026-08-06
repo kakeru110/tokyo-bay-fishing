@@ -7,6 +7,7 @@
   state.tideSizeSpecies = null;
   state.tideQtySpecies = null;
 
+  T.initFilterUI(render);
   T.renderFilterSummary('filterSummary');
 
   document.getElementById('dailySizeSpecies').addEventListener('change', (e) => {
@@ -100,7 +101,6 @@
     if (existingChart) existingChart.destroy();
     if (!selectedSpecies) return { chart: null, categories: [] };
     const stats = {};
-    let unit = null;
     records.forEach(r => {
       if (r.species !== selectedSpecies) return;
       const key = groupKey(r);
@@ -109,12 +109,18 @@
       if (!range) return;
       const [lo, hi, u] = range;
       if (lo == null || hi == null) return;
-      unit = u;
       rangeBucket(stats, key, u, lo, hi);
     });
-    const categories = categoryOrder
-      ? categoryOrder.filter(c => stats[c])
-      : Object.keys(stats).sort();
+    // A species should really use one unit, but real-world reports sometimes mix
+    // cm/kg for the same species; pick whichever unit has the most samples and
+    // only keep categories that actually have data in that unit.
+    const unitCounts = {};
+    Object.values(stats).forEach(entry => {
+      Object.entries(entry).forEach(([u, b]) => { unitCounts[u] = (unitCounts[u] || 0) + b.count; });
+    });
+    const unit = Object.keys(unitCounts).sort((a, b) => unitCounts[b] - unitCounts[a])[0] || null;
+    const categories = (categoryOrder ? categoryOrder.filter(c => stats[c]) : Object.keys(stats).sort())
+      .filter(c => unit && stats[c][unit]);
     if (!categories.length || !unit) return { chart: null, categories };
 
     const color = '#2a78d6';

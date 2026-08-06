@@ -151,6 +151,7 @@ window.TBF = (function () {
     });
 
     document.querySelectorAll('#periodButtons button').forEach(btn => {
+      btn.classList.toggle('active', Number(btn.dataset.days) === state.days);
       btn.addEventListener('click', () => {
         document.querySelectorAll('#periodButtons button').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');

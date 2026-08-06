@@ -19,9 +19,31 @@
 </nav>
 
 <div class="analysis-layout">
-  <div class="panel filter-summary-panel">
-    <span id="filterSummary"></span>
-    <a href="index.html" data-nav-page="index.html" class="filter-summary-link">絞り込みを変更する →</a>
+  <div class="panel">
+    <div class="filter-group period-buttons" id="periodButtons">
+      <button data-days="0">今日</button>
+      <button data-days="7">直近7日</button>
+      <button data-days="14">直近14日</button>
+      <button data-days="30" class="active">直近30日</button>
+      <button data-days="9999">全期間</button>
+    </div>
+
+    <details class="filter-details">
+      <summary>魚種 <span class="filter-count" id="speciesCount"></span></summary>
+      <div class="select-all-buttons"><button data-target="species" data-mode="all">全選択</button><button data-target="species" data-mode="none">全解除</button></div>
+      <div class="filter-group chips" id="speciesChips"></div>
+    </details>
+
+    <details class="filter-details">
+      <summary>船宿 <span class="filter-count" id="funayadoCount"></span></summary>
+      <div class="select-all-buttons"><button data-target="funayado" data-mode="all">全選択</button><button data-target="funayado" data-mode="none">全解除</button></div>
+      <div class="filter-group chips" id="funayadoChips"></div>
+    </details>
+
+    <div class="filter-summary-panel">
+      <span id="filterSummary"></span>
+      <a href="index.html" data-nav-page="index.html" class="filter-summary-link">📋 釣果一覧・地図を見る →</a>
+    </div>
   </div>
 
   <div class="panel">
@@ -77,7 +99,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
 <script src="data.js?v=14"></script>
-<script src="common.js?v=1"></script>
-<script src="analysis.js?v=1"></script>
+<script src="common.js?v=2"></script>
+<script src="analysis.js?v=2"></script>
 </body>
 </html>
