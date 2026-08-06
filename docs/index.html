@@ -68,6 +68,14 @@
     </div>
 
     <div class="panel">
+      <h2>日別 数量(最小・平均・最大)
+        <select id="dailyQtySpecies" class="chart-select"></select>
+      </h2>
+      <canvas id="dailyQtyChart"></canvas>
+      <div class="chart-note" id="dailyQtyNote"></div>
+    </div>
+
+    <div class="panel">
       <h2>釣果一覧(表示中の絞り込み条件)</h2>
       <div class="table-scroll">
         <table class="report-table" id="reportTable">
@@ -98,6 +106,6 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
 <script src="data.js?v=11"></script>
 <script src="gear.js?v=8"></script>
-<script src="app.js?v=14"></script>
+<script src="app.js?v=15"></script>
 </body>
 </html>
