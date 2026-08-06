@@ -15,7 +15,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="釣果データ分析｜東京湾 船釣り釣果マップ">
 <meta name="twitter:description" content="東京湾 船釣り釣果データの分析。魚種別サイズ、日別推移、潮回り(大潮・中潮など)別の傾向、天気と出船状況の関係をグラフで確認できます。">
-<link rel="stylesheet" href="style.css?v=18">
+<link rel="stylesheet" href="style.css?v=19">
 </head>
 <body>
 <header>
@@ -37,6 +37,11 @@
       <button data-days="14">直近14日</button>
       <button data-days="30" class="active">直近30日</button>
       <button data-days="9999">全期間</button>
+    </div>
+    <div class="filter-group date-range">
+      <input type="date" id="dateFrom" aria-label="開始日">
+      <span>〜</span>
+      <input type="date" id="dateTo" aria-label="終了日">
     </div>
 
     <details class="filter-details">
@@ -101,6 +106,12 @@
     <canvas id="weatherChart"></canvas>
     <div class="chart-note">左軸=報告件数(絞り込み条件に連動)、右軸=最大風速(km/h)。風が強い日ほど報告件数が減る傾向があります(出船数・釣行数の代理指標)。天気は釣れる量・サイズそのものへの影響は今のところ明確ではありません</div>
   </div>
+
+  <div class="panel" id="gearPanel">
+    <h2>🎣 おすすめ仕掛け・タックル(表示中の魚種から)</h2>
+    <div class="gear-cards" id="gearCards"></div>
+    <div class="pr-disclosure">PR: Amazonのアソシエイトとして、当サイトは適格販売により収入を得ています。</div>
+  </div>
 </div>
 
 <footer>
@@ -110,7 +121,8 @@
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
 <script src="data.js?v=16"></script>
-<script src="common.js?v=2"></script>
-<script src="analysis.js?v=2"></script>
+<script src="gear.js?v=10"></script>
+<script src="common.js?v=3"></script>
+<script src="analysis.js?v=3"></script>
 </body>
 </html>

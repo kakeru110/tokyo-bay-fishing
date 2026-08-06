@@ -2,11 +2,6 @@
   const T = window.TBF;
   const { CATCHES, SOURCES, state, filteredRecords, fmtRange, displayGroundLabel } = T;
 
-  const GEAR_RECOMMENDATIONS = window.GEAR_RECOMMENDATIONS || {};
-  const GEAR_PRODUCTS = window.GEAR_PRODUCTS || {};
-  const GEAR_DEFAULT = window.GEAR_DEFAULT || [];
-  const AMAZON_ASSOCIATE_TAG = window.AMAZON_ASSOCIATE_TAG || "";
-
   state.sortKey = 'date';
   state.sortDir = 'desc';
 
@@ -81,78 +76,6 @@
   }).addTo(map);
   let markerLayer = L.layerGroup().addTo(map);
 
-  function amazonSearchUrl(keyword) {
-    const params = new URLSearchParams({ k: keyword, tag: AMAZON_ASSOCIATE_TAG });
-    return `https://www.amazon.co.jp/s?${params.toString()}`;
-  }
-
-  function productCardHtml(item, species) {
-    const url = `https://www.amazon.co.jp/dp/${item.asin}?tag=${AMAZON_ASSOCIATE_TAG}`;
-    return `
-      <a class="gear-card gear-product" href="${url}" target="_blank" rel="noopener sponsored">
-        ${species ? `<div class="gear-species">${species}</div>` : ''}
-        <img class="gear-product-img" src="${item.image}" alt="${item.title}" loading="lazy">
-        <div class="gear-label">${item.title}</div>
-        <div class="gear-cta">Amazonで見る →</div>
-      </a>
-    `;
-  }
-
-  function keywordCardHtml(item, species) {
-    return `
-      <a class="gear-card" href="${amazonSearchUrl(item.keyword)}" target="_blank" rel="noopener sponsored">
-        ${species ? `<div class="gear-species">${species}</div>` : ''}
-        <div class="gear-label">${item.label}</div>
-        <div class="gear-cta">Amazonで見る →</div>
-      </a>
-    `;
-  }
-
-  function renderGearRecommendations(records) {
-    const container = document.getElementById('gearCards');
-    if (!container) return;
-
-    const speciesTotals = {};
-    records.forEach(r => { if (r.species) speciesTotals[r.species] = (speciesTotals[r.species] || 0) + 1; });
-    const topSpecies = Object.entries(speciesTotals)
-      .sort((a, b) => b[1] - a[1])
-      .slice(0, 3)
-      .map(([sp]) => sp);
-
-    const cardsHtml = [];
-    const seenKeys = new Set();
-
-    // Species with a curated GEAR_PRODUCTS entry get real product cards
-    // (image + specific ASIN link); everything else falls back to the
-    // generic keyword-search card.
-    topSpecies.forEach(sp => {
-      const products = GEAR_PRODUCTS[sp];
-      if (products && products.length) {
-        products.forEach(item => {
-          if (seenKeys.has(item.asin)) return;
-          seenKeys.add(item.asin);
-          cardsHtml.push(productCardHtml(item, sp));
-        });
-      } else {
-        (GEAR_RECOMMENDATIONS[sp] || []).forEach(item => {
-          if (seenKeys.has(item.keyword)) return;
-          seenKeys.add(item.keyword);
-          cardsHtml.push(keywordCardHtml(item, sp));
-        });
-      }
-    });
-
-    if (cardsHtml.length === 0) {
-      GEAR_DEFAULT.forEach(item => {
-        if (seenKeys.has(item.keyword)) return;
-        seenKeys.add(item.keyword);
-        cardsHtml.push(keywordCardHtml(item, null));
-      });
-    }
-
-    container.innerHTML = cardsHtml.join('');
-  }
-
   function render() {
     const records = filteredRecords();
 
@@ -195,7 +118,7 @@
     document.getElementById('statGrounds').textContent = Object.keys(groundGroups).length;
     document.getElementById('statSpecies').textContent = new Set(records.map(r => r.species)).size;
 
-    renderGearRecommendations(records);
+    T.renderGearRecommendations('gearCards');
 
     let topGroundName = '-';
     let topCount = 0;

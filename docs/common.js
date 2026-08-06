@@ -9,10 +9,17 @@ window.TBF = (function () {
 
   const allSpecies = Array.from(new Set(CATCHES.map(r => r.species).filter(Boolean))).sort();
   const allFunayado = Array.from(new Set(CATCHES.map(r => r.funayado).filter(Boolean)));
+  const allDates = CATCHES.map(r => r.date).filter(Boolean).sort();
+  const minDate = allDates[0] || null;
+  const maxDate = allDates[allDates.length - 1] || null;
 
   const qp = new URLSearchParams(location.search);
+  const hasRange = qp.has('from') || qp.has('to');
   const state = {
+    periodMode: hasRange ? 'range' : 'preset',
     days: qp.has('days') ? Number(qp.get('days')) : 30,
+    dateFrom: qp.get('from') || minDate,
+    dateTo: qp.get('to') || maxDate,
     species: new Set(),
     funayado: new Set(),
   };
@@ -31,7 +38,12 @@ window.TBF = (function () {
 
   function currentQueryString() {
     const p = new URLSearchParams();
-    p.set('days', state.days);
+    if (state.periodMode === 'range') {
+      if (state.dateFrom) p.set('from', state.dateFrom);
+      if (state.dateTo) p.set('to', state.dateTo);
+    } else {
+      p.set('days', state.days);
+    }
     if (state.species.size !== allSpecies.length) p.set('species', Array.from(state.species).join(','));
     if (state.funayado.size !== allFunayado.length) p.set('funayado', Array.from(state.funayado).join(','));
     return p.toString();
@@ -55,6 +67,11 @@ window.TBF = (function () {
 
   function withinPeriod(dateStr) {
     if (!dateStr) return false;
+    if (state.periodMode === 'range') {
+      if (state.dateFrom && dateStr < state.dateFrom) return false;
+      if (state.dateTo && dateStr > state.dateTo) return false;
+      return true;
+    }
     if (state.days === 0) return dateStr === todayJstStr();
     if (state.days >= 9999) return true;
     const d = new Date(dateStr + 'T00:00:00+09:00');
@@ -150,15 +167,42 @@ window.TBF = (function () {
       });
     });
 
+    function updatePeriodButtonsActive() {
+      document.querySelectorAll('#periodButtons button').forEach(b => {
+        b.classList.toggle('active', state.periodMode === 'preset' && Number(b.dataset.days) === state.days);
+      });
+    }
+    updatePeriodButtonsActive();
+
     document.querySelectorAll('#periodButtons button').forEach(btn => {
-      btn.classList.toggle('active', Number(btn.dataset.days) === state.days);
       btn.addEventListener('click', () => {
-        document.querySelectorAll('#periodButtons button').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
+        state.periodMode = 'preset';
         state.days = Number(btn.dataset.days);
+        updatePeriodButtonsActive();
         onChange();
       });
     });
+
+    const dateFromEl = document.getElementById('dateFrom');
+    const dateToEl = document.getElementById('dateTo');
+    if (dateFromEl && dateToEl) {
+      if (minDate) { dateFromEl.min = minDate; dateToEl.min = minDate; }
+      if (maxDate) { dateFromEl.max = maxDate; dateToEl.max = maxDate; }
+      if (state.periodMode === 'range') {
+        if (state.dateFrom) dateFromEl.value = state.dateFrom;
+        if (state.dateTo) dateToEl.value = state.dateTo;
+      }
+      const onDateChange = () => {
+        if (!dateFromEl.value || !dateToEl.value) return;
+        state.periodMode = 'range';
+        state.dateFrom = dateFromEl.value;
+        state.dateTo = dateToEl.value;
+        updatePeriodButtonsActive();
+        onChange();
+      };
+      dateFromEl.addEventListener('change', onDateChange);
+      dateToEl.addEventListener('change', onDateChange);
+    }
   }
 
   function renderHeaderMeta() {
@@ -176,14 +220,92 @@ window.TBF = (function () {
   function renderFilterSummary(elId) {
     const el = document.getElementById(elId);
     if (!el) return;
-    const periodLabel = state.days === 0 ? '今日' : state.days >= 9999 ? '全期間' : `直近${state.days}日`;
+    const periodLabel = state.periodMode === 'range'
+      ? `${state.dateFrom || '?'}〜${state.dateTo || '?'}`
+      : state.days === 0 ? '今日' : state.days >= 9999 ? '全期間' : `直近${state.days}日`;
     el.textContent = `絞り込み中: ${periodLabel} / 魚種${state.species.size}/${allSpecies.length} / 船宿${state.funayado.size}/${allFunayado.length}`;
+  }
+
+  // --- Amazon アフィリエイト用のギア推薦カード(実績・分析どちらのページからも呼べる) ---
+  function amazonSearchUrl(keyword) {
+    const tag = window.AMAZON_ASSOCIATE_TAG || '';
+    const params = new URLSearchParams({ k: keyword, tag });
+    return `https://www.amazon.co.jp/s?${params.toString()}`;
+  }
+
+  function productCardHtml(item, species) {
+    const tag = window.AMAZON_ASSOCIATE_TAG || '';
+    const url = `https://www.amazon.co.jp/dp/${item.asin}?tag=${tag}`;
+    return `
+      <a class="gear-card gear-product" href="${url}" target="_blank" rel="noopener sponsored">
+        ${species ? `<div class="gear-species">${species}</div>` : ''}
+        <img class="gear-product-img" src="${item.image}" alt="${item.title}" loading="lazy">
+        <div class="gear-label">${item.title}</div>
+        <div class="gear-cta">Amazonで見る →</div>
+      </a>
+    `;
+  }
+
+  function keywordCardHtml(item, species) {
+    return `
+      <a class="gear-card" href="${amazonSearchUrl(item.keyword)}" target="_blank" rel="noopener sponsored">
+        ${species ? `<div class="gear-species">${species}</div>` : ''}
+        <div class="gear-label">${item.label}</div>
+        <div class="gear-cta">Amazonで見る →</div>
+      </a>
+    `;
+  }
+
+  function renderGearRecommendations(containerId) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    const GEAR_RECOMMENDATIONS = window.GEAR_RECOMMENDATIONS || {};
+    const GEAR_PRODUCTS = window.GEAR_PRODUCTS || {};
+    const GEAR_DEFAULT = window.GEAR_DEFAULT || [];
+
+    const records = filteredRecords();
+    const speciesTotals = {};
+    records.forEach(r => { if (r.species) speciesTotals[r.species] = (speciesTotals[r.species] || 0) + 1; });
+    const topSpecies = Object.entries(speciesTotals)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 3)
+      .map(([sp]) => sp);
+
+    const cardsHtml = [];
+    const seenKeys = new Set();
+
+    topSpecies.forEach(sp => {
+      const products = GEAR_PRODUCTS[sp];
+      if (products && products.length) {
+        products.forEach(item => {
+          if (seenKeys.has(item.asin)) return;
+          seenKeys.add(item.asin);
+          cardsHtml.push(productCardHtml(item, sp));
+        });
+      } else {
+        (GEAR_RECOMMENDATIONS[sp] || []).forEach(item => {
+          if (seenKeys.has(item.keyword)) return;
+          seenKeys.add(item.keyword);
+          cardsHtml.push(keywordCardHtml(item, sp));
+        });
+      }
+    });
+
+    if (cardsHtml.length === 0) {
+      GEAR_DEFAULT.forEach(item => {
+        if (seenKeys.has(item.keyword)) return;
+        seenKeys.add(item.keyword);
+        cardsHtml.push(keywordCardHtml(item, null));
+      });
+    }
+
+    container.innerHTML = cardsHtml.join('');
   }
 
   return {
     CATCHES, SOURCES, WEATHER, GENERATED_AT,
-    state, allSpecies, allFunayado,
+    state, allSpecies, allFunayado, minDate, maxDate,
     filteredRecords, fmtRange, displayGroundLabel, rangeBucket, todayJstStr, withinPeriod,
-    syncUrlAndNav, initFilterUI, renderFilterSummary,
+    syncUrlAndNav, initFilterUI, renderFilterSummary, renderGearRecommendations,
   };
 })();

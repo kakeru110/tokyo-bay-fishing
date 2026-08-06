@@ -227,6 +227,25 @@ header .meta {
   font-weight: 600;
 }
 
+.date-range {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+.date-range input[type="date"] {
+  flex: 1;
+  min-width: 0;
+  padding: 5px 6px;
+  border: 1px solid var(--panel-border);
+  border-radius: 6px;
+  background: var(--accent-soft);
+  color: var(--text);
+  font-size: 0.78rem;
+}
+
 #map {
   height: 560px;
   border-radius: 12px;
