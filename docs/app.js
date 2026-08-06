@@ -421,7 +421,7 @@
     const sizeRangeScales = {
       x: { ticks: { color: '#3b5166', autoSkip: true, maxRotation: 45, minRotation: 0 }, grid: { color: '#e1ecf5' } },
       yCm: { position: 'left', ticks: { color: '#2a78d6' }, grid: { color: '#e1ecf5' }, title: { display: true, text: 'cm', color: '#2a78d6' } },
-      yKg: { position: 'right', ticks: { color: '#eb6834' }, grid: { drawOnChartArea: false }, title: { display: true, text: 'kg', color: '#eb6834' } },
+      yKg: { position: 'right', min: 0, max: 8, ticks: { color: '#eb6834' }, grid: { drawOnChartArea: false }, title: { display: true, text: 'kg', color: '#eb6834' } },
     };
 
     const sizeStatsBySpecies = {};
