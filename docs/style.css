@@ -452,6 +452,9 @@ footer {
 
   .panel { padding: 12px; border-radius: 10px; }
 
+  .period-buttons { flex-wrap: wrap; }
+  .period-buttons button { flex: 1 1 calc(33.333% - 4px); }
+
   .stats-row {
     display: grid;
     grid-template-columns: 1fr 1fr;

@@ -65,6 +65,11 @@ window.TBF = (function () {
     return jstNow.toISOString().slice(0, 10);
   }
 
+  function yesterdayJstStr() {
+    const jstYesterday = new Date(Date.now() + 9 * 3600000 - 86400000);
+    return jstYesterday.toISOString().slice(0, 10);
+  }
+
   function withinPeriod(dateStr) {
     if (!dateStr) return false;
     if (state.periodMode === 'range') {
@@ -73,6 +78,7 @@ window.TBF = (function () {
       return true;
     }
     if (state.days === 0) return dateStr === todayJstStr();
+    if (state.days === -1) return dateStr === yesterdayJstStr();
     if (state.days >= 9999) return true;
     const d = new Date(dateStr + 'T00:00:00+09:00');
     const now = new Date();
@@ -222,7 +228,7 @@ window.TBF = (function () {
     if (!el) return;
     const periodLabel = state.periodMode === 'range'
       ? `${state.dateFrom || '?'}〜${state.dateTo || '?'}`
-      : state.days === 0 ? '今日' : state.days >= 9999 ? '全期間' : `直近${state.days}日`;
+      : state.days === 0 ? '今日' : state.days === -1 ? '昨日' : state.days >= 9999 ? '全期間' : `直近${state.days}日`;
     el.textContent = `絞り込み中: ${periodLabel} / 魚種${state.species.size}/${allSpecies.length} / 船宿${state.funayado.size}/${allFunayado.length}`;
   }
 
