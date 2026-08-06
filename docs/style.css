@@ -314,6 +314,18 @@ header .meta {
   border-color: var(--accent2);
   transform: translateY(-2px);
 }
+.gear-card.gear-product {
+  max-width: 180px;
+}
+.gear-product-img {
+  display: block;
+  width: 100%;
+  height: 100px;
+  object-fit: contain;
+  background: #ffffff;
+  border-radius: 6px;
+  margin-bottom: 6px;
+}
 .gear-species {
   font-size: 0.7rem;
   color: var(--accent);
@@ -434,6 +446,8 @@ footer {
 
   .gear-cards { gap: 8px; }
   .gear-card { min-width: 0; flex: 1 1 calc(50% - 8px); padding: 8px 10px; }
+  .gear-card.gear-product { max-width: none; }
+  .gear-product-img { height: 80px; }
 
   table.report-table { font-size: 0.75rem; }
 }

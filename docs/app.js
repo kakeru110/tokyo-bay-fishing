@@ -3,6 +3,7 @@
   const { CATCHES, SOURCES, state, filteredRecords, fmtRange, displayGroundLabel } = T;
 
   const GEAR_RECOMMENDATIONS = window.GEAR_RECOMMENDATIONS || {};
+  const GEAR_PRODUCTS = window.GEAR_PRODUCTS || {};
   const GEAR_DEFAULT = window.GEAR_DEFAULT || [];
   const AMAZON_ASSOCIATE_TAG = window.AMAZON_ASSOCIATE_TAG || "";
 
@@ -85,6 +86,28 @@
     return `https://www.amazon.co.jp/s?${params.toString()}`;
   }
 
+  function productCardHtml(item, species) {
+    const url = `https://www.amazon.co.jp/dp/${item.asin}?tag=${AMAZON_ASSOCIATE_TAG}`;
+    return `
+      <a class="gear-card gear-product" href="${url}" target="_blank" rel="noopener sponsored">
+        ${species ? `<div class="gear-species">${species}</div>` : ''}
+        <img class="gear-product-img" src="${item.image}" alt="${item.title}" loading="lazy">
+        <div class="gear-label">${item.title}</div>
+        <div class="gear-cta">Amazonで見る →</div>
+      </a>
+    `;
+  }
+
+  function keywordCardHtml(item, species) {
+    return `
+      <a class="gear-card" href="${amazonSearchUrl(item.keyword)}" target="_blank" rel="noopener sponsored">
+        ${species ? `<div class="gear-species">${species}</div>` : ''}
+        <div class="gear-label">${item.label}</div>
+        <div class="gear-cta">Amazonで見る →</div>
+      </a>
+    `;
+  }
+
   function renderGearRecommendations(records) {
     const container = document.getElementById('gearCards');
     if (!container) return;
@@ -96,30 +119,38 @@
       .slice(0, 3)
       .map(([sp]) => sp);
 
-    const items = [];
-    const seenKeywords = new Set();
+    const cardsHtml = [];
+    const seenKeys = new Set();
+
+    // Species with a curated GEAR_PRODUCTS entry get real product cards
+    // (image + specific ASIN link); everything else falls back to the
+    // generic keyword-search card.
     topSpecies.forEach(sp => {
-      (GEAR_RECOMMENDATIONS[sp] || []).forEach(item => {
-        if (seenKeywords.has(item.keyword)) return;
-        seenKeywords.add(item.keyword);
-        items.push({ ...item, species: sp });
-      });
+      const products = GEAR_PRODUCTS[sp];
+      if (products && products.length) {
+        products.forEach(item => {
+          if (seenKeys.has(item.asin)) return;
+          seenKeys.add(item.asin);
+          cardsHtml.push(productCardHtml(item, sp));
+        });
+      } else {
+        (GEAR_RECOMMENDATIONS[sp] || []).forEach(item => {
+          if (seenKeys.has(item.keyword)) return;
+          seenKeys.add(item.keyword);
+          cardsHtml.push(keywordCardHtml(item, sp));
+        });
+      }
     });
-    if (items.length === 0) {
+
+    if (cardsHtml.length === 0) {
       GEAR_DEFAULT.forEach(item => {
-        if (seenKeywords.has(item.keyword)) return;
-        seenKeywords.add(item.keyword);
-        items.push(item);
+        if (seenKeys.has(item.keyword)) return;
+        seenKeys.add(item.keyword);
+        cardsHtml.push(keywordCardHtml(item, null));
       });
     }
 
-    container.innerHTML = items.map(item => `
-      <a class="gear-card" href="${amazonSearchUrl(item.keyword)}" target="_blank" rel="noopener sponsored">
-        ${item.species ? `<div class="gear-species">${item.species}</div>` : ''}
-        <div class="gear-label">${item.label}</div>
-        <div class="gear-cta">Amazonで見る →</div>
-      </a>
-    `).join('');
+    container.innerHTML = cardsHtml.join('');
   }
 
   function render() {

@@ -82,6 +82,23 @@ window.GEAR_RECOMMENDATIONS = {
   ],
 };
 
+// 報告数の多い魚種向けに、画像付きの具体的な商品(ASIN直リンク)を試験的に用意。
+// ここに無い魚種は従来どおりGEAR_RECOMMENDATIONSの検索リンクにフォールバックする。
+window.GEAR_PRODUCTS = {
+  "マアジ": [
+    { asin: "B00D3RLNHQ", title: "ハヤブサ(Hayabusa) 下カゴ飛ばしサビキセット リアルアミエビ 8-3", image: "https://m.media-amazon.com/images/I/71zAErAltIL._AC_UL320_.jpg" },
+    { asin: "B002OARBXS", title: "第一精工 コマセカゴシリーズ サビキカゴ プラカゴ", image: "https://m.media-amazon.com/images/I/61akH2ussTL._AC_UL320_.jpg" },
+  ],
+  "タチウオ": [
+    { asin: "B07FFTLQZC", title: "メジャークラフト ワーム 太刀魚道場 テンヤスタートセット", image: "https://m.media-amazon.com/images/I/618Dg6pDHEL._AC_UL320_.jpg" },
+    { asin: "B0CB7KS6LL", title: "ダイワ(DAIWA) 船タチウオ天秤仕掛SS SPケン付", image: "https://m.media-amazon.com/images/I/51G3C+eNXdL._AC_UL320_.jpg" },
+  ],
+  "シロギス": [
+    { asin: "B008QQSRUA", title: "ハヤブサ(Hayabusa) 投げキス天秤式 早掛キス 2本鈎", image: "https://m.media-amazon.com/images/I/61rzNDm4MeL._AC_UL320_.jpg" },
+    { asin: "B00IN2JQC0", title: "ハヤブサ(Hayabusa) ライトショット 立つ天秤スマッシュ", image: "https://m.media-amazon.com/images/I/511D4o6+OnL._AC_UL320_.jpg" },
+  ],
+};
+
 window.GEAR_DEFAULT = [
   { label: "船釣り仕掛け各種", keyword: "船釣り 仕掛け" },
   { label: "船釣り用クーラーボックス", keyword: "船釣り クーラーボックス" },
