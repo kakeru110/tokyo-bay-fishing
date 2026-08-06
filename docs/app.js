@@ -5,6 +5,7 @@
   const GEAR_RECOMMENDATIONS = window.GEAR_RECOMMENDATIONS || {};
   const GEAR_DEFAULT = window.GEAR_DEFAULT || [];
   const AMAZON_ASSOCIATE_TAG = window.AMAZON_ASSOCIATE_TAG || "";
+  const WEATHER = window.WEATHER || {};
 
   const state = {
     days: 30,
@@ -173,7 +174,7 @@
   }).addTo(map);
   let markerLayer = L.layerGroup().addTo(map);
 
-  let trendChart, dailySizeChart, dailyQtyChart, tideSizeChart, tideQtyChart;
+  let trendChart, dailySizeChart, dailyQtyChart, tideSizeChart, tideQtyChart, weatherChart;
 
   function fmtRange(min, max, unit) {
     if (min == null && max == null) return '-';
@@ -654,6 +655,71 @@
         : result.categories.length
           ? `${state.tideQtySpecies}の数量(潮名別、1件あたり平均)`
           : `${state.tideQtySpecies}の数量データがありません`;
+    }
+
+    // --- weather vs report count (report count reflects whether boats went out at all) ---
+    {
+      const dayReports = {};
+      records.forEach(r => { if (r.date) dayReports[r.date] = (dayReports[r.date] || 0) + 1; });
+      const weatherDates = Object.keys(dayReports).filter(d => WEATHER[d]).sort();
+
+      if (weatherChart) weatherChart.destroy();
+      if (weatherDates.length) {
+        weatherChart = new Chart(document.getElementById('weatherChart'), {
+          data: {
+            labels: weatherDates,
+            datasets: [
+              {
+                type: 'bar',
+                label: '報告件数',
+                yAxisID: 'yCount',
+                data: weatherDates.map(d => dayReports[d]),
+                backgroundColor: 'rgba(42,120,214,0.35)',
+                borderColor: '#2a78d6',
+                borderWidth: 1,
+                borderRadius: 3,
+              },
+              {
+                type: 'line',
+                label: '最大風速(km/h)',
+                yAxisID: 'yWind',
+                data: weatherDates.map(d => WEATHER[d].wind_kmh),
+                borderColor: '#eb6834',
+                backgroundColor: 'rgba(235,104,52,0.15)',
+                borderWidth: 2,
+                pointRadius: 2,
+                tension: 0.3,
+              },
+            ],
+          },
+          options: {
+            plugins: {
+              legend: { display: true, position: 'top', labels: { color: '#3b5166', boxWidth: 12, font: { size: 10 } } },
+              tooltip: {
+                callbacks: {
+                  label: (ctx) => ctx.dataset.type === 'line'
+                    ? `最大風速: ${ctx.raw}km/h`
+                    : `報告件数: ${ctx.raw}件`,
+                },
+              },
+            },
+            scales: {
+              x: {
+                ticks: {
+                  color: '#3b5166',
+                  autoSkip: true,
+                  maxRotation: 60,
+                  minRotation: 45,
+                  maxTicksLimit: window.innerWidth < 600 ? 7 : 14,
+                },
+                grid: { color: '#e1ecf5' },
+              },
+              yCount: { position: 'left', ticks: { color: '#2a78d6' }, grid: { color: '#e1ecf5' }, title: { display: true, text: '報告件数', color: '#2a78d6' }, beginAtZero: true },
+              yWind: { position: 'right', ticks: { color: '#eb6834' }, grid: { drawOnChartArea: false }, title: { display: true, text: 'km/h', color: '#eb6834' }, beginAtZero: true },
+            },
+          },
+        });
+      }
     }
 
     // --- table ---

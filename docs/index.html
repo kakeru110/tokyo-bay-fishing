@@ -93,6 +93,12 @@
     </div>
 
     <div class="panel">
+      <h2>天気と出船状況(報告件数 × 風速)</h2>
+      <canvas id="weatherChart"></canvas>
+      <div class="chart-note">左軸=報告件数(表示中の絞り込み条件)、右軸=最大風速(km/h)。風が強い日ほど報告件数が減る傾向があります(出船数・釣行数の代理指標)。天気は釣れる量・サイズそのものへの影響は今のところ明確ではありません</div>
+    </div>
+
+    <div class="panel">
       <h2>釣果一覧(表示中の絞り込み条件)</h2>
       <div class="table-scroll">
         <table class="report-table" id="reportTable">
@@ -121,8 +127,8 @@
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
-<script src="data.js?v=12"></script>
+<script src="data.js?v=13"></script>
 <script src="gear.js?v=8"></script>
-<script src="app.js?v=17"></script>
+<script src="app.js?v=18"></script>
 </body>
 </html>
