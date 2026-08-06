@@ -1,6 +1,6 @@
 (function () {
   const T = window.TBF;
-  const { CATCHES, SOURCES, state, filteredRecords, fmtRange, displayGroundLabel } = T;
+  const { CATCHES, SOURCES, state, filteredRecords, fmtRange, fmtDate, displayGroundLabel } = T;
 
   state.sortKey = 'date';
   state.sortDir = 'desc';
@@ -161,7 +161,7 @@
           const link = r.source_url ? `<a href="${r.source_url}" target="_blank" rel="noopener">記事</a>` : '';
           const size = fmtRange(r.size_min, r.size_max, r.size_unit);
           const qty = fmtRange(r.qty_min, r.qty_max, r.qty_unit);
-          return `<div class="popup-row">${r.date} ${(SOURCES[r.funayado] || {}).name || r.funayado} — ${r.species} ${size} / ${qty} ${link}</div>`;
+          return `<div class="popup-row">${fmtDate(r.date)} ${(SOURCES[r.funayado] || {}).name || r.funayado} — ${r.species} ${size} / ${qty} ${link}</div>`;
         })
         .join('');
 
@@ -193,7 +193,7 @@
         const isBig = sizeVal != null && speciesBigSizeThreshold[r.species] != null && sizeVal >= speciesBigSizeThreshold[r.species];
         const sizeCell = fmtRange(r.size_min, r.size_max, r.size_unit) + (isBig ? ' <span class="badge-big">大物</span>' : '');
         tr.innerHTML = `
-          <td>${r.date || '-'}</td>
+          <td>${r.date ? fmtDate(r.date) : '-'}</td>
           <td>${(SOURCES[r.funayado] || {}).name || r.funayado}</td>
           <td>${r.species || '-'}</td>
           <td>${sizeCell}</td>

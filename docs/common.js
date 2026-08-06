@@ -102,6 +102,16 @@ window.TBF = (function () {
     return `${min}〜${max}${unit || ''}`;
   }
 
+  const DOW = ['日', '月', '火', '水', '木', '金', '土'];
+  // "2026-08-06" -> "26-08-06(木)". Uses UTC-anchored date math so the
+  // weekday reflects the calendar date itself, not the viewer's timezone.
+  function fmtDate(dateStr) {
+    if (!dateStr) return dateStr;
+    const [y, m, d] = dateStr.split('-').map(Number);
+    const dow = DOW[new Date(Date.UTC(y, m - 1, d)).getUTCDay()];
+    return `${dateStr.slice(2)}(${dow})`;
+  }
+
   function displayGroundLabel(r) {
     const port = (SOURCES[r.funayado] || {}).port;
     if (!r.ground_text) return port ? `${port}港周辺` : '不明';
@@ -227,7 +237,7 @@ window.TBF = (function () {
     const el = document.getElementById(elId);
     if (!el) return;
     const periodLabel = state.periodMode === 'range'
-      ? `${state.dateFrom || '?'}〜${state.dateTo || '?'}`
+      ? `${state.dateFrom ? fmtDate(state.dateFrom) : '?'}〜${state.dateTo ? fmtDate(state.dateTo) : '?'}`
       : state.days === 0 ? '今日' : state.days === -1 ? '昨日' : state.days >= 9999 ? '全期間' : `直近${state.days}日`;
     el.textContent = `絞り込み中: ${periodLabel} / 魚種${state.species.size}/${allSpecies.length} / 船宿${state.funayado.size}/${allFunayado.length}`;
   }
@@ -311,7 +321,7 @@ window.TBF = (function () {
   return {
     CATCHES, SOURCES, WEATHER, GENERATED_AT,
     state, allSpecies, allFunayado, minDate, maxDate,
-    filteredRecords, fmtRange, displayGroundLabel, rangeBucket, todayJstStr, withinPeriod,
+    filteredRecords, fmtRange, fmtDate, displayGroundLabel, rangeBucket, todayJstStr, withinPeriod,
     syncUrlAndNav, initFilterUI, renderFilterSummary, renderGearRecommendations,
   };
 })();

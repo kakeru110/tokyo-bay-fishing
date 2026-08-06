@@ -1,6 +1,6 @@
 (function () {
   const T = window.TBF;
-  const { state, filteredRecords, rangeBucket, WEATHER } = T;
+  const { state, filteredRecords, rangeBucket, WEATHER, fmtDate } = T;
 
   state.dailySizeSpecies = null;
   state.dailyQtySpecies = null;
@@ -97,7 +97,7 @@
   // --- min/avg/max chart for a single selected species, grouped by date or tide phase ---
   // Mixing species together isn't meaningful (different species, different scales),
   // so these charts always focus on one species at a time.
-  function renderSingleSpeciesRangeChart({ existingChart, canvasId, selectedSpecies, records, getRange, groupKey, categoryOrder, rotateLabels }) {
+  function renderSingleSpeciesRangeChart({ existingChart, canvasId, selectedSpecies, records, getRange, groupKey, categoryOrder, rotateLabels, isDate }) {
     if (existingChart) existingChart.destroy();
     if (!selectedSpecies) return { chart: null, categories: [] };
     const stats = {};
@@ -122,11 +122,12 @@
     const categories = (categoryOrder ? categoryOrder.filter(c => stats[c]) : Object.keys(stats).sort())
       .filter(c => unit && stats[c][unit]);
     if (!categories.length || !unit) return { chart: null, categories };
+    const labels = isDate ? categories.map(fmtDate) : categories;
 
     const color = '#2a78d6';
     const chart = new Chart(document.getElementById(canvasId), {
       data: {
-        labels: categories,
+        labels,
         datasets: [
           {
             type: 'bar',
@@ -236,6 +237,7 @@
         selectedSpecies: state.dailySizeSpecies,
         records,
         groupKey: r => r.date,
+        isDate: true,
         getRange: r => (r.size_unit === 'cm' || r.size_unit === 'kg')
           ? [r.size_min ?? r.size_max, r.size_max ?? r.size_min, r.size_unit]
           : null,
@@ -267,6 +269,7 @@
         selectedSpecies: state.dailyQtySpecies,
         records,
         groupKey: r => r.date,
+        isDate: true,
         getRange: r => r.qty_unit ? [r.qty_min ?? r.qty_max, r.qty_max ?? r.qty_min, r.qty_unit] : null,
       });
       dailyQtyChart = result.chart;
@@ -344,7 +347,7 @@
       if (weatherDates.length) {
         weatherChart = new Chart(document.getElementById('weatherChart'), {
           data: {
-            labels: weatherDates,
+            labels: weatherDates.map(fmtDate),
             datasets: [
               {
                 type: 'bar',
