@@ -318,10 +318,61 @@ window.TBF = (function () {
     container.innerHTML = cardsHtml.join('');
   }
 
+  // --- "好調な船宿": which (funayado, species) combo is currently running
+  // notably above ITS OWN all-time average size/quantity, not just which
+  // funayado/species has the most reports (report volume reflects how many
+  // boats went out, not how well they're catching).
+  function midpoint(lo, hi) {
+    if (lo == null && hi == null) return null;
+    if (lo == null) return hi;
+    if (hi == null) return lo;
+    return (lo + hi) / 2;
+  }
+
+  function buildFunayadoSpeciesGroups(records, metric) {
+    const groups = {};
+    records.forEach(r => {
+      if (!r.funayado || !r.species) return;
+      const unit = metric === 'size' ? r.size_unit : r.qty_unit;
+      if (!unit) return;
+      const val = metric === 'size' ? midpoint(r.size_min, r.size_max) : midpoint(r.qty_min, r.qty_max);
+      if (val == null) return;
+      const key = `${r.funayado}|${r.species}|${unit}`;
+      const g = groups[key] || (groups[key] = { sum: 0, count: 0, unit, funayado: r.funayado, species: r.species });
+      g.sum += val;
+      g.count += 1;
+    });
+    return groups;
+  }
+
+  function computeHotFunayado(recentRecords) {
+    const MIN_BASELINE = 5;
+    const MIN_RECENT = 2;
+    let best = null;
+    ['size', 'qty'].forEach(metric => {
+      const baselineGroups = buildFunayadoSpeciesGroups(CATCHES, metric);
+      const recentGroups = buildFunayadoSpeciesGroups(recentRecords, metric);
+      Object.keys(recentGroups).forEach(key => {
+        const recent = recentGroups[key];
+        const baseline = baselineGroups[key];
+        if (!baseline || baseline.count < MIN_BASELINE || recent.count < MIN_RECENT) return;
+        const baselineAvg = baseline.sum / baseline.count;
+        const recentAvg = recent.sum / recent.count;
+        if (baselineAvg <= 0) return;
+        const pct = (recentAvg - baselineAvg) / baselineAvg * 100;
+        if (pct <= 0) return; // only surface funayado genuinely running above their own average
+        if (!best || pct > best.pct) {
+          best = { funayado: recent.funayado, species: recent.species, metric, unit: recent.unit, pct, recentAvg, baselineAvg, recentCount: recent.count };
+        }
+      });
+    });
+    return best;
+  }
+
   return {
     CATCHES, SOURCES, WEATHER, GENERATED_AT,
     state, allSpecies, allFunayado, minDate, maxDate,
     filteredRecords, fmtRange, fmtDate, displayGroundLabel, rangeBucket, todayJstStr, withinPeriod,
-    syncUrlAndNav, initFilterUI, renderFilterSummary, renderGearRecommendations,
+    syncUrlAndNav, initFilterUI, renderFilterSummary, renderGearRecommendations, computeHotFunayado,
   };
 })();

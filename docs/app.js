@@ -115,8 +115,21 @@
       groundGroups[key].names.add(displayGroundLabel(r));
       groundGroups[key].records.push(r);
     });
-    document.getElementById('statGrounds').textContent = Object.keys(groundGroups).length;
     document.getElementById('statSpecies').textContent = new Set(records.map(r => r.species)).size;
+
+    const hotEl = document.getElementById('statHotFunayado');
+    const hotLabelEl = document.getElementById('statHotFunayadoLabel');
+    if (hotEl && hotLabelEl) {
+      const hot = T.computeHotFunayado(records);
+      if (hot) {
+        const metricLabel = hot.metric === 'size' ? 'サイズ' : '数量';
+        hotEl.textContent = (SOURCES[hot.funayado] || {}).name || hot.funayado;
+        hotLabelEl.textContent = `好調(${hot.species}・${metricLabel}が平均+${hot.pct.toFixed(0)}%)`;
+      } else {
+        hotEl.textContent = '-';
+        hotLabelEl.textContent = '好調な船宿(該当なし)';
+      }
+    }
 
     T.renderGearRecommendations('gearCards');
 
