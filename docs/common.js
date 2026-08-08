@@ -6,6 +6,7 @@ window.TBF = (function () {
   const SOURCES = window.SOURCES || {};
   const WEATHER = window.WEATHER || {};
   const GENERATED_AT = window.GENERATED_AT || null;
+  const LAST_CHECKED_AT = window.LAST_CHECKED_AT || null;
 
   const allSpecies = Array.from(new Set(CATCHES.map(r => r.species).filter(Boolean))).sort();
   const allFunayado = Array.from(new Set(CATCHES.map(r => r.funayado).filter(Boolean)));
@@ -224,7 +225,13 @@ window.TBF = (function () {
   function renderHeaderMeta() {
     const lastUpdatedEl = document.getElementById('lastUpdated');
     if (lastUpdatedEl) {
-      lastUpdatedEl.textContent = GENERATED_AT ? `最終更新: ${GENERATED_AT}` : '最終更新: 不明';
+      if (!GENERATED_AT) {
+        lastUpdatedEl.textContent = '最終更新: 不明';
+      } else if (LAST_CHECKED_AT && LAST_CHECKED_AT !== GENERATED_AT) {
+        lastUpdatedEl.textContent = `最終更新: ${GENERATED_AT}(最終確認: ${LAST_CHECKED_AT}・新着なし)`;
+      } else {
+        lastUpdatedEl.textContent = `最終更新: ${GENERATED_AT}`;
+      }
     }
     const sourceCountEl = document.getElementById('sourceCount');
     if (sourceCountEl) sourceCountEl.textContent = Object.keys(SOURCES).length;
@@ -407,7 +414,7 @@ window.TBF = (function () {
   }
 
   return {
-    CATCHES, SOURCES, WEATHER, GENERATED_AT,
+    CATCHES, SOURCES, WEATHER, GENERATED_AT, LAST_CHECKED_AT,
     state, allSpecies, allFunayado, minDate, maxDate,
     filteredRecords, fmtRange, fmtDate, displayGroundLabel, rangeBucket, todayJstStr, withinPeriod,
     syncUrlAndNav, initFilterUI, renderFilterSummary, renderGearRecommendations, renderGearTeaser, computeHotFunayado,
