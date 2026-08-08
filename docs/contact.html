@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>お問い合わせ｜東京湾 船釣り釣果マップ</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="東京湾 船釣り釣果マップへのお問い合わせフォームです。ご意見・掲載情報の誤り・追加してほしい船宿などをお寄せください。">
+<link rel="canonical" href="https://kakeru110.github.io/tokyo-bay-fishing/contact.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="東京湾 船釣り釣果マップ">
+<meta property="og:title" content="お問い合わせ｜東京湾 船釣り釣果マップ">
+<meta property="og:description" content="東京湾 船釣り釣果マップへのお問い合わせフォームです。ご意見・掲載情報の誤り・追加してほしい船宿などをお寄せください。">
+<meta property="og:url" content="https://kakeru110.github.io/tokyo-bay-fishing/contact.html">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="お問い合わせ｜東京湾 船釣り釣果マップ">
+<meta name="twitter:description" content="東京湾 船釣り釣果マップへのお問い合わせフォームです。ご意見・掲載情報の誤り・追加してほしい船宿などをお寄せください。">
+<link rel="stylesheet" href="style.css?v=29">
+</head>
+<body>
+<header>
+  <h1>🎣 東京湾 船釣り釣果マップ</h1>
+  <span class="meta">お問い合わせ</span>
+</header>
+
+<nav class="page-nav">
+  <a href="index.html" data-nav-page="index.html">📋 釣果実績</a>
+  <a href="analysis.html" data-nav-page="analysis.html">📊 分析</a>
+  <a href="funayado.html" data-nav-page="funayado.html">📞 船宿情報</a>
+  <a href="contact.html" data-nav-page="contact.html" class="active">✉️ お問い合わせ</a>
+</nav>
+
+<div class="contact-layout">
+  <p class="funayado-intro">
+    ご意見・ご感想、掲載情報の誤りのご指摘、追加してほしい船宿のご要望などをお寄せください。いただいた内容は運営者宛にメールで届きます。
+  </p>
+
+  <div id="contactSent" class="contact-sent" hidden>
+    ✅ 送信しました。ありがとうございます。
+  </div>
+
+  <form class="panel contact-form" action="https://formsubmit.co/kakeru.senoo@gmail.com" method="POST">
+    <input type="hidden" name="_subject" value="【東京湾 船釣り釣果マップ】お問い合わせ">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="true">
+    <input type="hidden" name="_next" value="https://kakeru110.github.io/tokyo-bay-fishing/contact.html?sent=1">
+    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+    <label class="contact-field">
+      <span>お名前(任意)</span>
+      <input type="text" name="name" placeholder="山田太郎" autocomplete="name">
+    </label>
+
+    <label class="contact-field">
+      <span>メールアドレス<span class="contact-required">必須</span></span>
+      <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
+    </label>
+
+    <label class="contact-field">
+      <span>件名(任意)</span>
+      <input type="text" name="subject" placeholder="例: 船宿情報の誤りについて">
+    </label>
+
+    <label class="contact-field">
+      <span>お問い合わせ内容<span class="contact-required">必須</span></span>
+      <textarea name="message" rows="6" placeholder="内容をご記入ください" required></textarea>
+    </label>
+
+    <button type="submit" class="contact-submit">送信する</button>
+  </form>
+
+  <p class="funayado-disclaimer">
+    このフォームは外部サービス(FormSubmit)を利用して送信内容をメールに転送しています。個人情報(お名前・メールアドレス等)はお問い合わせ対応の目的以外には使用しません。
+  </p>
+</div>
+
+<footer>
+  釣り場の緯度経度は各船宿の釣果テキストに記載された通称地名から概算で割り当てた近似値であり、実測GPS座標ではありません。
+  データは各船宿の公開ブログ・釣果情報を基に作成しています。
+</footer>
+
+<script>
+  if (new URLSearchParams(location.search).get('sent') === '1') {
+    document.getElementById('contactSent').hidden = false;
+  }
+</script>
+</body>
+</html>
