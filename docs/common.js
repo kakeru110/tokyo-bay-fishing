@@ -5,6 +5,7 @@ window.TBF = (function () {
   const CATCHES = window.CATCHES || [];
   const SOURCES = window.SOURCES || {};
   const WEATHER = window.WEATHER || {};
+  const AVAILABILITY = window.AVAILABILITY || { checked_at: null, by_funayado: {} };
   const GENERATED_AT = window.GENERATED_AT || null;
 
   const allSpecies = Array.from(new Set(CATCHES.map(r => r.species).filter(Boolean))).sort();
@@ -370,7 +371,7 @@ window.TBF = (function () {
   }
 
   return {
-    CATCHES, SOURCES, WEATHER, GENERATED_AT,
+    CATCHES, SOURCES, WEATHER, AVAILABILITY, GENERATED_AT,
     state, allSpecies, allFunayado, minDate, maxDate,
     filteredRecords, fmtRange, fmtDate, displayGroundLabel, rangeBucket, todayJstStr, withinPeriod,
     syncUrlAndNav, initFilterUI, renderFilterSummary, renderGearRecommendations, computeHotFunayado,

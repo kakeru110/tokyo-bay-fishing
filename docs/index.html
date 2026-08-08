@@ -16,7 +16,7 @@
 <meta name="twitter:title" content="東京湾 船釣り釣果マップ｜魚種・船宿別の最新釣果情報">
 <meta name="twitter:description" content="東京湾の船釣り釣果情報を16船宿から自動集計。魚種・船宿・期間で絞り込んで、直近の釣果一覧と釣り場の地図を確認できます。">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-<link rel="stylesheet" href="style.css?v=22">
+<link rel="stylesheet" href="style.css?v=23">
 </head>
 <body>
 <header>
@@ -71,6 +71,12 @@
       <div class="stat-card"><div class="num" id="statAvgSize">-</div><div class="label" id="statAvgSizeLabel">平均サイズ</div></div>
     </div>
 
+    <div class="panel" id="availabilityPanel">
+      <h2>📅 空き状況(<span id="availabilityCheckedAt">-</span>時点)</h2>
+      <div class="availability-chips" id="availabilityChips"></div>
+      <div class="chart-note">各船宿サイトの記載を自動集計した参考情報です。予約前に元記事で最新状況をご確認ください。</div>
+    </div>
+
     <div id="map"></div>
     <div class="map-legend">
       <span><span class="legend-dot legend-dot-real"></span>実際の釣り場</span>
@@ -107,7 +113,7 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="data.js?v=18"></script>
 <script src="gear.js?v=10"></script>
-<script src="common.js?v=6"></script>
-<script src="app.js?v=23"></script>
+<script src="common.js?v=7"></script>
+<script src="app.js?v=24"></script>
 </body>
 </html>
