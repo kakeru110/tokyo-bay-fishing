@@ -488,3 +488,113 @@ footer {
 
   table.report-table { font-size: 0.75rem; }
 }
+
+.funayado-layout {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px 20px 4px;
+}
+
+.funayado-intro {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0 0 18px;
+  line-height: 1.6;
+}
+
+.funayado-section {
+  margin-bottom: 22px;
+}
+.funayado-section h2 {
+  font-size: 1rem;
+  color: var(--accent);
+  border-left: 4px solid var(--accent);
+  padding-left: 8px;
+  margin: 0 0 10px;
+}
+
+.funayado-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.funayado-card {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-left: 4px solid var(--sea);
+  border-radius: 10px;
+  padding: 14px 16px;
+  box-shadow: 0 2px 8px rgba(20, 60, 100, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.funayado-card h3 {
+  margin: 0 0 2px;
+  font-size: 1rem;
+  color: var(--text);
+}
+.funayado-port {
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+.funayado-tel {
+  display: inline-block;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: var(--sea);
+  padding: 6px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  width: fit-content;
+  margin: 2px 0 6px;
+}
+.funayado-tel:hover { opacity: 0.9; }
+.funayado-tel-sub {
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin: -4px 0 6px;
+}
+.funayado-addr {
+  font-size: 0.8rem;
+  color: var(--text);
+}
+.funayado-note {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+.funayado-note a { color: var(--accent); }
+.funayado-warn {
+  font-size: 0.72rem;
+  color: var(--accent2);
+  background: #fdf3e8;
+  border-radius: 6px;
+  padding: 6px 8px;
+  margin-top: 2px;
+}
+.funayado-site {
+  align-self: flex-start;
+  margin-top: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+}
+.funayado-site:hover { text-decoration: underline; }
+
+.funayado-disclaimer {
+  font-size: 0.75rem;
+  color: var(--muted);
+  line-height: 1.6;
+  border-top: 1px solid var(--panel-border);
+  padding-top: 12px;
+  margin-top: 8px;
+}
+
+@media (max-width: 600px) {
+  .funayado-layout { padding: 10px 12px 4px; }
+  .funayado-grid { grid-template-columns: 1fr; }
+}
