@@ -594,6 +594,8 @@ footer {
 }
 .funayado-site:hover { text-decoration: underline; }
 
+.funayado-layout .panel { margin-bottom: 6px; }
+
 .funayado-disclaimer {
   font-size: 0.72rem;
   color: var(--muted);
