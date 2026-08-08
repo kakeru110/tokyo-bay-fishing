@@ -496,89 +496,98 @@ footer {
 }
 
 .funayado-intro {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--muted);
-  margin: 0 0 18px;
-  line-height: 1.6;
+  margin: 0 0 12px;
+  line-height: 1.5;
 }
 
 .funayado-section {
-  margin-bottom: 22px;
+  margin-bottom: 12px;
 }
 .funayado-section h2 {
-  font-size: 1rem;
+  font-size: 0.85rem;
   color: var(--accent);
   border-left: 4px solid var(--accent);
   padding-left: 8px;
-  margin: 0 0 10px;
+  margin: 0 0 6px;
 }
 
 .funayado-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 6px;
 }
 
 .funayado-card {
   background: var(--panel);
   border: 1px solid var(--panel-border);
   border-left: 4px solid var(--sea);
-  border-radius: 10px;
-  padding: 14px 16px;
-  box-shadow: 0 2px 8px rgba(20, 60, 100, 0.06);
+  border-radius: 8px;
+  padding: 7px 10px;
+  box-shadow: 0 1px 4px rgba(20, 60, 100, 0.06);
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 1px;
+}
+.funayado-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 6px;
 }
 .funayado-card h3 {
-  margin: 0 0 2px;
-  font-size: 1rem;
+  margin: 0;
+  font-size: 0.86rem;
   color: var(--text);
 }
 .funayado-port {
-  font-size: 0.72rem;
+  font-size: 0.66rem;
   color: var(--muted);
-  margin-bottom: 4px;
+  white-space: nowrap;
+}
+.funayado-tel-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 2px 0 1px;
 }
 .funayado-tel {
   display: inline-block;
-  font-size: 1.05rem;
+  font-size: 0.82rem;
   font-weight: 700;
   color: #ffffff;
   background: var(--sea);
-  padding: 6px 12px;
-  border-radius: 8px;
+  padding: 2px 8px;
+  border-radius: 6px;
   text-decoration: none;
   width: fit-content;
-  margin: 2px 0 6px;
 }
 .funayado-tel:hover { opacity: 0.9; }
 .funayado-tel-sub {
-  font-size: 0.72rem;
+  font-size: 0.66rem;
   color: var(--muted);
-  margin: -4px 0 6px;
 }
 .funayado-addr {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   color: var(--text);
 }
 .funayado-note {
-  font-size: 0.75rem;
+  font-size: 0.68rem;
   color: var(--muted);
 }
 .funayado-note a { color: var(--accent); }
 .funayado-warn {
-  font-size: 0.72rem;
+  font-size: 0.66rem;
   color: var(--accent2);
   background: #fdf3e8;
   border-radius: 6px;
-  padding: 6px 8px;
-  margin-top: 2px;
+  padding: 3px 6px;
+  margin-top: 1px;
 }
 .funayado-site {
   align-self: flex-start;
-  margin-top: 6px;
-  font-size: 0.78rem;
+  font-size: 0.68rem;
   font-weight: 600;
   color: var(--accent);
   text-decoration: none;
@@ -586,12 +595,12 @@ footer {
 .funayado-site:hover { text-decoration: underline; }
 
 .funayado-disclaimer {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   color: var(--muted);
-  line-height: 1.6;
+  line-height: 1.5;
   border-top: 1px solid var(--panel-border);
-  padding-top: 12px;
-  margin-top: 8px;
+  padding-top: 10px;
+  margin-top: 6px;
 }
 
 @media (max-width: 600px) {
