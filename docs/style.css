@@ -63,15 +63,18 @@ header .meta {
   background: var(--panel);
 }
 
-.page-nav a.page-nav-cta {
-  margin-left: auto;
-  align-self: center;
-  padding: 6px 12px;
-  border-radius: 999px;
+.gear-banner {
+  display: block;
+  text-align: center;
+  padding: 10px 16px;
   background: var(--accent2);
   color: #ffffff;
-  font-size: 0.78rem;
-  white-space: nowrap;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+.gear-banner:hover {
+  opacity: 0.92;
 }
 
 .analysis-layout {
@@ -457,6 +460,7 @@ footer {
 
   .page-nav { padding: 8px 12px 0; }
   .page-nav a { padding: 7px 12px; font-size: 0.8rem; }
+  .gear-banner { padding: 8px 12px; font-size: 0.82rem; }
 
   .layout { padding: 10px 12px; gap: 12px; }
   .analysis-layout { padding: 10px 12px; gap: 12px; }
