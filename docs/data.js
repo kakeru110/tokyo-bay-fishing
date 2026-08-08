@@ -36673,3 +36673,528 @@ window.CATCHES = [
     "tide_title": "小潮"
   }
 ];
+
+window.AVAILABILITY = {
+  "checked_at": "2026-08-08 12:30",
+  "by_funayado": {
+    "kurokawamaru": [
+      {
+        "date": "2026-08-08",
+        "course": "タチ＆アジ",
+        "status": "残りわずか",
+        "note": "予定表: ※(残り僅か)",
+        "source_url": "https://kurokawa-maru.blogspot.com/2026/08/blog-post_147.html"
+      },
+      {
+        "date": "2026-08-09",
+        "course": "タチ＆アジ",
+        "status": "受付中",
+        "note": "予定表: 〇(出船人数確定・予約受付中)",
+        "source_url": "https://kurokawa-maru.blogspot.com/2026/08/blog-post_147.html"
+      },
+      {
+        "date": "2026-08-10",
+        "course": "タチ＆アジ",
+        "status": "受付中",
+        "note": "予定表: 〇(出船人数確定・予約受付中)",
+        "source_url": "https://kurokawa-maru.blogspot.com/2026/08/blog-post_147.html"
+      },
+      {
+        "date": "2026-08-11",
+        "course": "タチ＆アジ",
+        "status": "受付中",
+        "note": "予定表: 〇(出船人数確定・予約受付中)",
+        "source_url": "https://kurokawa-maru.blogspot.com/2026/08/blog-post_147.html"
+      },
+      {
+        "date": "2026-08-12",
+        "course": "タチ＆アジ",
+        "status": "受付中",
+        "note": "予定表: 〇(出船人数確定・予約受付中)",
+        "source_url": "https://kurokawa-maru.blogspot.com/2026/08/blog-post_147.html"
+      },
+      {
+        "date": "2026-08-13",
+        "course": "タチ＆アジ",
+        "status": "受付中",
+        "note": "予定表: 〇(出船人数確定・予約受付中)",
+        "source_url": "https://kurokawa-maru.blogspot.com/2026/08/blog-post_147.html"
+      },
+      {
+        "date": "2026-08-12",
+        "course": "ショートアジ",
+        "status": "受付中",
+        "note": "予定表: 受付",
+        "source_url": "https://kurokawa-maru.blogspot.com/2026/08/blog-post_147.html"
+      },
+      {
+        "date": "2026-08-12",
+        "course": "リレー仕立",
+        "status": "受付中",
+        "note": "予定表: 受付",
+        "source_url": "https://kurokawa-maru.blogspot.com/2026/08/blog-post_147.html"
+      }
+    ],
+    "tsurikou": [
+      {
+        "date": "2026-08-08",
+        "course": "太刀魚",
+        "status": "満船",
+        "note": "土曜日2隻体制ご予約締め切りです",
+        "source_url": "https://www.tsurikou.com/category/Realtime/1/"
+      },
+      {
+        "date": "2026-08-08",
+        "course": "午前アジ",
+        "status": "満船",
+        "note": "土曜日出船確定 ご予約締め切り",
+        "source_url": "https://www.tsurikou.com/category/Realtime/1/"
+      },
+      {
+        "date": "2026-08-09",
+        "course": "午前アジ",
+        "status": "受付中",
+        "note": "日曜日出船確定 空席あります",
+        "source_url": "https://www.tsurikou.com/category/Realtime/1/"
+      },
+      {
+        "date": "2026-08-08",
+        "course": "午前シロギス",
+        "status": "満船",
+        "note": "土曜日出船確定 ご予約締め切り",
+        "source_url": "https://www.tsurikou.com/category/Realtime/1/"
+      },
+      {
+        "date": "2026-08-09",
+        "course": "午前シロギス",
+        "status": "受付中",
+        "note": "日曜日2隻体制出船確定 空席多数",
+        "source_url": "https://www.tsurikou.com/category/Realtime/1/"
+      }
+    ],
+    "hiranomaru": [
+      {
+        "date": "2026-08-08",
+        "course": "タチウオ船",
+        "status": "受付中",
+        "note": "週末の予約(15時現在) 2隻体制 空きあります",
+        "source_url": "https://www.hiranomaru.net/category/Choka/"
+      },
+      {
+        "date": "2026-08-09",
+        "course": "タチウオ船",
+        "status": "受付中",
+        "note": "週末の予約(15時現在) 2隻体制 空きあります",
+        "source_url": "https://www.hiranomaru.net/category/Choka/"
+      },
+      {
+        "date": "2026-08-16",
+        "course": null,
+        "status": "出船中止",
+        "note": "8月のお休み(全船)",
+        "source_url": "https://www.hiranomaru.net/category/Choka/"
+      },
+      {
+        "date": "2026-08-20",
+        "course": null,
+        "status": "出船中止",
+        "note": "8月のお休み(全船)",
+        "source_url": "https://www.hiranomaru.net/category/Choka/"
+      }
+    ],
+    "hiraimaru": [
+      {
+        "date": "2026-08-08",
+        "course": "タチウオ乗合船",
+        "status": "受付中",
+        "note": "出船確定 まだ空席あり ご予約受付中",
+        "source_url": "https://www.hiraimaru.net/"
+      },
+      {
+        "date": "2026-08-09",
+        "course": "ショートLTアジ乗合船",
+        "status": "受付中",
+        "note": "あと2名様で出船確定 ご予約受付中",
+        "source_url": "https://www.hiraimaru.net/"
+      },
+      {
+        "date": "2026-08-09",
+        "course": "マダコ乗合船",
+        "status": "受付中",
+        "note": "あと3名様で出船確定 ご予約受付中",
+        "source_url": "https://www.hiraimaru.net/"
+      },
+      {
+        "date": "2026-08-09",
+        "course": "タチウオ乗合船",
+        "status": "受付中",
+        "note": "出船確定 まだまだ空席多数 ご予約受付中",
+        "source_url": "https://www.hiraimaru.net/"
+      },
+      {
+        "date": "2026-08-10",
+        "course": "ショートLTアジ乗合船",
+        "status": "受付中",
+        "note": "ご予約受付中",
+        "source_url": "https://www.hiraimaru.net/"
+      },
+      {
+        "date": "2026-08-10",
+        "course": "マダコ乗合船",
+        "status": "受付中",
+        "note": "ご予約受付中",
+        "source_url": "https://www.hiraimaru.net/"
+      },
+      {
+        "date": "2026-08-10",
+        "course": "タチウオ乗合船",
+        "status": "受付中",
+        "note": "出船確定 まだまだ空席多数 ご予約受付中",
+        "source_url": "https://www.hiraimaru.net/"
+      },
+      {
+        "date": "2026-08-11",
+        "course": "ショートLTアジ乗合船",
+        "status": "受付中",
+        "note": "出船確定 まだ空席あり ご予約受付中",
+        "source_url": "https://www.hiraimaru.net/"
+      },
+      {
+        "date": "2026-08-11",
+        "course": "マダコ乗合船",
+        "status": "満船",
+        "note": "出船確定 満員御礼 受付終了です",
+        "source_url": "https://www.hiraimaru.net/"
+      },
+      {
+        "date": "2026-08-12",
+        "course": null,
+        "status": "出船中止",
+        "note": "配船の都合でお休みです(全船)",
+        "source_url": "https://www.hiraimaru.net/"
+      },
+      {
+        "date": "2026-08-13",
+        "course": "ショートLTアジ乗合船",
+        "status": "受付中",
+        "note": "ご予約受付中",
+        "source_url": "https://www.hiraimaru.net/"
+      },
+      {
+        "date": "2026-08-13",
+        "course": "マダコ乗合船",
+        "status": "受付中",
+        "note": "ご予約受付中",
+        "source_url": "https://www.hiraimaru.net/"
+      },
+      {
+        "date": "2026-08-13",
+        "course": "タチウオ乗合船",
+        "status": "受付中",
+        "note": "出船確定 まだまだ空席多数 ご予約受付中",
+        "source_url": "https://www.hiraimaru.net/"
+      },
+      {
+        "date": "2026-08-14",
+        "course": "ショートLTアジ乗合船",
+        "status": "受付中",
+        "note": "ご予約受付中",
+        "source_url": "https://www.hiraimaru.net/"
+      },
+      {
+        "date": "2026-08-14",
+        "course": "マダコ乗合船",
+        "status": "受付中",
+        "note": "あと3名様で出船確定 ご予約受付中",
+        "source_url": "https://www.hiraimaru.net/"
+      },
+      {
+        "date": "2026-08-14",
+        "course": "タチウオ乗合船",
+        "status": "受付中",
+        "note": "あと1名様で出船確定 ご予約受付中",
+        "source_url": "https://www.hiraimaru.net/"
+      },
+      {
+        "date": "2026-08-15",
+        "course": "ショートLTアジ乗合船",
+        "status": "受付中",
+        "note": "ご予約受付中",
+        "source_url": "https://www.hiraimaru.net/"
+      },
+      {
+        "date": "2026-08-15",
+        "course": "マダコ乗合船",
+        "status": "受付中",
+        "note": "出船確定 まだまだ空席多数 ご予約受付中",
+        "source_url": "https://www.hiraimaru.net/"
+      },
+      {
+        "date": "2026-08-15",
+        "course": "タチウオ乗合船",
+        "status": "受付中",
+        "note": "出船確定 まだまだ空席多数 ご予約受付中",
+        "source_url": "https://www.hiraimaru.net/"
+      },
+      {
+        "date": "2026-08-16",
+        "course": "ショートLTアジ乗合船",
+        "status": "受付中",
+        "note": "ご予約受付中",
+        "source_url": "https://www.hiraimaru.net/"
+      },
+      {
+        "date": "2026-08-16",
+        "course": "マダコ乗合船",
+        "status": "受付中",
+        "note": "出船確定 まだまだ空席多数 ご予約受付中",
+        "source_url": "https://www.hiraimaru.net/"
+      },
+      {
+        "date": "2026-08-16",
+        "course": "タチウオ乗合船",
+        "status": "受付中",
+        "note": "ご予約受付中",
+        "source_url": "https://www.hiraimaru.net/"
+      }
+    ],
+    "heisakumaru": [
+      {
+        "date": "2026-08-08",
+        "course": "ショートタチウオ船",
+        "status": "受付中",
+        "note": "出船確定 空席多数・予約受付中",
+        "source_url": "https://heisakumaru.jp/"
+      },
+      {
+        "date": "2026-08-09",
+        "course": "ショートタチウオ船",
+        "status": "受付中",
+        "note": "出船確定 空席多数・予約受付中",
+        "source_url": "https://heisakumaru.jp/"
+      },
+      {
+        "date": "2026-08-10",
+        "course": "ショートタチウオ船",
+        "status": "受付中",
+        "note": "出船確定 空席多数・予約受付中",
+        "source_url": "https://heisakumaru.jp/"
+      },
+      {
+        "date": "2026-08-11",
+        "course": "ショートタチウオ船",
+        "status": "受付中",
+        "note": "出船確定 空席多数・予約受付中",
+        "source_url": "https://heisakumaru.jp/"
+      },
+      {
+        "date": "2026-08-12",
+        "course": "ショートタチウオ船",
+        "status": "受付中",
+        "note": "出船確定 空席多数・予約受付中",
+        "source_url": "https://heisakumaru.jp/"
+      },
+      {
+        "date": "2026-08-13",
+        "course": "ショートタチウオ船",
+        "status": "受付中",
+        "note": "予約受付中(現在1名様)",
+        "source_url": "https://heisakumaru.jp/"
+      },
+      {
+        "date": "2026-08-14",
+        "course": "ショートタチウオ船",
+        "status": "受付中",
+        "note": "予約受付中(現在1名様)",
+        "source_url": "https://heisakumaru.jp/"
+      },
+      {
+        "date": "2026-08-15",
+        "course": "ショートタチウオ船",
+        "status": "受付中",
+        "note": "出船確定 空席多数・予約受付中",
+        "source_url": "https://heisakumaru.jp/"
+      },
+      {
+        "date": "2026-08-16",
+        "course": "ショートタチウオ船",
+        "status": "受付中",
+        "note": "出船確定 空席多数・予約受付中",
+        "source_url": "https://heisakumaru.jp/"
+      }
+    ],
+    "miyagawamaru": [
+      {
+        "date": "2026-08-09",
+        "course": "ルアータチウオ乗合船",
+        "status": "受付中",
+        "note": "出船確定(現在14名)",
+        "source_url": "https://www.miyagawamaru.co.jp/"
+      },
+      {
+        "date": "2026-08-11",
+        "course": "ルアータチウオ乗合船",
+        "status": "受付中",
+        "note": "出船確定(現在6名)",
+        "source_url": "https://www.miyagawamaru.co.jp/"
+      },
+      {
+        "date": "2026-08-13",
+        "course": "ルアータチウオ乗合船",
+        "status": "受付中",
+        "note": "出船確定(現在6名)",
+        "source_url": "https://www.miyagawamaru.co.jp/"
+      },
+      {
+        "date": "2026-08-14",
+        "course": "ルアータチウオ乗合船",
+        "status": "受付中",
+        "note": "出船確定(現在6名)",
+        "source_url": "https://www.miyagawamaru.co.jp/"
+      },
+      {
+        "date": "2026-08-16",
+        "course": "ルアータチウオ乗合船",
+        "status": "受付中",
+        "note": "出船確定(現在5名)",
+        "source_url": "https://www.miyagawamaru.co.jp/"
+      }
+    ],
+    "yoshinoya": [
+      {
+        "date": "2026-08-09",
+        "course": "ヤリ・スルメイカ",
+        "status": "受付中",
+        "note": "スポット出船日として告知(要予約)",
+        "source_url": "https://www.funayado-yoshinoya.com/"
+      },
+      {
+        "date": "2026-08-16",
+        "course": "ヤリ・スルメイカ",
+        "status": "受付中",
+        "note": "スポット出船日として告知(要予約)",
+        "source_url": "https://www.funayado-yoshinoya.com/"
+      },
+      {
+        "date": "2026-08-10",
+        "course": "ビシアジ",
+        "status": "受付中",
+        "note": "スポット出船日として告知(要予約)",
+        "source_url": "https://www.funayado-yoshinoya.com/"
+      },
+      {
+        "date": "2026-08-12",
+        "course": "ビシアジ",
+        "status": "受付中",
+        "note": "スポット出船日として告知(要予約)",
+        "source_url": "https://www.funayado-yoshinoya.com/"
+      },
+      {
+        "date": "2026-08-13",
+        "course": "ビシアジ",
+        "status": "受付中",
+        "note": "スポット出船日として告知(要予約)",
+        "source_url": "https://www.funayado-yoshinoya.com/"
+      },
+      {
+        "date": "2026-08-17",
+        "course": null,
+        "status": "出船中止",
+        "note": "臨時休業(全船)",
+        "source_url": "https://www.funayado-yoshinoya.com/"
+      },
+      {
+        "date": "2026-08-18",
+        "course": null,
+        "status": "出船中止",
+        "note": "臨時休業(全船)",
+        "source_url": "https://www.funayado-yoshinoya.com/"
+      },
+      {
+        "date": "2026-08-19",
+        "course": null,
+        "status": "出船中止",
+        "note": "臨時休業(全船)",
+        "source_url": "https://www.funayado-yoshinoya.com/"
+      },
+      {
+        "date": "2026-08-20",
+        "course": null,
+        "status": "出船中止",
+        "note": "臨時休業(全船)",
+        "source_url": "https://www.funayado-yoshinoya.com/"
+      }
+    ],
+    "nakayamamaru": [
+      {
+        "date": "2026-08-08",
+        "course": "タチウオ船",
+        "status": "受付中",
+        "note": "★明日はタチウオ船2隻に確定です！",
+        "source_url": "https://www.nakayamamaru.com/search/ChokaDetail/375713/"
+      },
+      {
+        "date": "2026-08-08",
+        "course": "ショートLTアジ船",
+        "status": "受付中",
+        "note": "★明日はショートLTアジ船に確定です！",
+        "source_url": "https://www.nakayamamaru.com/search/ChokaDetail/375713/"
+      },
+      {
+        "date": "2026-08-10",
+        "course": "ショウサイフグ船",
+        "status": "受付中",
+        "note": "ショウサイフグ10日(月)確定です！",
+        "source_url": "https://www.nakayamamaru.com/search/ChokaDetail/375713/"
+      },
+      {
+        "date": "2026-08-11",
+        "course": "ショウサイフグ船",
+        "status": "受付中",
+        "note": "ショウサイフグ11日(火)確定です！",
+        "source_url": "https://www.nakayamamaru.com/search/ChokaDetail/375713/"
+      }
+    ],
+    "kawasakimaru": [
+      {
+        "date": "2026-08-08",
+        "course": "LTタチウオ船",
+        "status": "受付中",
+        "note": "明日8/8(土)も天候良く凪予報でご予約お待ちしています(17時現在9名様と空きあり)",
+        "source_url": "https://www.kawasakimaru.jp/blog/51128/"
+      }
+    ],
+    "dai3asanagimaru": [
+      {
+        "date": "2026-08-20",
+        "course": null,
+        "status": "出船中止",
+        "note": "8月の定休日(全船)",
+        "source_url": "https://dai3-asanagimaru.com/"
+      }
+    ],
+    "ichiroumaru": [
+      {
+        "date": "2026-08-19",
+        "course": null,
+        "status": "出船中止",
+        "note": "8月の定休日(全船)",
+        "source_url": "https://www.ichiroumaru.jp/result/"
+      },
+      {
+        "date": "2026-08-20",
+        "course": null,
+        "status": "出船中止",
+        "note": "8月の定休日(全船)",
+        "source_url": "https://www.ichiroumaru.jp/result/"
+      },
+      {
+        "date": "2026-08-21",
+        "course": null,
+        "status": "出船中止",
+        "note": "8月の定休日(全船)",
+        "source_url": "https://www.ichiroumaru.jp/result/"
+      }
+    ]
+  }
+};
