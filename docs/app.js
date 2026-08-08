@@ -132,6 +132,7 @@
     }
 
     T.renderGearRecommendations('gearCards');
+    T.renderGearTeaser('gearTeaser');
 
     let topGroundName = '-';
     let topCount = 0;

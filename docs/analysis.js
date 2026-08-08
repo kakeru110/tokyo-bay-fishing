@@ -188,6 +188,7 @@
     const records = filteredRecords();
     T.renderFilterSummary('filterSummary');
     T.renderGearRecommendations('gearCards');
+    T.renderGearTeaser('gearTeaser');
 
     const speciesTotals = {};
     records.forEach(r => { if (r.species) speciesTotals[r.species] = (speciesTotals[r.species] || 0) + 1; });

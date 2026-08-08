@@ -16,7 +16,7 @@
 <meta name="twitter:title" content="東京湾 船釣り釣果マップ｜魚種・船宿別の最新釣果情報">
 <meta name="twitter:description" content="東京湾の船釣り釣果情報を16船宿から自動集計。魚種・船宿・期間で絞り込んで、直近の釣果一覧と釣り場の地図を確認できます。">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-<link rel="stylesheet" href="style.css?v=29">
+<link rel="stylesheet" href="style.css?v=30">
 </head>
 <body>
 <header>
@@ -24,8 +24,6 @@
   <span class="meta" id="lastUpdated">読み込み中...</span>
   <span class="meta">対象船宿: <span id="sourceCount">-</span>件 / レコード数: <span id="recordCount">-</span></span>
 </header>
-
-<a href="#gearPanel" class="gear-banner">🎣 今日のおすすめ仕掛けはこちら →</a>
 
 <nav class="page-nav">
   <a href="index.html" data-nav-page="index.html" class="active">📋 釣果実績</a>
@@ -62,6 +60,8 @@
       <div class="select-all-buttons"><button data-target="funayado" data-mode="all">全選択</button><button data-target="funayado" data-mode="none">全解除</button></div>
       <div class="filter-group chips" id="funayadoChips"></div>
     </details>
+
+    <div id="gearTeaser" class="gear-teaser-slot"></div>
   </aside>
 
   <div class="main-col">
@@ -109,7 +109,7 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="data.js?v=18"></script>
 <script src="gear.js?v=10"></script>
-<script src="common.js?v=7"></script>
-<script src="app.js?v=24"></script>
+<script src="common.js?v=8"></script>
+<script src="app.js?v=25"></script>
 </body>
 </html>

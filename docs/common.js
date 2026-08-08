@@ -272,6 +272,16 @@ window.TBF = (function () {
     `;
   }
 
+  function computeTopSpecies(n) {
+    const records = filteredRecords();
+    const speciesTotals = {};
+    records.forEach(r => { if (r.species) speciesTotals[r.species] = (speciesTotals[r.species] || 0) + 1; });
+    return Object.entries(speciesTotals)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, n)
+      .map(([sp]) => sp);
+  }
+
   function renderGearRecommendations(containerId) {
     const container = document.getElementById(containerId);
     if (!container) return;
@@ -279,13 +289,7 @@ window.TBF = (function () {
     const GEAR_PRODUCTS = window.GEAR_PRODUCTS || {};
     const GEAR_DEFAULT = window.GEAR_DEFAULT || [];
 
-    const records = filteredRecords();
-    const speciesTotals = {};
-    records.forEach(r => { if (r.species) speciesTotals[r.species] = (speciesTotals[r.species] || 0) + 1; });
-    const topSpecies = Object.entries(speciesTotals)
-      .sort((a, b) => b[1] - a[1])
-      .slice(0, 3)
-      .map(([sp]) => sp);
+    const topSpecies = computeTopSpecies(3);
 
     const cardsHtml = [];
     const seenKeys = new Set();
@@ -316,6 +320,39 @@ window.TBF = (function () {
     }
 
     container.innerHTML = cardsHtml.join('');
+  }
+
+  // 表示中の絞り込みで一番報告の多い魚種1つだけを使った、控えめな仕掛け案内カード。
+  // (旧: 全幅のオレンジ帯バナー。文言が固定で内容と合っておらず、目立つ割にクリックされない
+  // という指摘を受けて、実際の魚種名と商品サムネイルを出す小さいカードに変更)
+  function renderGearTeaser(containerId) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    const GEAR_RECOMMENDATIONS = window.GEAR_RECOMMENDATIONS || {};
+    const GEAR_PRODUCTS = window.GEAR_PRODUCTS || {};
+
+    const [topSpecies] = computeTopSpecies(1);
+    if (!topSpecies) { container.innerHTML = ''; return; }
+
+    const product = (GEAR_PRODUCTS[topSpecies] || [])[0];
+    const fallback = (GEAR_RECOMMENDATIONS[topSpecies] || [])[0];
+    if (!product && !fallback) { container.innerHTML = ''; return; }
+
+    const thumbHtml = product
+      ? `<img class="gear-teaser-img" src="${product.image}" alt="${product.title}" loading="lazy">`
+      : `<span class="gear-teaser-icon">🎣</span>`;
+    const label = product ? product.title : fallback.label;
+
+    container.innerHTML = `
+      <a href="#gearPanel" class="gear-teaser">
+        ${thumbHtml}
+        <span class="gear-teaser-text">
+          <span class="gear-teaser-eyebrow">直近よく釣れている魚種</span>
+          <span class="gear-teaser-title">${topSpecies}</span>
+          <span class="gear-teaser-sub">${label} を見る →</span>
+        </span>
+      </a>
+    `;
   }
 
   // --- "好調な船宿": which (funayado, species) combo is currently running
@@ -373,6 +410,6 @@ window.TBF = (function () {
     CATCHES, SOURCES, WEATHER, GENERATED_AT,
     state, allSpecies, allFunayado, minDate, maxDate,
     filteredRecords, fmtRange, fmtDate, displayGroundLabel, rangeBucket, todayJstStr, withinPeriod,
-    syncUrlAndNav, initFilterUI, renderFilterSummary, renderGearRecommendations, computeHotFunayado,
+    syncUrlAndNav, initFilterUI, renderFilterSummary, renderGearRecommendations, renderGearTeaser, computeHotFunayado,
   };
 })();

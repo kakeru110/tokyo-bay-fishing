@@ -15,7 +15,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="釣果データ分析｜東京湾 船釣り釣果マップ">
 <meta name="twitter:description" content="東京湾 船釣り釣果データの分析。魚種別サイズ、日別推移、潮回り(大潮・中潮など)別の傾向、天気と出船状況の関係をグラフで確認できます。">
-<link rel="stylesheet" href="style.css?v=29">
+<link rel="stylesheet" href="style.css?v=30">
 </head>
 <body>
 <header>
@@ -23,8 +23,6 @@
   <span class="meta" id="lastUpdated">読み込み中...</span>
   <span class="meta">対象船宿: <span id="sourceCount">-</span>件 / レコード数: <span id="recordCount">-</span></span>
 </header>
-
-<a href="#gearPanel" class="gear-banner">🎣 今日のおすすめ仕掛けはこちら →</a>
 
 <nav class="page-nav">
   <a href="index.html" data-nav-page="index.html">📋 釣果実績</a>
@@ -65,6 +63,8 @@
       <span id="filterSummary"></span>
       <a href="index.html" data-nav-page="index.html" class="filter-summary-link">📋 釣果一覧・地図を見る →</a>
     </div>
+
+    <div id="gearTeaser" class="gear-teaser-slot"></div>
   </div>
 
   <div class="panel">
@@ -127,7 +127,7 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
 <script src="data.js?v=18"></script>
 <script src="gear.js?v=10"></script>
-<script src="common.js?v=7"></script>
-<script src="analysis.js?v=4"></script>
+<script src="common.js?v=8"></script>
+<script src="analysis.js?v=5"></script>
 </body>
 </html>
