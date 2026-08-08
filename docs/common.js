@@ -169,6 +169,12 @@ window.TBF = (function () {
     if (!document.getElementById('speciesChips')) return; // this page has no filter UI
     const onChange = () => { syncUrlAndNav(); onChangeRaw(); };
 
+    // PC(狭くない画面)では魚種/船宿の選択肢を最初から開いておく。モバイルは
+    // コンパクトさを優先して従来通り閉じたまま(タップで開く)。
+    if (window.matchMedia('(min-width: 601px)').matches) {
+      document.querySelectorAll('.filter-details').forEach(d => { d.open = true; });
+    }
+
     buildChips('speciesChips', allSpecies, state.species, null, onChange);
     buildChips('funayadoChips', allFunayado, state.funayado, f => (SOURCES[f] && SOURCES[f].name) || f, onChange);
 
