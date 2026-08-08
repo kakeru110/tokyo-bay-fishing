@@ -577,6 +577,18 @@ footer {
   color: var(--muted);
 }
 .funayado-note a { color: var(--accent); }
+.funayado-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  margin: 2px 0 1px;
+}
+.funayado-species, .funayado-time, .funayado-price {
+  font-size: 0.66rem;
+  line-height: 1.35;
+  color: var(--text);
+}
+.funayado-price { color: var(--accent2); font-weight: 600; }
 .funayado-warn {
   font-size: 0.66rem;
   color: var(--accent2);
