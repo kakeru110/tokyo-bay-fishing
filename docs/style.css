@@ -608,6 +608,45 @@ footer {
 
 .funayado-layout .panel { margin-bottom: 6px; }
 
+.funayado-compare-panel { margin-bottom: 12px; }
+.funayado-compare-panel .funayado-intro { margin-bottom: 10px; }
+.funayado-compare-scroll {
+  overflow-x: auto;
+  max-height: 480px;
+  overflow-y: auto;
+  border: 1px solid var(--panel-border);
+  border-radius: 8px;
+}
+table.funayado-compare-table {
+  font-size: 0.72rem;
+  min-width: 100%;
+}
+table.funayado-compare-table th, table.funayado-compare-table td {
+  white-space: nowrap;
+  text-align: center;
+  padding: 5px 7px;
+}
+table.funayado-compare-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--panel);
+}
+table.funayado-compare-table .fcmp-name-col {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: var(--panel);
+  text-align: left;
+  font-weight: 600;
+  color: var(--text);
+  box-shadow: 1px 0 0 var(--panel-border);
+}
+table.funayado-compare-table thead th.fcmp-name-col { z-index: 3; }
+table.funayado-compare-table .fcmp-price { color: var(--accent2); font-weight: 700; }
+table.funayado-compare-table .fcmp-dash { color: var(--muted); }
+table.funayado-compare-table .fcmp-tbd { color: var(--accent); font-weight: 600; }
+
 .funayado-disclaimer {
   font-size: 0.72rem;
   color: var(--muted);
@@ -620,4 +659,6 @@ footer {
 @media (max-width: 600px) {
   .funayado-layout { padding: 10px 12px 4px; }
   .funayado-grid { grid-template-columns: 1fr; }
+  table.funayado-compare-table { font-size: 0.68rem; }
+  table.funayado-compare-table th, table.funayado-compare-table td { padding: 4px 6px; }
 }
