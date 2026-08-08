@@ -290,51 +290,6 @@ header .meta {
   border: 1px dashed #64748b;
 }
 
-.availability-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 6px;
-}
-.availability-chip {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  min-width: 130px;
-  padding: 8px 12px;
-  border: 1px solid var(--panel-border);
-  border-radius: 10px;
-  background: var(--accent-soft);
-  color: var(--text);
-  text-decoration: none;
-  transition: border-color 0.15s ease, transform 0.15s ease;
-}
-.availability-chip:hover {
-  border-color: var(--accent);
-  transform: translateY(-2px);
-}
-.av-funayado {
-  font-size: 0.8rem;
-  font-weight: 700;
-}
-.av-status {
-  display: inline-block;
-  width: fit-content;
-  padding: 1px 8px;
-  border-radius: 999px;
-  font-size: 0.7rem;
-  font-weight: 700;
-  color: #ffffff;
-}
-.av-status-open { background: var(--sea); }
-.av-status-few { background: var(--accent2); }
-.av-status-full { background: #c94040; }
-.av-status-closed { background: #94a3b8; }
-.av-date {
-  font-size: 0.7rem;
-  color: var(--muted);
-}
-
 .main-col { display: flex; flex-direction: column; gap: 16px; }
 
 .stats-row {
@@ -530,9 +485,6 @@ footer {
   .gear-card { min-width: 0; flex: 1 1 calc(50% - 8px); padding: 8px 10px; }
   .gear-card.gear-product { max-width: none; }
   .gear-product-img { height: 80px; }
-
-  .availability-chips { gap: 6px; }
-  .availability-chip { min-width: 0; flex: 1 1 calc(50% - 6px); padding: 7px 10px; }
 
   table.report-table { font-size: 0.75rem; }
 }

@@ -76,52 +76,8 @@
   }).addTo(map);
   let markerLayer = L.layerGroup().addTo(map);
 
-  // --- 空き状況(予約可否) ---
-  // Perishable data (goes stale in hours), unlike catch history — always
-  // shows the checked_at timestamp and links out to the source post so
-  // anglers confirm the current state themselves before assuming it's live.
-  function availabilityStatusClass(status) {
-    switch (status) {
-      case '受付中': return 'av-status-open';
-      case '残りわずか': return 'av-status-few';
-      case '満船': return 'av-status-full';
-      case '出船中止': return 'av-status-closed';
-      default: return '';
-    }
-  }
-
-  function renderAvailability() {
-    const container = document.getElementById('availabilityChips');
-    if (!container) return;
-    const AVAILABILITY = T.AVAILABILITY;
-    const checkedAtEl = document.getElementById('availabilityCheckedAt');
-    if (checkedAtEl) checkedAtEl.textContent = AVAILABILITY.checked_at || '不明';
-
-    const today = T.todayJstStr();
-    const chips = [];
-    Object.keys(AVAILABILITY.by_funayado || {}).forEach(funayadoId => {
-      if (!state.funayado.has(funayadoId)) return;
-      const entries = (AVAILABILITY.by_funayado[funayadoId] || []).slice().sort((a, b) => (a.date < b.date ? -1 : 1));
-      const entry = entries.find(e => e.date >= today) || entries[0];
-      if (!entry) return;
-      chips.push({ name: (SOURCES[funayadoId] || {}).name || funayadoId, entry });
-    });
-    chips.sort((a, b) => (a.entry.date < b.entry.date ? -1 : a.entry.date > b.entry.date ? 1 : 0));
-
-    container.innerHTML = chips.length
-      ? chips.map(c => `
-          <a class="availability-chip" href="${c.entry.source_url}" target="_blank" rel="noopener">
-            <div class="av-funayado">${c.name}</div>
-            <div class="av-status ${availabilityStatusClass(c.entry.status)}">${c.entry.status}</div>
-            <div class="av-date">${fmtDate(c.entry.date)}${c.entry.course ? ' ' + c.entry.course : ''}</div>
-          </a>
-        `).join('')
-      : '<div class="chart-note">表示中の船宿の空き状況情報は現在ありません</div>';
-  }
-
   function render() {
     const records = filteredRecords();
-    renderAvailability();
 
     // --- stats ---
     document.getElementById('statReports').textContent = records.length;
