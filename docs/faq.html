@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>よくある質問｜東京湾 船釣り釣果マップ</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="東京湾 船釣り釣果マップのよくある質問。データの集計方法、更新頻度、地図の座標精度、絞り込み機能、広告についてまとめました。">
+<link rel="canonical" href="https://tokyo-bay-fishing.com/faq.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="東京湾 船釣り釣果マップ">
+<meta property="og:title" content="よくある質問｜東京湾 船釣り釣果マップ">
+<meta property="og:description" content="東京湾 船釣り釣果マップのよくある質問。データの集計方法、更新頻度、地図の座標精度、絞り込み機能、広告についてまとめました。">
+<meta property="og:url" content="https://tokyo-bay-fishing.com/faq.html">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="よくある質問｜東京湾 船釣り釣果マップ">
+<meta name="twitter:description" content="東京湾 船釣り釣果マップのよくある質問。データの集計方法、更新頻度、地図の座標精度、絞り込み機能、広告についてまとめました。">
+<link rel="stylesheet" href="style.css?v=33">
+</head>
+<body>
+<header>
+  <h1><a href="index.html">🎣 東京湾 船釣り釣果マップ</a></h1>
+  <span class="meta">よくある質問</span>
+  <span class="meta">累計アクセス数: <span id="pageViewCount">-</span>回</span>
+</header>
+
+<nav class="page-nav">
+  <a href="index.html" data-nav-page="index.html">📋 釣果実績</a>
+  <a href="analysis.html" data-nav-page="analysis.html">📊 分析</a>
+  <a href="funayado.html" data-nav-page="funayado.html">📞 船宿情報</a>
+  <a href="faq.html" data-nav-page="faq.html" class="active">❓ よくある質問</a>
+  <a href="contact.html" data-nav-page="contact.html">✉️ お問い合わせ</a>
+</nav>
+
+<div class="faq-layout">
+  <p class="funayado-intro">
+    このサイトについてよくいただく質問をまとめました。解決しない場合は<a href="contact.html">お問い合わせ</a>からご連絡ください。
+  </p>
+
+  <section class="panel faq-category">
+    <h2>🎣 サイトについて</h2>
+
+    <details class="faq-item">
+      <summary>このサイトは何ですか?</summary>
+      <div class="faq-answer">東京湾の船釣り情報を、船宿16社が公開しているブログ・釣果情報から自動で集計している<strong>非公式のまとめサイト</strong>です。魚種・船宿・期間で絞り込んで釣果の傾向を見たり、釣り場を地図で確認したりできます。</div>
+    </details>
+
+    <details class="faq-item">
+      <summary>船宿(運営会社)の公式サイトですか?</summary>
+      <div class="faq-answer">いいえ、非公式です。各船宿が公開している情報を集計・分析しているだけで、船宿を運営したり船宿と提携したりはしていません。予約・乗船に関するお問い合わせは、<a href="funayado.html">船宿情報ページ</a>から各船宿へ直接ご連絡ください。</div>
+    </details>
+  </section>
+
+  <section class="panel faq-category">
+    <h2>📋 データの集計について</h2>
+
+    <details class="faq-item">
+      <summary>釣果データはどこから来ていますか?</summary>
+      <div class="faq-answer">掲載している16船宿(<a href="funayado.html">船宿情報ページ</a>で一覧できます)が公式サイト・ブログで公開している釣果報告を、自動プログラムが巡回して取得しています。</div>
+    </details>
+
+    <details class="faq-item">
+      <summary>更新頻度はどれくらいですか?</summary>
+      <div class="faq-answer">1日に数回、全船宿のサイトを自動で巡回し新着の釣果報告をチェックしています。新着が無い日はデータは増えませんが、ヘッダーの「最終更新」表示に、新着が無い場合は直近のチェック時刻(最終確認)も併記され、パイプラインが動いていることが分かるようになっています。</div>
+    </details>
+
+    <details class="faq-item">
+      <summary>なぜ全ての船宿が載っていないのですか?</summary>
+      <div class="faq-answer">現在16船宿を対象にしています。東京湾には他にも多数の船宿がありますが、釣果報告を自動で読み取れる形式(ブログ・RSS等)であることが条件のため、順次対象を検討・拡張しています。掲載してほしい船宿があれば<a href="contact.html">お問い合わせ</a>からご連絡ください。</div>
+    </details>
+
+    <details class="faq-item">
+      <summary>サイズ・数量が空欄(-)になっているのはなぜですか?</summary>
+      <div class="faq-answer">船宿のブログ投稿自体に具体的な数値の記載が無い場合(「まずまず釣れました」のような定性的な表現のみ等)は、数値を推測で埋めずに空欄のまま掲載しています。</div>
+    </details>
+  </section>
+
+  <section class="panel faq-category">
+    <h2>🗺️ 地図・釣り場について</h2>
+
+    <details class="faq-item">
+      <summary>地図の位置(緯度経度)は正確ですか?</summary>
+      <div class="faq-answer">実測のGPS座標ではありません。船宿の釣果テキストに書かれた通称の地名(「猿島沖」など)を地名辞書と照合し、概算で割り当てた近似値です。地名の記載が無い投稿は、船宿の出船港の座標で代用しています(地図上ではマーカーの色で見分けられます)。</div>
+    </details>
+  </section>
+
+  <section class="panel faq-category">
+    <h2>🔍 絞り込み・分析機能について</h2>
+
+    <details class="faq-item">
+      <summary>期間や魚種で絞り込むと何が変わりますか?</summary>
+      <div class="faq-answer">ページ上部の期間ボタン・魚種/船宿の選択肢を変えると、釣果一覧・地図・統計カード・グラフ(分析ページ)が全てその条件でリアルタイムに再集計されます。</div>
+    </details>
+
+    <details class="faq-item">
+      <summary>「好調な船宿」はどうやって選ばれていますか?</summary>
+      <div class="faq-answer">船宿・魚種の組み合わせごとに、選んだ期間の平均サイズ・数量が、その船宿の全期間平均よりも明確に上回っている場合に表示されます。単に釣果報告の件数が多いだけの船宿は選ばれません。</div>
+    </details>
+
+    <details class="faq-item">
+      <summary>潮名(大潮・中潮など)や天気のデータはどこから取得していますか?</summary>
+      <div class="faq-answer">潮名は<a href="https://tide736.net/" target="_blank" rel="noopener">tide736.net</a>(走水地点、東京湾内)、天気はOpen-Meteoの気象データを使用しています。</div>
+    </details>
+  </section>
+
+  <section class="panel faq-category">
+    <h2>📦 おすすめ仕掛け・広告について</h2>
+
+    <details class="faq-item">
+      <summary>「おすすめ仕掛け」に出てくる商品は何ですか?</summary>
+      <div class="faq-answer">表示中の絞り込み条件で最も釣果報告の多い魚種に対応した、Amazonの釣具商品です。Amazonアソシエイト・プログラムによるアフィリエイトリンクで、購入いただくと当サイトに収入が入ります(価格が変わることはありません)。</div>
+    </details>
+
+    <details class="faq-item">
+      <summary>「累計アクセス数」はどう集計していますか?個人情報は集めていますか?</summary>
+      <div class="faq-answer">外部の無料カウンターサービスでページ表示回数を数えているだけの、素朴な累計ヒット数です。個人を特定する情報は収集していません。</div>
+    </details>
+  </section>
+
+  <section class="panel faq-category">
+    <h2>✉️ お問い合わせについて</h2>
+
+    <details class="faq-item">
+      <summary>掲載情報の誤りを見つけたときは?</summary>
+      <div class="faq-answer"><a href="contact.html">お問い合わせページ</a>からご連絡ください。船宿名・日付・誤っている内容を書いていただけると助かります。</div>
+    </details>
+
+    <details class="faq-item">
+      <summary>船宿の追加をリクエストできますか?</summary>
+      <div class="faq-answer">はい、<a href="contact.html">お問い合わせページ</a>から船宿名を教えてください。自動で釣果を読み取れる形式か確認した上で、対応を検討します。</div>
+    </details>
+  </section>
+</div>
+
+<footer>
+  釣り場の緯度経度は各船宿の釣果テキストに記載された通称地名から概算で割り当てた近似値であり、実測GPS座標ではありません。
+  データは各船宿の公開ブログ・釣果情報を基に作成しています。
+</footer>
+
+<script src="counter.js?v=1"></script>
+</body>
+</html>

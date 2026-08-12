@@ -794,3 +794,51 @@ table.funayado-compare-table .fcmp-tbd { color: var(--accent); font-weight: 600;
   cursor: pointer;
 }
 .contact-submit:hover { opacity: 0.92; }
+
+.faq-layout {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 16px 20px 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.faq-category { display: flex; flex-direction: column; }
+.faq-category h2 {
+  font-size: 1rem;
+  margin: 0 0 6px;
+}
+
+.faq-item {
+  border-top: 1px solid var(--panel-border);
+  padding: 10px 0;
+}
+.faq-item:first-of-type { border-top: none; padding-top: 4px; }
+
+.faq-item summary {
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--text);
+  list-style: none;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::before {
+  content: '▸ ';
+  color: var(--accent);
+}
+.faq-item[open] summary::before { content: '▾ '; }
+
+.faq-answer {
+  margin-top: 8px;
+  padding-left: 1.1em;
+  font-size: 0.86rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.faq-answer a { color: var(--accent); font-weight: 600; }
+
+@media (max-width: 600px) {
+  .faq-layout { padding: 10px 12px 4px; }
+}
