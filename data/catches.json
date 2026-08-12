@@ -1,6 +1,6 @@
 {
-    "generated_at":  "2026-08-12 18:10",
-    "count":  2092,
+    "generated_at":  "2026-08-12 21:43",
+    "count":  2093,
     "records":  [
                     {
                         "id":  958,
@@ -48117,6 +48117,29 @@
                         "source_url":  "https://www.ichiroumaru.jp/result/detail.html?1786514052",
                         "raw_text":  "ふぐ　　鴨居・大貫・下浦沖　４～１３　匹　１２～３２ｃｍ　　１０ｍ　トップ１３匹・２番手１０匹・３番手８匹です。サイズは小型から中型です。",
                         "fetched_at":  "2026-08-12 18:10"
+                    },
+                    {
+                        "id":  2096,
+                        "funayado":  "iwataya",
+                        "port":  "浦安",
+                        "date":  "2026-08-11",
+                        "course":  null,
+                        "species":  "マダコ",
+                        "species_raw":  "マダコ",
+                        "size_min":  0.3,
+                        "size_max":  0.65,
+                        "size_unit":  "kg",
+                        "qty_min":  1,
+                        "qty_max":  8,
+                        "qty_unit":  "杯",
+                        "ground_text":  null,
+                        "depth_text":  null,
+                        "lat":  35.664956,
+                        "lon":  139.887427,
+                        "geocode_match":  "fallback_port",
+                        "source_url":  "https://iwataya-funayado.jp/tsuribune_blog/date/2026/08/12/27878/",
+                        "raw_text":  "ターゲット マダコ 数 1～8杯 大きさ 0.3～0.65kg 今日は台風接近のため影響が出るのがお昼ごろであろうとの予想だったのでお客さまが揃い次第早めに出船しました。早くポイントに着いた朝タコのノリも良く連続してGETされる方も♪最近、朝が調子良いですね。貸竿ビギナーさんもいらっしゃいましたがそれぞれ何とか１杯ずつGETされました。今日もオデコなく終了♪大きいサイズで0.65kg、その他0.6kgや0.5kgもあがりました。トップ やさしい高山さん 8杯、今日も3杯バラシでした。次回こそ100%GET目指して頑張ってください！今日は台風の影響もなく一日通して出来たので良かったですね！また次回もよろしくお願いいたします。",
+                        "fetched_at":  "2026-08-12 21:43"
                     }
                 ]
 }
