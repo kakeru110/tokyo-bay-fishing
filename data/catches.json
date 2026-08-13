@@ -1,6 +1,6 @@
 {
-    "generated_at":  "2026-08-13 18:03",
-    "count":  2122,
+    "generated_at":  "2026-08-13 21:50",
+    "count":  2123,
     "records":  [
                     {
                         "id":  958,
@@ -48807,6 +48807,29 @@
                         "source_url":  "https://www.nakayamamaru.com/search/ChokaDetail/376187/",
                         "raw_text":  "LTアジ ショート便 18-28cm 15-85匹 釣り場と水深:本牧〜富岡 15M〜20M",
                         "fetched_at":  "2026-08-13 18:03"
+                    },
+                    {
+                        "id":  2126,
+                        "funayado":  "suzufukumaru",
+                        "port":  "久里浜",
+                        "date":  "2026-08-13",
+                        "course":  "ビシアジ船",
+                        "species":  "マアジ",
+                        "species_raw":  "アジ",
+                        "size_min":  23,
+                        "size_max":  40,
+                        "size_unit":  "cm",
+                        "qty_min":  17,
+                        "qty_max":  49,
+                        "qty_unit":  "匹",
+                        "ground_text":  null,
+                        "depth_text":  null,
+                        "lat":  35.2207,
+                        "lon":  139.7138,
+                        "geocode_match":  "fallback_port",
+                        "source_url":  "https://www.suzufukumaru.com/search/ChokaDetail/376270/",
+                        "raw_text":  "本日も潮が澄んでいて潮の流れが速い時間帯もあり、釣り辛かったと思います。前半は中型アジ主体で、中盤から後半にかけて良型、大型アジ揃い。",
+                        "fetched_at":  "2026-08-13 21:50"
                     }
                 ]
 }
