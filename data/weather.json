@@ -739,6 +739,15 @@
       "gust_kmh": 58.7,
       "pressure_hpa": 1004.0,
       "weathercode": 63
+    },
+    "2026-08-13": {
+      "tmax": 26.7,
+      "tmin": 22.3,
+      "precip_mm": 29.4,
+      "wind_kmh": 21.2,
+      "gust_kmh": 52.9,
+      "pressure_hpa": 1007.3,
+      "weathercode": 63
     }
   }
 }
