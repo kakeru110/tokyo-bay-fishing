@@ -1,6 +1,6 @@
 {
-    "generated_at":  "2026-08-15 21:17",
-    "count":  2186,
+    "generated_at":  "2026-08-16 13:10",
+    "count":  2187,
     "records":  [
                     {
                         "id":  958,
@@ -50279,6 +50279,29 @@
                         "source_url":  "https://www.suzufukumaru.com/search/ChokaDetail/376427/",
                         "raw_text":  "ショートアジ船で出船。本日も潮が澄みぎみで非常に潮の流れが速く、場所を転々と、速い潮をかわしての拾い釣りでしたが、中型、良型アジ揃いで大型アジも交じってポツポツ当たりました。25-38cm 12-54匹。",
                         "fetched_at":  "2026-08-15 21:17"
+                    },
+                    {
+                        "id":  2190,
+                        "funayado":  "iwataya",
+                        "port":  "浦安",
+                        "date":  "2026-08-15",
+                        "course":  null,
+                        "species":  "マダコ",
+                        "species_raw":  "マダコ",
+                        "size_min":  0.3,
+                        "size_max":  1.22,
+                        "size_unit":  "kg",
+                        "qty_min":  0,
+                        "qty_max":  14,
+                        "qty_unit":  "杯",
+                        "ground_text":  null,
+                        "depth_text":  null,
+                        "lat":  35.664956,
+                        "lon":  139.887427,
+                        "geocode_match":  "fallback_port",
+                        "source_url":  "https://iwataya-funayado.jp/tsuribune_blog/date/2026/08/15/27899/",
+                        "raw_text":  "ターゲット: マダコ / 数: 0～14杯 / 大きさ: 0.3～1.22kg。最大1.22kg、本日トップ14杯。全体的に2～5杯が多かった。",
+                        "fetched_at":  "2026-08-16 13:10"
                     }
                 ]
 }
