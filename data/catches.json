@@ -1,6 +1,6 @@
 {
-    "generated_at":  "2026-08-18 18:20",
-    "count":  2253,
+    "generated_at":  "2026-08-19 13:10",
+    "count":  2255,
     "records":  [
                     {
                         "id":  958,
@@ -51820,6 +51820,52 @@
                         "source_url":  "https://www.ichiroumaru.jp/result/detail.html?1787035648",
                         "raw_text":  "ふぐ釣り好調です！！ 2026年8月18日 / 今日はポツリポツリと釣れました。トップ37匹・2番手31匹・3番手29匹。サイズは小型、35cmのトラフグも。 ふぐ 鴨居・大貫・下浦沖 11～37匹 12～35cm 10m",
                         "fetched_at":  "2026-08-18 18:20"
+                    },
+                    {
+                        "id":  2257,
+                        "funayado":  "suzufukumaru",
+                        "port":  "久里浜",
+                        "date":  "2026-08-18",
+                        "course":  "ビシアジ船",
+                        "species":  "マアジ",
+                        "species_raw":  "アジ",
+                        "size_min":  25,
+                        "size_max":  38,
+                        "size_unit":  "cm",
+                        "qty_min":  31,
+                        "qty_max":  37,
+                        "qty_unit":  "匹",
+                        "ground_text":  null,
+                        "depth_text":  null,
+                        "lat":  35.2207,
+                        "lon":  139.7138,
+                        "geocode_match":  "fallback_port",
+                        "source_url":  "https://www.suzufukumaru.com/search/ChokaDetail/376611/",
+                        "raw_text":  "潮濁り、潮通しも良かったでしたが、魚に動きがあり良型アジ主体で中型、大型アジも交じって拾い釣り",
+                        "fetched_at":  "2026-08-19 13:10"
+                    },
+                    {
+                        "id":  2258,
+                        "funayado":  "iwataya",
+                        "port":  "浦安",
+                        "date":  "2026-08-16",
+                        "course":  null,
+                        "species":  "タチウオ",
+                        "species_raw":  "タチウオ",
+                        "size_min":  55,
+                        "size_max":  105,
+                        "size_unit":  "cm",
+                        "qty_min":  10,
+                        "qty_max":  19,
+                        "qty_unit":  "尾",
+                        "ground_text":  "猿島沖",
+                        "depth_text":  null,
+                        "lat":  35.28,
+                        "lon":  139.705,
+                        "geocode_match":  "gazetteer",
+                        "source_url":  "https://iwataya-funayado.jp/tsuribune_blog/date/2026/08/19/27917/",
+                        "raw_text":  "ターゲット タチウオ / 数 10～19尾 / 大きさ 55～105cm / ポイント 猿島沖 本日タチウオ船！当たりが多かった分エサの消耗も激しかったです。小型主流で、釣果の半分をリリースしたと言う方も少なくありませんでした。本日トップ⭐19本♪ ピンクさん(髙野さん)。二番手⭐山名さん16本(右)、釣果11～12本が多かったです。",
+                        "fetched_at":  "2026-08-19 13:10"
                     }
                 ]
 }
