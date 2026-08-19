@@ -1,6 +1,6 @@
 {
-    "generated_at":  "2026-08-19 18:20",
-    "count":  2267,
+    "generated_at":  "2026-08-19 21:30",
+    "count":  2268,
     "records":  [
                     {
                         "id":  958,
@@ -52142,6 +52142,29 @@
                         "source_url":  "https://kurokawa-maru.blogspot.com/2026/08/blog-post_19.html",
                         "raw_text":  "良型揃い!! 23〜42cm 15〜61尾 観音崎沖40〜50ｍ",
                         "fetched_at":  "2026-08-19 18:12"
+                    },
+                    {
+                        "id":  2271,
+                        "funayado":  "hiraimaru",
+                        "port":  "品川",
+                        "date":  "2026-08-19",
+                        "course":  "ショートLTアジ乗合船",
+                        "species":  "マアジ",
+                        "species_raw":  "マアジ",
+                        "size_min":  18,
+                        "size_max":  28,
+                        "size_unit":  "cm",
+                        "qty_min":  9,
+                        "qty_max":  90,
+                        "qty_unit":  "尾",
+                        "ground_text":  "横浜沖",
+                        "depth_text":  "10M～20M",
+                        "lat":  35.45,
+                        "lon":  139.65,
+                        "geocode_match":  "gazetteer",
+                        "source_url":  "https://www.hiraimaru.net/search/ChokaDetail/376664/",
+                        "raw_text":  "マアジ 18-28 cm\u30009-90 尾／船長コメント：今日のアジ船は久々なので手前のポイントから！低めの反応で開始し、1投目でご対面できましたがあとがなく…すると中層に反応が出てきてタナがバシッとキマるとダブルやトリプルで釣れてくれてタナが浅い分手返しの速い方はグングン数も伸びていきました。やりこんでいくと間が長くなってしまったので移動してみましたがどこやってもカタ出すか出さないかの大苦戦。横浜で反応モリモリでしたが魚が難しくたまーーにポロッと釣れてくる感じ。釣り場と水深：横浜沖 10M～20M",
+                        "fetched_at":  "2026-08-19 21:30"
                     }
                 ]
 }
