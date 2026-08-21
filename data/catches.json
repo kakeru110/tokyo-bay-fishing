@@ -1,6 +1,6 @@
 {
-    "generated_at":  "2026-08-21 18:10",
-    "count":  2293,
+    "generated_at":  "2026-08-21 21:30",
+    "count":  2295,
     "records":  [
                     {
                         "id":  958,
@@ -52742,6 +52742,52 @@
                         "source_url":  "https://kurokawa-maru.blogspot.com/2026/08/blog-post_427.html",
                         "raw_text":  "ショートアジ 22～33cm 26～71尾 観音崎沖50ｍ 中型喰い活発‼️",
                         "fetched_at":  "2026-08-21 18:10"
+                    },
+                    {
+                        "id":  2297,
+                        "funayado":  "miyagawamaru",
+                        "port":  "木更津",
+                        "date":  "2026-08-21",
+                        "course":  "アジ（堤防）",
+                        "species":  "マアジ",
+                        "species_raw":  "アジ",
+                        "size_min":  12,
+                        "size_max":  21,
+                        "size_unit":  "cm",
+                        "qty_min":  null,
+                        "qty_max":  40,
+                        "qty_unit":  "匹",
+                        "ground_text":  "各堤",
+                        "depth_text":  null,
+                        "lat":  35.3833,
+                        "lon":  139.9128,
+                        "geocode_match":  "fallback_port",
+                        "source_url":  "https://www.miyagawamaru.co.jp/89812.html",
+                        "raw_text":  "釣果：最高４０匹　大きさ：１２〜２１cm　場所：各堤　午後から釣り皆さん数釣れていました。",
+                        "fetched_at":  "2026-08-21 21:30"
+                    },
+                    {
+                        "id":  2298,
+                        "funayado":  "miyagawamaru",
+                        "port":  "木更津",
+                        "date":  "2026-08-21",
+                        "course":  "アジ（堤防）",
+                        "species":  "シーバス",
+                        "species_raw":  "シーバス",
+                        "size_min":  75,
+                        "size_max":  75,
+                        "size_unit":  "cm",
+                        "qty_min":  null,
+                        "qty_max":  null,
+                        "qty_unit":  "匹",
+                        "ground_text":  "各堤",
+                        "depth_text":  null,
+                        "lat":  35.3833,
+                        "lon":  139.9128,
+                        "geocode_match":  "fallback_port",
+                        "source_url":  "https://www.miyagawamaru.co.jp/89812.html",
+                        "raw_text":  "シーバスはルアーで７５cm",
+                        "fetched_at":  "2026-08-21 21:30"
                     }
                 ]
 }
