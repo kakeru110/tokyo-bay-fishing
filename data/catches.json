@@ -1,6 +1,6 @@
 {
-    "generated_at":  "2026-08-22 18:20",
-    "count":  2322,
+    "generated_at":  "2026-08-22 21:15",
+    "count":  2324,
     "records":  [
                     {
                         "id":  958,
@@ -53409,6 +53409,52 @@
                         "source_url":  "https://kurokawa-maru.blogspot.com/2026/08/blog-post_22.html",
                         "raw_text":  "ﾘﾚｰｱｼﾞ 24～40cm 0～16尾 観音崎沖50ｍ",
                         "fetched_at":  "2026-08-22 18:20"
+                    },
+                    {
+                        "id":  2326,
+                        "funayado":  "suzufukumaru",
+                        "port":  "久里浜",
+                        "date":  "2026-08-22",
+                        "course":  "ビシアジ船",
+                        "species":  "マアジ",
+                        "species_raw":  "アジ",
+                        "size_min":  25,
+                        "size_max":  38,
+                        "size_unit":  "cm",
+                        "qty_min":  6,
+                        "qty_max":  37,
+                        "qty_unit":  "匹",
+                        "ground_text":  null,
+                        "depth_text":  null,
+                        "lat":  35.2207,
+                        "lon":  139.7138,
+                        "geocode_match":  "fallback_port",
+                        "source_url":  "https://www.suzufukumaru.com/search/ChokaDetail/376880/",
+                        "raw_text":  "ショートアジ船で出船。朝から大型アジ揃いで当たり始めるが長続きせず、本日は、潮が澄み食い渋めで、中型、良型アジ揃いで拾い釣りでした。外道にクロムツ多数。25-38cm 6-37匹",
+                        "fetched_at":  "2026-08-22 21:15"
+                    },
+                    {
+                        "id":  2327,
+                        "funayado":  "dai3asanagimaru",
+                        "port":  "横浜・金沢八景",
+                        "date":  "2026-08-22",
+                        "course":  "太刀魚船",
+                        "species":  "タチウオ",
+                        "species_raw":  "太刀魚",
+                        "size_min":  65,
+                        "size_max":  100,
+                        "size_unit":  "cm",
+                        "qty_min":  14,
+                        "qty_max":  18,
+                        "qty_unit":  "本",
+                        "ground_text":  "猿島沖・台船東沖",
+                        "depth_text":  null,
+                        "lat":  35.28,
+                        "lon":  139.705,
+                        "geocode_match":  "gazetteer",
+                        "source_url":  "https://dai3-asanagimaru.com/2026/08/22/%e5%a4%aa%e5%88%80%e9%ad%9a%e8%88%b9-12/",
+                        "raw_text":  "今日は猿島沖から開始!その後台船東沖に合流されて頂きポツポツと当たりました!後半は台船西沖を見に行きましたが反応がイマイチでした。65cm〜100cm 14〜18本",
+                        "fetched_at":  "2026-08-22 21:15"
                     }
                 ]
 }
