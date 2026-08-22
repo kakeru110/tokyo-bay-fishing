@@ -1,6 +1,6 @@
 {
-    "generated_at":  "2026-08-21 21:30",
-    "count":  2295,
+    "generated_at":  "2026-08-22 13:06",
+    "count":  2297,
     "records":  [
                     {
                         "id":  958,
@@ -52788,6 +52788,52 @@
                         "source_url":  "https://www.miyagawamaru.co.jp/89812.html",
                         "raw_text":  "シーバスはルアーで７５cm",
                         "fetched_at":  "2026-08-21 21:30"
+                    },
+                    {
+                        "id":  2299,
+                        "funayado":  "susumumaru",
+                        "port":  "横浜・金沢八景",
+                        "date":  "2026-08-21",
+                        "course":  "半日LTアジ(午前)",
+                        "species":  "マアジ",
+                        "species_raw":  "アジ",
+                        "size_min":  18,
+                        "size_max":  28,
+                        "size_unit":  "cm",
+                        "qty_min":  8,
+                        "qty_max":  20,
+                        "qty_unit":  "尾",
+                        "ground_text":  null,
+                        "depth_text":  null,
+                        "lat":  35.332923,
+                        "lon":  139.634866,
+                        "geocode_match":  "fallback_port",
+                        "source_url":  "https://susumumaru.com/2026-08-21/",
+                        "raw_text":  "午前アジ・・・・・　８～２０尾（１８～２８cm）",
+                        "fetched_at":  "2026-08-22 13:06"
+                    },
+                    {
+                        "id":  2300,
+                        "funayado":  "susumumaru",
+                        "port":  "横浜・金沢八景",
+                        "date":  "2026-08-21",
+                        "course":  "半日シロギス(午前)",
+                        "species":  "シロギス",
+                        "species_raw":  "シロギス",
+                        "size_min":  15,
+                        "size_max":  22,
+                        "size_unit":  "cm",
+                        "qty_min":  14,
+                        "qty_max":  82,
+                        "qty_unit":  "尾",
+                        "ground_text":  null,
+                        "depth_text":  null,
+                        "lat":  35.332923,
+                        "lon":  139.634866,
+                        "geocode_match":  "fallback_port",
+                        "source_url":  "https://susumumaru.com/2026-08-21/",
+                        "raw_text":  "午前シロギス・・・１４～８２尾（１５～２２cm）",
+                        "fetched_at":  "2026-08-22 13:06"
                     }
                 ]
 }
