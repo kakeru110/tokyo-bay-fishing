@@ -16,22 +16,24 @@
 <meta name="twitter:title" content="東京湾 船釣り釣果マップ｜魚種・船宿別の最新釣果情報">
 <meta name="twitter:description" content="東京湾の船釣り釣果情報を16船宿から自動集計。魚種・船宿・期間で絞り込んで、直近の釣果一覧と釣り場の地図を確認できます。">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-<link rel="stylesheet" href="style.css?v=33">
+<link rel="stylesheet" href="style.css?v=34">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
 </head>
 <body>
 <header>
-  <h1><a href="index.html">🎣 東京湾 船釣り釣果マップ</a></h1>
+  <h1><a href="index.html">東京湾 船釣り釣果マップ</a></h1>
   <span class="meta" id="lastUpdated">読み込み中...</span>
   <span class="meta">対象船宿: <span id="sourceCount">-</span>件 / レコード数: <span id="recordCount">-</span></span>
   <span class="meta">累計アクセス数: <span id="pageViewCount">-</span>回</span>
 </header>
 
 <nav class="page-nav">
-  <a href="index.html" data-nav-page="index.html" class="active">📋 釣果実績</a>
-  <a href="analysis.html" data-nav-page="analysis.html">📊 分析</a>
-  <a href="funayado.html" data-nav-page="funayado.html">📞 船宿情報</a>
-  <a href="faq.html" data-nav-page="faq.html">❓ よくある質問</a>
-  <a href="contact.html" data-nav-page="contact.html">✉️ お問い合わせ</a>
+  <a href="index.html" data-nav-page="index.html" class="active">釣果実績</a>
+  <a href="analysis.html" data-nav-page="analysis.html">分析</a>
+  <a href="funayado.html" data-nav-page="funayado.html">船宿情報</a>
+  <a href="faq.html" data-nav-page="faq.html">よくある質問</a>
+  <a href="contact.html" data-nav-page="contact.html">お問い合わせ</a>
 </nav>
 
 <div class="layout">
@@ -96,7 +98,7 @@
     </div>
 
     <div class="panel" id="gearPanel">
-      <h2>🎣 おすすめ仕掛け・タックル(表示中の魚種から)</h2>
+      <h2>おすすめ仕掛け・タックル(表示中の魚種から)</h2>
       <div class="gear-cards" id="gearCards"></div>
       <div class="pr-disclosure">PR: Amazonのアソシエイトとして、当サイトは適格販売により収入を得ています。</div>
     </div>

@@ -1,37 +1,63 @@
 :root {
-  --bg: #eaf5fb;
-  --bg2: #eef9f3;
-  --panel: #ffffff;
-  --panel-border: #d6e6f2;
-  --text: #123152;
-  --muted: #5c7188;
-  --accent: #2a78d6;
-  --accent2: #eb6834;
-  --accent-soft: #e6f1fb;
-  --sea: #1baf7a;
+  --bg: #f6f0e0;
+  --bg2: #f1e9d4;
+  --panel: #fffdf8;
+  --panel-border: #ded0ac;
+  --text: #1e3a5f;
+  --muted: #746b56;
+  --accent: #2c4d73;
+  --accent2: #b8451c;
+  --accent-soft: #ece2c6;
+  --sea: #4a7a5a;
+
+  /* 線画SVGアイコン(絵文字の代わり)。currentColorで着色されるstroke系。 */
+  --ico-fish: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M1 12c2.6-5 8.6-7.6 13-4.6 2.2-1.2 5-1.4 7.2-0.4-2.4 1.4-2.4 4 0 5.4-2.2 1-5 0.8-7.2-0.4-4.4 3-10.4 0.4-13-4.6z' fill='none' stroke='black' stroke-width='1.6' stroke-linejoin='round' stroke-linecap='round'/%3E%3Ccircle cx='6.2' cy='11' r='0.75' fill='black'/%3E%3C/svg%3E");
+  --ico-doc: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='4' y='3' width='16' height='18' rx='1.4' fill='none' stroke='black' stroke-width='1.7'/%3E%3Cline x1='7.5' y1='8' x2='16.5' y2='8' stroke='black' stroke-width='1.6' stroke-linecap='round'/%3E%3Cline x1='7.5' y1='12' x2='16.5' y2='12' stroke='black' stroke-width='1.6' stroke-linecap='round'/%3E%3Cline x1='7.5' y1='16' x2='13' y2='16' stroke='black' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E");
+  --ico-chart: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cline x1='4' y1='21' x2='20' y2='21' stroke='black' stroke-width='1.7' stroke-linecap='round'/%3E%3Crect x='6' y='13' width='3.4' height='8' fill='none' stroke='black' stroke-width='1.6'/%3E%3Crect x='11.5' y='7' width='3.4' height='14' fill='none' stroke='black' stroke-width='1.6'/%3E%3Crect x='17' y='10' width='3.4' height='11' fill='none' stroke='black' stroke-width='1.6'/%3E%3C/svg%3E");
+  --ico-phone: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5.5 4h3.2l1.6 4-2 1.6a12 12 0 0 0 6.1 6.1l1.6-2 4 1.6v3.2c0 1-0.9 1.8-1.9 1.6C10.6 19 5 13.4 3.9 6.9 3.7 5.9 4.5 5 5.5 4z' fill='none' stroke='black' stroke-width='1.6' stroke-linejoin='round' stroke-linecap='round'/%3E%3C/svg%3E");
+  --ico-help: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='9' fill='none' stroke='black' stroke-width='1.6'/%3E%3Cpath d='M9.3 9.6a2.8 2.8 0 1 1 4 2.5c-0.9 0.5-1.3 1-1.3 2' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round'/%3E%3Ccircle cx='12' cy='16.6' r='0.9' fill='black'/%3E%3C/svg%3E");
+  --ico-mail: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='3.5' y='5.5' width='17' height='13' rx='1.3' fill='none' stroke='black' stroke-width='1.6'/%3E%3Cpath d='M4.2 6.4l7.8 6 7.8-6' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  --ico-yen: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='9' fill='none' stroke='black' stroke-width='1.6'/%3E%3Cpath d='M8.5 7l3.5 5.4L15.5 7M12 12.4V18M9 15h6M9 17h6' stroke='black' stroke-width='1.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  --ico-warn: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 4l9.5 16.5h-19z' fill='none' stroke='black' stroke-width='1.6' stroke-linejoin='round'/%3E%3Cline x1='12' y1='10' x2='12' y2='14.5' stroke='black' stroke-width='1.6' stroke-linecap='round'/%3E%3Ccircle cx='12' cy='17.3' r='0.9' fill='black'/%3E%3C/svg%3E");
+  --ico-bag: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 8V6a3 3 0 0 1 6 0v2' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round'/%3E%3Crect x='5' y='8' width='14' height='12' rx='2' fill='none' stroke='black' stroke-width='1.6'/%3E%3Cline x1='5' y1='12.5' x2='19' y2='12.5' stroke='black' stroke-width='1.4'/%3E%3C/svg%3E");
+  --ico-map: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 3c-4 0-7 3-7 7 0 5 7 11 7 11s7-6 7-11c0-4-3-7-7-7z' fill='none' stroke='black' stroke-width='1.6' stroke-linejoin='round'/%3E%3Ccircle cx='12' cy='10' r='2.3' fill='none' stroke='black' stroke-width='1.5'/%3E%3C/svg%3E");
+  --ico-search: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='10.5' cy='10.5' r='6.5' fill='none' stroke='black' stroke-width='1.7'/%3E%3Cline x1='15.3' y1='15.3' x2='20.5' y2='20.5' stroke='black' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E");
+  --ico-box: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4 8l8-4 8 4-8 4-8-4z' fill='none' stroke='black' stroke-width='1.5' stroke-linejoin='round'/%3E%3Cpath d='M4 8v9l8 4 8-4V8' fill='none' stroke='black' stroke-width='1.5' stroke-linejoin='round'/%3E%3Cline x1='12' y1='12' x2='12' y2='21' stroke='black' stroke-width='1.4'/%3E%3C/svg%3E");
+  --ico-check: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='9' fill='none' stroke='black' stroke-width='1.6'/%3E%3Cpath d='M8 12.5l2.6 2.6L16.5 9' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 }
 
 * { box-sizing: border-box; }
 
 body {
   margin: 0;
-  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+  font-family: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
   background: linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%) fixed;
   color: var(--text);
 }
 
+h1, h2, h3 {
+  font-family: "Shippori Mincho", "Hiragino Mincho ProN", serif;
+}
+
 header {
   padding: 18px 20px;
-  background: linear-gradient(90deg, var(--accent) 0%, var(--sea) 100%);
+  background-color: #1e3a5f;
+  background-image:
+    radial-gradient(circle at 0 100%, transparent 23%, #2c4d73 24%, #2c4d73 26%, transparent 27%, transparent 35%, #2c4d73 36%, #2c4d73 38%, transparent 39%),
+    radial-gradient(circle at 60px 100%, transparent 23%, #2c4d73 24%, #2c4d73 26%, transparent 27%, transparent 35%, #2c4d73 36%, #2c4d73 38%, transparent 39%),
+    radial-gradient(circle at 120px 100%, transparent 23%, #2c4d73 24%, #2c4d73 26%, transparent 27%, transparent 35%, #2c4d73 36%, #2c4d73 38%, transparent 39%);
+  background-size: 60px 60px;
+  background-position: 0 30px, 0 30px, 0 30px;
   display: flex;
   align-items: baseline;
   gap: 16px;
   flex-wrap: wrap;
-  box-shadow: 0 2px 10px rgba(20, 60, 100, 0.15);
+  box-shadow: 0 2px 10px rgba(20, 30, 50, 0.2);
 }
 
 header h1 {
   font-size: 1.3rem;
+  font-weight: 600;
   margin: 0;
   color: #ffffff;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
@@ -39,9 +65,23 @@ header h1 {
 header h1 a {
   color: inherit;
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
 }
 header h1 a:hover {
   opacity: 0.88;
+}
+header h1 a::before {
+  content: "";
+  display: inline-block;
+  width: 0.92em; height: 0.92em;
+  margin-right: 0.3em;
+  background-color: currentColor;
+  -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+  -webkit-mask-size: contain; mask-size: contain;
+  -webkit-mask-position: center; mask-position: center;
+  -webkit-mask-image: var(--ico-fish);
+  mask-image: var(--ico-fish);
 }
 
 header .meta {
@@ -841,4 +881,101 @@ table.funayado-compare-table .fcmp-tbd { color: var(--accent); font-weight: 600;
 
 @media (max-width: 600px) {
   .faq-layout { padding: 10px 12px 4px; }
+}
+
+/* ==== 線画アイコン(絵文字の代わり) ==== */
+[class*="ico-"]::before {
+  content: "";
+  display: inline-block;
+  width: 0.9em; height: 0.9em;
+  vertical-align: -0.12em;
+  margin-right: 0.32em;
+  background-color: currentColor;
+  -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+  -webkit-mask-size: contain; mask-size: contain;
+  -webkit-mask-position: center; mask-position: center;
+}
+.ico-fish::before { -webkit-mask-image: var(--ico-fish); mask-image: var(--ico-fish); }
+.ico-doc::before { -webkit-mask-image: var(--ico-doc); mask-image: var(--ico-doc); }
+.ico-chart::before { -webkit-mask-image: var(--ico-chart); mask-image: var(--ico-chart); }
+.ico-phone::before { -webkit-mask-image: var(--ico-phone); mask-image: var(--ico-phone); }
+.ico-help::before { -webkit-mask-image: var(--ico-help); mask-image: var(--ico-help); }
+.ico-mail::before { -webkit-mask-image: var(--ico-mail); mask-image: var(--ico-mail); }
+.ico-yen::before { -webkit-mask-image: var(--ico-yen); mask-image: var(--ico-yen); }
+.ico-warn::before { -webkit-mask-image: var(--ico-warn); mask-image: var(--ico-warn); }
+.ico-bag::before { -webkit-mask-image: var(--ico-bag); mask-image: var(--ico-bag); }
+.ico-map::before { -webkit-mask-image: var(--ico-map); mask-image: var(--ico-map); }
+.ico-search::before { -webkit-mask-image: var(--ico-search); mask-image: var(--ico-search); }
+.ico-box::before { -webkit-mask-image: var(--ico-box); mask-image: var(--ico-box); }
+.ico-check::before { -webkit-mask-image: var(--ico-check); mask-image: var(--ico-check); }
+
+.page-nav a[data-nav-page="index.html"]::before { -webkit-mask-image: var(--ico-doc); mask-image: var(--ico-doc); }
+.page-nav a[data-nav-page="analysis.html"]::before { -webkit-mask-image: var(--ico-chart); mask-image: var(--ico-chart); }
+.page-nav a[data-nav-page="funayado.html"]::before { -webkit-mask-image: var(--ico-phone); mask-image: var(--ico-phone); }
+.page-nav a[data-nav-page="faq.html"]::before { -webkit-mask-image: var(--ico-help); mask-image: var(--ico-help); }
+.page-nav a[data-nav-page="contact.html"]::before { -webkit-mask-image: var(--ico-mail); mask-image: var(--ico-mail); }
+.page-nav a[data-nav-page]::before {
+  content: "";
+  display: inline-block;
+  width: 0.95em; height: 0.95em;
+  vertical-align: -0.15em;
+  margin-right: 0.3em;
+  background-color: currentColor;
+  -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+  -webkit-mask-size: contain; mask-size: contain;
+  -webkit-mask-position: center; mask-position: center;
+}
+
+.funayado-compare-panel h2::before,
+.funayado-species::before {
+  content: "";
+  display: inline-block; width: 0.9em; height: 0.9em; vertical-align: -0.1em; margin-right: 0.3em;
+  background-color: currentColor;
+  -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-size: contain; mask-size: contain;
+  -webkit-mask-image: var(--ico-fish); mask-image: var(--ico-fish);
+}
+.funayado-species::before { width: 0.8em; height: 0.8em; color: var(--accent); }
+
+.funayado-tel::before {
+  content: "";
+  display: inline-block; width: 0.85em; height: 0.85em; vertical-align: -0.08em; margin-right: 0.3em;
+  background-color: currentColor;
+  -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-size: contain; mask-size: contain;
+  -webkit-mask-image: var(--ico-phone); mask-image: var(--ico-phone);
+}
+
+.funayado-price::before {
+  content: "";
+  display: inline-block; width: 0.82em; height: 0.82em; vertical-align: -0.08em; margin-right: 0.28em;
+  background-color: currentColor;
+  -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-size: contain; mask-size: contain;
+  -webkit-mask-image: var(--ico-yen); mask-image: var(--ico-yen);
+}
+
+.funayado-warn::before {
+  content: "";
+  display: inline-block; width: 0.9em; height: 0.9em; vertical-align: -0.12em; margin-right: 0.32em;
+  background-color: currentColor;
+  -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-size: contain; mask-size: contain;
+  -webkit-mask-image: var(--ico-warn); mask-image: var(--ico-warn);
+}
+
+#prepGearPanel h2::before,
+#gearPanel h2::before,
+.gear-teaser-icon::before {
+  content: "";
+  display: inline-block; width: 0.9em; height: 0.9em; vertical-align: -0.1em; margin-right: 0.3em;
+  background-color: currentColor;
+  -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-size: contain; mask-size: contain;
+  -webkit-mask-image: var(--ico-fish); mask-image: var(--ico-fish);
+}
+#prepGearPanel h2::before { -webkit-mask-image: var(--ico-bag); mask-image: var(--ico-bag); }
+.gear-teaser-icon::before { width: 22px; height: 22px; margin: 0; color: var(--accent); }
+
+.filter-summary-link::before {
+  content: "";
+  display: inline-block; width: 0.85em; height: 0.85em; vertical-align: -0.1em; margin-right: 0.28em;
+  background-color: currentColor;
+  -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-size: contain; mask-size: contain;
+  -webkit-mask-image: var(--ico-doc); mask-image: var(--ico-doc);
 }

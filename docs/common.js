@@ -353,7 +353,7 @@ window.TBF = (function () {
 
     const thumbHtml = product
       ? `<img class="gear-teaser-img" src="${product.image}" alt="${product.title}" loading="lazy">`
-      : `<span class="gear-teaser-icon">🎣</span>`;
+      : `<span class="gear-teaser-icon"></span>`;
     const label = product ? product.title : fallback.label;
 
     container.innerHTML = `
