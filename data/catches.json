@@ -1,6 +1,6 @@
 {
-    "generated_at":  "2026-08-25 18:10",
-    "count":  2412,
+    "generated_at":  "2026-08-25 21:37",
+    "count":  2413,
     "records":  [
                     {
                         "id":  958,
@@ -55479,6 +55479,29 @@
                         "source_url":  "https://www.ichiroumaru.jp/result/detail.html?1787639074",
                         "raw_text":  "南西の風強く海も悪く良いポイントに当たらなかった。トップ9匹・2番手8匹・3番手7匹2名様。サイズは小型。",
                         "fetched_at":  "2026-08-25 18:10"
+                    },
+                    {
+                        "id":  2416,
+                        "funayado":  "suzufukumaru",
+                        "port":  "久里浜",
+                        "date":  "2026-08-25",
+                        "course":  "ビシアジ船",
+                        "species":  "マアジ",
+                        "species_raw":  "アジ",
+                        "size_min":  25,
+                        "size_max":  35,
+                        "size_unit":  "cm",
+                        "qty_min":  12,
+                        "qty_max":  45,
+                        "qty_unit":  "匹",
+                        "ground_text":  null,
+                        "depth_text":  null,
+                        "lat":  35.2207,
+                        "lon":  139.7138,
+                        "geocode_match":  "fallback_port",
+                        "source_url":  "https://www.suzufukumaru.com/search/ChokaDetail/377071/",
+                        "raw_text":  "アジ 25-35 cm　12-45 匹",
+                        "fetched_at":  "2026-08-25 21:37"
                     }
                 ]
 }
