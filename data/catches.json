@@ -1,6 +1,6 @@
 {
-    "generated_at":  "2026-08-28 18:11",
-    "count":  2467,
+    "generated_at":  "2026-08-28 21:39",
+    "count":  2468,
     "records":  [
                     {
                         "id":  958,
@@ -56742,6 +56742,29 @@
                         "source_url":  "https://yamashitamaru.jp/blog.php",
                         "raw_text":  "カワハギ 20～29.5cm 1～7匹 久里浜沖 20m 水温27℃ 船長:坂本達哉",
                         "fetched_at":  "2026-08-28 18:11"
+                    },
+                    {
+                        "id":  2471,
+                        "funayado":  "dai3asanagimaru",
+                        "port":  "横浜・金沢八景",
+                        "date":  "2026-08-28",
+                        "course":  "太刀魚船",
+                        "species":  "タチウオ",
+                        "species_raw":  "太刀魚",
+                        "size_min":  null,
+                        "size_max":  null,
+                        "size_unit":  null,
+                        "qty_min":  null,
+                        "qty_max":  null,
+                        "qty_unit":  null,
+                        "ground_text":  "台船東沖・台船西沖",
+                        "depth_text":  null,
+                        "lat":  35.330687,
+                        "lon":  139.632991,
+                        "geocode_match":  "fallback_port",
+                        "source_url":  "https://dai3-asanagimaru.com/2026/08/28/%e5%a4%aa%e5%88%80%e9%ad%9a%e8%88%b9-16/",
+                        "raw_text":  "今日も台船東沖から開始！オールレンタルセット5名様とテンヤの方1名で出船！朝一は教えながらの釣りでしたが良型も交じりながらポツリポツリと当たりました！その後台船西沖に移動してポツ〜ンポツ〜ンでしたが暑さでだらけてしまい失速…。それでも良型結構交じったので良かったです(^^)",
+                        "fetched_at":  "2026-08-28 21:39"
                     }
                 ]
 }
