@@ -1,6 +1,6 @@
 {
-    "generated_at":  "2026-08-28 18:11",
-    "count":  2467,
+    "generated_at":  "2026-08-29 13:20",
+    "count":  2469,
     "records":  [
                     {
                         "id":  958,
@@ -56742,6 +56742,52 @@
                         "source_url":  "https://yamashitamaru.jp/blog.php",
                         "raw_text":  "カワハギ 20～29.5cm 1～7匹 久里浜沖 20m 水温27℃ 船長:坂本達哉",
                         "fetched_at":  "2026-08-28 18:11"
+                    },
+                    {
+                        "id":  2471,
+                        "funayado":  "iwataya",
+                        "port":  "浦安",
+                        "date":  "2026-08-28",
+                        "course":  null,
+                        "species":  "マダコ",
+                        "species_raw":  "マダコ",
+                        "size_min":  0.3,
+                        "size_max":  0.6,
+                        "size_unit":  "kg",
+                        "qty_min":  0,
+                        "qty_max":  9,
+                        "qty_unit":  "杯",
+                        "ground_text":  null,
+                        "depth_text":  null,
+                        "lat":  35.664956,
+                        "lon":  139.887427,
+                        "geocode_match":  "fallback_port",
+                        "source_url":  "https://iwataya-funayado.jp/tsuribune_blog/date/2026/08/28/27953/",
+                        "raw_text":  "ターゲット：マダコ　数：0～9杯　大きさ：0.3～0.6kg（外道：マゴチ）",
+                        "fetched_at":  "2026-08-29 13:06"
+                    },
+                    {
+                        "id":  2472,
+                        "funayado":  "dai3asanagimaru",
+                        "port":  "横浜・金沢八景",
+                        "date":  "2026-08-28",
+                        "course":  "太刀魚船",
+                        "species":  "タチウオ",
+                        "species_raw":  "太刀魚船",
+                        "size_min":  null,
+                        "size_max":  null,
+                        "size_unit":  "cm",
+                        "qty_min":  null,
+                        "qty_max":  null,
+                        "qty_unit":  "本",
+                        "ground_text":  "台船東沖・台船西沖",
+                        "depth_text":  null,
+                        "lat":  35.330687,
+                        "lon":  139.632991,
+                        "geocode_match":  "fallback_port",
+                        "source_url":  "https://dai3-asanagimaru.com/2026/08/28/%e5%a4%aa%e5%88%80%e9%ad%9a%e8%88%b9-16/",
+                        "raw_text":  "今日も台船東沖から開始！オールレンタルセット5名様とテンヤの方1名で出船！朝一は教えながらの釣りでしたが良型も交じりながらポツリポツリと当たりました！その後台船西沖に移動してポツ〜ンポツ〜ンでしたが暑さでだらけてしまい失速…。それでも良型結構交じったので良かったです(^^)",
+                        "fetched_at":  "2026-08-29 13:06"
                     }
                 ]
 }
