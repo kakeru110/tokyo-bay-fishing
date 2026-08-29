@@ -1,6 +1,6 @@
 {
-    "generated_at":  "2026-08-29 18:12",
-    "count":  2509,
+    "generated_at":  "2026-08-29 21:35",
+    "count":  2510,
     "records":  [
                     {
                         "id":  958,
@@ -57708,6 +57708,29 @@
                         "source_url":  "https://kurokawa-maru.blogspot.com/2026/08/blog-post_29.html",
                         "raw_text":  "アジ(ショートアジ) 24~40cm 0~7尾 観音崎沖40m。喰いが悪く、良い反応に当たりませんでした。",
                         "fetched_at":  "2026-08-29 18:12"
+                    },
+                    {
+                        "id":  2513,
+                        "funayado":  "kawasakimaru",
+                        "port":  "富津",
+                        "date":  "2026-08-29",
+                        "course":  "マダコ船",
+                        "species":  "マダコ",
+                        "species_raw":  "マダコ",
+                        "size_min":  0.3,
+                        "size_max":  1.5,
+                        "size_unit":  "kg",
+                        "qty_min":  null,
+                        "qty_max":  56,
+                        "qty_unit":  "杯",
+                        "ground_text":  null,
+                        "depth_text":  null,
+                        "lat":  35.314158,
+                        "lon":  139.809426,
+                        "geocode_match":  "fallback_port",
+                        "source_url":  "https://www.kawasakimaru.jp/blog/51519/",
+                        "raw_text":  "【マダコ】2026年08月29日（土） 前半絶好調に乗りました！ 開始ポイントを「極上マダコポイント」からスルーして他のポイントからスタート、8:30には50杯超えの好ペース、冷たい雨のため10:30に早上がり。釣果は０.３～１.５ｋｇをトップ８杯・７杯が２名【１名は初挑戦で良型揃い】・６杯が２名・５杯【女性】・３杯が２名・２杯が４名・１杯が３名の【船中５６杯】の大漁でした",
+                        "fetched_at":  "2026-08-29 21:35"
                     }
 
                 ]
