@@ -1,6 +1,6 @@
 {
-    "generated_at":  "2026-08-29 21:35",
-    "count":  2510,
+    "generated_at":  "2026-08-30 13:20",
+    "count":  2512,
     "records":  [
                     {
                         "id":  958,
@@ -57731,6 +57731,52 @@
                         "source_url":  "https://www.kawasakimaru.jp/blog/51519/",
                         "raw_text":  "【マダコ】2026年08月29日（土） 前半絶好調に乗りました！ 開始ポイントを「極上マダコポイント」からスルーして他のポイントからスタート、8:30には50杯超えの好ペース、冷たい雨のため10:30に早上がり。釣果は０.３～１.５ｋｇをトップ８杯・７杯が２名【１名は初挑戦で良型揃い】・６杯が２名・５杯【女性】・３杯が２名・２杯が４名・１杯が３名の【船中５６杯】の大漁でした",
                         "fetched_at":  "2026-08-29 21:35"
+                    },
+                    {
+                        "id":  2514,
+                        "funayado":  "suzufukumaru",
+                        "port":  "久里浜",
+                        "date":  "2026-08-29",
+                        "course":  "ビシアジ船",
+                        "species":  "マアジ",
+                        "species_raw":  "アジ",
+                        "size_min":  23,
+                        "size_max":  35,
+                        "size_unit":  "cm",
+                        "qty_min":  1,
+                        "qty_max":  14,
+                        "qty_unit":  "匹",
+                        "ground_text":  null,
+                        "depth_text":  null,
+                        "lat":  35.2207,
+                        "lon":  139.7138,
+                        "geocode_match":  "fallback_port",
+                        "source_url":  "https://www.suzufukumaru.com/search/ChokaDetail/377320/",
+                        "raw_text":  "ビシアジ船／アジ／23-35 cm　1-14 匹／船長コメント：ショートアジ船で出船。本日は潮の流れが速く場所を転々するも、なかなか速い潮が止まらず、食い渋く大苦戦！！１日を通して中型アジ主体でした。",
+                        "fetched_at":  "2026-08-30 13:20"
+                    },
+                    {
+                        "id":  2515,
+                        "funayado":  "iwataya",
+                        "port":  "浦安",
+                        "date":  "2026-08-29",
+                        "course":  null,
+                        "species":  "マアジ",
+                        "species_raw":  "LTアジ",
+                        "size_min":  18,
+                        "size_max":  27,
+                        "size_unit":  "cm",
+                        "qty_min":  14,
+                        "qty_max":  56,
+                        "qty_unit":  "尾",
+                        "ground_text":  "本牧沖",
+                        "depth_text":  null,
+                        "lat":  35.412,
+                        "lon":  139.705,
+                        "geocode_match":  "gazetteer",
+                        "source_url":  "https://iwataya-funayado.jp/tsuribune_blog/date/2026/08/29/27965/",
+                        "raw_text":  "ターゲット LTアジ 数 14～56尾 大きさ 18～27cm ポイント 本牧沖 外道 ｶｻｺﾞ､ｲｼﾓﾁ､ｼﾛｷﾞｽ",
+                        "fetched_at":  "2026-08-30 13:20"
                     }
 
                 ]
