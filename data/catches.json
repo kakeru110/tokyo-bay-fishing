@@ -1,6 +1,6 @@
 {
-    "generated_at":  "2026-08-30 18:10",
-    "count":  2544,
+    "generated_at":  "2026-08-30 21:19",
+    "count":  2546,
     "records":  [
                     {
                         "id":  958,
@@ -58513,6 +58513,52 @@
                         "source_url":  "https://kurokawa-maru.blogspot.com/2026/08/blog-post_30.html",
                         "raw_text":  "観音崎沖50ｍでリレーアジ。中～大アジ混じりで、喰いは渋めながらもポツポツと釣れました。アジ23～40cm、2～32尾。",
                         "fetched_at":  "2026-08-30 18:10"
+                    },
+                    {
+                        "id":  2548,
+                        "funayado":  "hiraimaru",
+                        "port":  "品川",
+                        "date":  "2026-08-30",
+                        "course":  "タチウオ乗合船（天ビン）",
+                        "species":  "タチウオ",
+                        "species_raw":  "タチウオ（天ビン）",
+                        "size_min":  60,
+                        "size_max":  105,
+                        "size_unit":  "cm",
+                        "qty_min":  4,
+                        "qty_max":  26,
+                        "qty_unit":  "本",
+                        "ground_text":  "走水沖",
+                        "depth_text":  "60M",
+                        "lat":  35.25,
+                        "lon":  139.78,
+                        "geocode_match":  "gazetteer",
+                        "source_url":  "https://www.hiraimaru.net/search/ChokaDetail/377412/",
+                        "raw_text":  "タチウオ 天ビン：60～105cm、4～26本 走水沖 水深60M（タチウオ乗合船）",
+                        "fetched_at":  "2026-08-30 21:19"
+                    },
+                    {
+                        "id":  2549,
+                        "funayado":  "hiraimaru",
+                        "port":  "品川",
+                        "date":  "2026-08-30",
+                        "course":  "タチウオ乗合船（テンヤ）",
+                        "species":  "タチウオ",
+                        "species_raw":  "タチウオ（テンヤ）",
+                        "size_min":  65,
+                        "size_max":  115,
+                        "size_unit":  "cm",
+                        "qty_min":  3,
+                        "qty_max":  5,
+                        "qty_unit":  "本",
+                        "ground_text":  "走水沖",
+                        "depth_text":  "60M",
+                        "lat":  35.25,
+                        "lon":  139.78,
+                        "geocode_match":  "gazetteer",
+                        "source_url":  "https://www.hiraimaru.net/search/ChokaDetail/377412/",
+                        "raw_text":  "タチウオ テンヤ：65～115cm、3～5本 走水沖 水深60M（タチウオ乗合船）",
+                        "fetched_at":  "2026-08-30 21:19"
                     }
 
                 ]
