@@ -1,6 +1,6 @@
 {
-    "generated_at":  "2026-08-30 21:19",
-    "count":  2546,
+    "generated_at":  "2026-08-31 13:12",
+    "count":  2547,
     "records":  [
                     {
                         "id":  958,
@@ -58559,6 +58559,29 @@
                         "source_url":  "https://www.hiraimaru.net/search/ChokaDetail/377412/",
                         "raw_text":  "タチウオ テンヤ：65～115cm、3～5本 走水沖 水深60M（タチウオ乗合船）",
                         "fetched_at":  "2026-08-30 21:19"
+                    },
+                    {
+                        "id":  2550,
+                        "funayado":  "suzufukumaru",
+                        "port":  "久里浜",
+                        "date":  "2026-08-30",
+                        "course":  "ビシアジ船",
+                        "species":  "マアジ",
+                        "species_raw":  "アジ",
+                        "size_min":  25,
+                        "size_max":  38,
+                        "size_unit":  "cm",
+                        "qty_min":  4,
+                        "qty_max":  23,
+                        "qty_unit":  "匹",
+                        "ground_text":  null,
+                        "depth_text":  null,
+                        "lat":  35.2207,
+                        "lon":  139.7138,
+                        "geocode_match":  "fallback_port",
+                        "source_url":  "https://www.suzufukumaru.com/search/ChokaDetail/377423/",
+                        "raw_text":  "ショートアジ船で出船。本日も潮の流れが速く厳しく、場所を転々と、前半は大型アジ揃いで、後半は中型、良型アジ揃いで、前半後半ともに食い渋め。外道にクロムツ",
+                        "fetched_at":  "2026-08-31 13:12"
                     }
 
                 ]
