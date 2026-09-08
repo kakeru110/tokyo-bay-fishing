@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-09-08 18:07",
- "count": 2709,
+ "generated_at": "2026-09-08 21:28",
+ "count": 2711,
  "records": [
   {
    "id": 958,
@@ -62308,6 +62308,52 @@
    "port": "久里浜港",
    "id": 2712,
    "fetched_at": "2026-09-08 18:07"
+  },
+  {
+   "funayado": "miyagawamaru",
+   "date": "2026-09-03",
+   "course": "シロギス(堤防)",
+   "species": "クロダイ",
+   "species_raw": "クロダイ",
+   "size_min": 30,
+   "size_max": 40,
+   "size_unit": "cm",
+   "qty_min": 0,
+   "qty_max": 3,
+   "qty_unit": "枚",
+   "ground_text": "各堤防",
+   "depth_text": null,
+   "lat": 35.3833,
+   "lon": 139.9128,
+   "geocode_match": "fallback_port",
+   "source_url": "https://www.miyagawamaru.co.jp/89905.html",
+   "raw_text": "クロダイは３０～４０cm　０～３枚",
+   "port": "木更津",
+   "id": 2713,
+   "fetched_at": "2026-09-08 21:28"
+  },
+  {
+   "funayado": "miyagawamaru",
+   "date": "2026-08-30",
+   "course": "アジ（堤防）",
+   "species": "クロダイ",
+   "species_raw": "クロダイ",
+   "size_min": 37,
+   "size_max": 42,
+   "size_unit": "cm",
+   "qty_min": 0,
+   "qty_max": 3,
+   "qty_unit": "枚",
+   "ground_text": "各堤",
+   "depth_text": null,
+   "lat": 35.3833,
+   "lon": 139.9128,
+   "geocode_match": "fallback_port",
+   "source_url": "https://www.miyagawamaru.co.jp/89871.html",
+   "raw_text": "クロダイは潮が澄んでサカナ見えますが食い渋い。３７~４２cm　０～３枚でした。",
+   "port": "木更津",
+   "id": 2714,
+   "fetched_at": "2026-09-08 21:28"
   }
  ]
 }
