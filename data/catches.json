@@ -63274,6 +63274,29 @@
    "lon": 139.7475,
    "id": 2754,
    "fetched_at": "2026-09-11 18:11"
+  },
+  {
+   "funayado": "yoshinoya",
+   "date": "2026-09-11",
+   "course": null,
+   "species": "マアジ",
+   "species_raw": "LTアジ",
+   "size_min": 17,
+   "size_max": 26,
+   "size_unit": "cm",
+   "qty_min": 40,
+   "qty_max": 122,
+   "qty_unit": "匹",
+   "ground_text": "本牧沖",
+   "depth_text": "20m",
+   "source_url": "https://www.funayado-yoshinoya.com/blog/post-1098/",
+   "raw_text": "LTアジ　１７ｃｍ～２６ｃｍ　４0～１２２匹　　本牧沖　２０ｍ（事後修正検知: 前回取得〈2026-09-11 18:11〉時点の本文は「４～１２２匹」だったが、今回のライブ再取得で「４0～１２２匹」に変化。既存レコードid2747は削除・上書きせず、修正後の値をこのレコードとして追記）",
+   "port": "浦安",
+   "geocode_match": "gazetteer",
+   "lat": 35.412,
+   "lon": 139.705,
+   "id": 2755,
+   "fetched_at": "2026-09-11 21:27"
   }
  ]
 }
