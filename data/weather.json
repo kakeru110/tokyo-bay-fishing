@@ -1000,6 +1000,24 @@
    "gust_kmh": 55.1,
    "pressure_hpa": 1017.4,
    "weathercode": 61
+  },
+  "2026-09-11": {
+   "tmax": 21.2,
+   "tmin": 19.4,
+   "precip_mm": 30.9,
+   "wind_kmh": 18.4,
+   "gust_kmh": 49.0,
+   "pressure_hpa": 1019.5,
+   "weathercode": 63
+  },
+  "2026-09-12": {
+   "tmax": 24.2,
+   "tmin": 20.6,
+   "precip_mm": 11.0,
+   "wind_kmh": 19.2,
+   "gust_kmh": 44.3,
+   "pressure_hpa": 1021.3,
+   "weathercode": 61
   }
  }
 }
