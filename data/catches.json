@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-12 21:16",
-  "count": 2803,
+  "generated_at": "2026-09-14 13:11",
+  "count": 2846,
   "records": [
     {
       "id": 958,
@@ -65436,6 +65436,29 @@
       "source_url": "https://dai3-asanagimaru.com/2026/09/13/%e7%9c%9f%e9%af%9b%e4%ba%94%e7%9b%ae%e8%88%b9-389/",
       "raw_text": "他にはイナダ、黒鯛が交じりました",
       "fetched_at": "2026-09-13 21:14"
+    },
+    {
+      "id": 2849,
+      "funayado": "iwataya",
+      "port": "浦安",
+      "date": "2026-09-13",
+      "course": "仕立船",
+      "species": "シロギス",
+      "species_raw": "シロギス",
+      "size_min": 14,
+      "size_max": 24,
+      "size_unit": "cm",
+      "qty_min": 6,
+      "qty_max": 60,
+      "qty_unit": "尾",
+      "ground_text": "中の瀬",
+      "depth_text": null,
+      "lat": 35.35,
+      "lon": 139.75,
+      "geocode_match": "gazetteer",
+      "source_url": "https://iwataya-funayado.jp/tsuribune_blog/date/2026/09/13/28075/",
+      "raw_text": "ターゲット シロギス(仕立船) 数 6～60尾 大きさ 14～24cm ポイント 中の瀬 外道 ｲｼﾓﾁ､ﾒｺﾞﾁ､ﾏｺﾞﾁ､ﾎｳﾎﾞｳ 本日シロギスの仕立船でした！",
+      "fetched_at": "2026-09-14 13:09"
     }
   ]
 }
