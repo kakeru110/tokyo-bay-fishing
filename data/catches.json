@@ -68196,6 +68196,29 @@
       "raw_text": "ワラサ　2.8～3.8kg　1～3本　剣崎沖40～50ｍ　3本3人　2本3人　他にマダイ、イサキ、ハナダイ、良型ヒラソウダ、イナダ混じり(数量記載なしのため未収録)",
       "id": 2968,
       "fetched_at": "2026-09-15 18:19"
+    },
+    {
+      "id": 2969,
+      "funayado": "tsurikou",
+      "port": "川崎",
+      "date": "2026-09-15",
+      "course": "タチウオ(第8さくら丸)",
+      "species": "タチウオ",
+      "species_raw": "タチウオ",
+      "size_min": 70,
+      "size_max": 100,
+      "size_unit": "cm",
+      "qty_min": 10,
+      "qty_max": 31,
+      "qty_unit": "本",
+      "ground_text": null,
+      "depth_text": null,
+      "lat": 35.517138,
+      "lon": 139.725151,
+      "geocode_match": "fallback_port",
+      "source_url": "https://www.tsurikou.com/search/RealtimeDetail/306839/",
+      "raw_text": "タチウオ 第8さくら丸 / 70cm〜100cm / 10本〜31本 / 2番手26本続いて20本 / 反応良くあたり多く出ました",
+      "fetched_at": "2026-09-15 21:19"
     }
   ]
 }
