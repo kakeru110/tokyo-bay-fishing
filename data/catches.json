@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-15 18:19",
-  "count": 2965,
+  "generated_at": "2026-09-16 13:15",
+  "count": 2968,
   "records": [
     {
       "id": 958,
@@ -68219,6 +68219,52 @@
       "source_url": "https://www.tsurikou.com/search/RealtimeDetail/306839/",
       "raw_text": "タチウオ 第8さくら丸 / 70cm〜100cm / 10本〜31本 / 2番手26本続いて20本 / 反応良くあたり多く出ました",
       "fetched_at": "2026-09-15 21:19"
+    },
+    {
+      "id": 2970,
+      "funayado": "kawasakimaru",
+      "port": "富津",
+      "date": "2026-09-16",
+      "course": null,
+      "species": "フグ",
+      "species_raw": "フグ",
+      "size_min": 15,
+      "size_max": 34,
+      "size_unit": "cm",
+      "qty_min": null,
+      "qty_max": 180,
+      "qty_unit": "尾",
+      "ground_text": null,
+      "depth_text": "水深10m以浅のポイント(複数箇所)",
+      "lat": 35.314158,
+      "lon": 139.809426,
+      "geocode_match": "fallback_port",
+      "source_url": "https://www.kawasakimaru.jp/blog/51805/",
+      "raw_text": "終日雨の中での釣りとなりましたが、各ポイントでボツボツ食いました。船中180尾、サイズ15～34cm(ショウサイ8割・コモン2割・アカメ3尾混在)。",
+      "fetched_at": "2026-09-16 13:15"
+    },
+    {
+      "id": 2971,
+      "funayado": "dai3asanagimaru",
+      "port": "横浜・金沢八景",
+      "date": "2026-09-15",
+      "course": "真鯛五目船",
+      "species": "ワラサ",
+      "species_raw": "ワラサ",
+      "size_min": null,
+      "size_max": null,
+      "size_unit": null,
+      "qty_min": null,
+      "qty_max": null,
+      "qty_unit": null,
+      "ground_text": null,
+      "depth_text": null,
+      "lat": 35.330687,
+      "lon": 139.632991,
+      "geocode_match": "fallback_port",
+      "source_url": "https://dai3-asanagimaru.com/2026/09/15/%e7%9c%9f%e9%af%9b%e4%ba%94%e7%9b%ae%e8%88%b9-391/",
+      "raw_text": "他に脂バッチリの大鯵、中鯵、ワラサ、イナダ、黒鯛と今日は平目が2枚出ました。",
+      "fetched_at": "2026-09-16 13:15"
     }
   ]
 }
