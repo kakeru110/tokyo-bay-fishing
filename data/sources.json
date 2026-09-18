@@ -160,7 +160,7 @@
       "site_url": "https://yamashitamaru.jp",
       "category_url": "https://yamashitamaru.jp/blog.php",
       "type": "custom_php_html",
-      "parse_notes": "独自PHP、RSSなし。本文「魚種 サイズ 尾数」がシンプルに並ぶ。釣り場表記は「京急久里浜沖」で統一(fishing_grounds.jsonでは久里浜沖のエイリアスとして扱う)。"
+      "parse_notes": "独自PHP、RSSなし。本文「魚種 サイズ 尾数 【釣り場】地名 水深 【水温】 【船長】」の順。釣り場は「京急久里浜沖」固定ではなく投稿ごとに実際の釣り場(観音崎沖・久里浜沖・下浦沖〜竹岡沖等)が個別記載されるため、その値をそのまま使う(2026-09-18確認、従来の思い込みを訂正)。"
     },
     {
       "id": "heisakumaru",
