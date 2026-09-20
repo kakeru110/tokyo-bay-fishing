@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-20 13:12",
-  "count": 3088,
+  "generated_at": "2026-09-20 18:09",
+  "count": 3089,
   "records": [
     {
       "id": 958,
@@ -71025,6 +71025,29 @@
       "source_url": "https://www.suzufukumaru.com/search/ChokaDetail/378495/",
       "raw_text": "アジ 25-38 cm　21-52 匹\n船長コメント：ショートアジ船で出船。朝から中型、良型アジ揃いで当たり始め、お昼前から大型アジ揃いでポツポツ当たりました。",
       "fetched_at": "2026-09-20 13:12"
+    },
+    {
+      "id": 3092,
+      "funayado": "heisakumaru",
+      "port": "久里浜港",
+      "date": "2026-09-19",
+      "course": "タチウオ船",
+      "species": "タチウオ",
+      "species_raw": "タチウオ",
+      "size_min": 60,
+      "size_max": 120,
+      "size_unit": "cm",
+      "qty_min": 10,
+      "qty_max": 33,
+      "qty_unit": "匹",
+      "ground_text": "走水沖",
+      "depth_text": "65m",
+      "lat": 35.25,
+      "lon": 139.78,
+      "geocode_match": "gazetteer",
+      "source_url": "https://heisakumaru.jp/blog.php",
+      "raw_text": "タチウオ船の釣果｜タチウオ 60～120cm 10～33匹 【釣り場】走水沖　65m【水温】23.5℃【船長】秀太郎｜走水沖を狙い、反応は少なめでしたが、アタリ活発で好調に釣れ続きました。テンヤのみで大型雑じり良型主体で33本、29本、16本、15本、10本とお土産になりました。",
+      "fetched_at": "2026-09-20 18:09"
     }
   ]
 }
