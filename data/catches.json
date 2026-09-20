@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-19 21:35",
-  "count": 3087,
+  "generated_at": "2026-09-20 13:12",
+  "count": 3088,
   "records": [
     {
       "id": 958,
@@ -71002,6 +71002,29 @@
       "source_url": "https://www.funayado-yoshinoya.com/blog/post-1150/",
       "raw_text": "ふぐ　１６ｃｍ～３２ｃｍ　０～９匹　大貫沖　１０ｍ",
       "fetched_at": "2026-09-19 21:35"
+    },
+    {
+      "id": 3091,
+      "funayado": "suzufukumaru",
+      "port": "久里浜",
+      "date": "2026-09-19",
+      "course": "ビシアジ船",
+      "species": "マアジ",
+      "species_raw": "アジ",
+      "size_min": 25,
+      "size_max": 38,
+      "size_unit": "cm",
+      "qty_min": 21,
+      "qty_max": 52,
+      "qty_unit": "匹",
+      "ground_text": null,
+      "depth_text": null,
+      "lat": 35.2207,
+      "lon": 139.7138,
+      "geocode_match": "fallback_port",
+      "source_url": "https://www.suzufukumaru.com/search/ChokaDetail/378495/",
+      "raw_text": "アジ 25-38 cm　21-52 匹\n船長コメント：ショートアジ船で出船。朝から中型、良型アジ揃いで当たり始め、お昼前から大型アジ揃いでポツポツ当たりました。",
+      "fetched_at": "2026-09-20 13:12"
     }
   ]
 }
