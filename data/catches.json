@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-20 18:09",
-  "count": 3089,
+  "generated_at": "2026-09-21 21:28",
+  "count": 3090,
   "records": [
     {
       "id": 958,
@@ -71048,6 +71048,29 @@
       "source_url": "https://heisakumaru.jp/blog.php",
       "raw_text": "タチウオ船の釣果｜タチウオ 60～120cm 10～33匹 【釣り場】走水沖　65m【水温】23.5℃【船長】秀太郎｜走水沖を狙い、反応は少なめでしたが、アタリ活発で好調に釣れ続きました。テンヤのみで大型雑じり良型主体で33本、29本、16本、15本、10本とお土産になりました。",
       "fetched_at": "2026-09-20 18:09"
+    },
+    {
+      "id": 3093,
+      "funayado": "yoshinoya",
+      "port": "浦安",
+      "date": "2026-09-13",
+      "course": null,
+      "species": "シロギス",
+      "species_raw": "シロギス",
+      "size_min": 12,
+      "size_max": 24,
+      "size_unit": "cm",
+      "qty_min": 10,
+      "qty_max": 86,
+      "qty_unit": "匹",
+      "ground_text": "木更津沖",
+      "depth_text": "5~10m",
+      "lat": 35.385,
+      "lon": 139.87,
+      "geocode_match": "gazetteer",
+      "source_url": "https://www.funayado-yoshinoya.com/blog/post-1119/",
+      "raw_text": "シロギス　１２ｃｍ～２４ｃｍ　１０～８６匹　　木更津沖　５～１０ｍ",
+      "fetched_at": "2026-09-21 21:28"
     }
   ]
 }
