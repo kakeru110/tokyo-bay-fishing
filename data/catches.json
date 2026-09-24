@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-24 18:10",
-  "count": 3211,
+  "generated_at": "2026-09-24 21:30",
+  "count": 3213,
   "records": [
     {
       "id": 958,
@@ -73854,6 +73854,52 @@
       "raw_text": "ふぐ　　鴨居・大貫・下浦沖　９～３３　匹　１２～３０ｃｍ　　１０ｍ",
       "id": 3214,
       "fetched_at": "2026-09-24 18:10"
+    },
+    {
+      "funayado": "miyagawamaru",
+      "port": "木更津",
+      "date": "2026-09-24",
+      "course": "シーバス（堤防ルアー）",
+      "species": "シーバス",
+      "species_raw": "シーバス",
+      "size_min": 45,
+      "size_max": 70,
+      "size_unit": "cm",
+      "qty_min": 0,
+      "qty_max": 3,
+      "qty_unit": "本",
+      "ground_text": "各堤防",
+      "depth_text": null,
+      "lat": 35.3833,
+      "lon": 139.9128,
+      "geocode_match": "fallback_port",
+      "source_url": "https://www.miyagawamaru.co.jp/90021.html",
+      "raw_text": "釣　果　:　０～３本 大きさ　:　４５〜７０cm 場　所　:　各堤防 コメント いよいよコノシロ回って来てシーバス釣れ出しました。今日は上潮１０時頃からアタリ多くなって良かったです。フックを伸ばされた大型もいる感じです。",
+      "id": 3215,
+      "fetched_at": "2026-09-24 21:30"
+    },
+    {
+      "funayado": "kawasakimaru",
+      "port": "富津",
+      "date": "2026-09-24",
+      "course": null,
+      "species": "フグ",
+      "species_raw": "フグ",
+      "size_min": null,
+      "size_max": null,
+      "size_unit": null,
+      "qty_min": 10,
+      "qty_max": 49,
+      "qty_unit": "尾",
+      "ground_text": null,
+      "depth_text": null,
+      "lat": 35.314158,
+      "lon": 139.809426,
+      "geocode_match": "fallback_port",
+      "source_url": "https://www.kawasakimaru.jp/blog/51914/",
+      "raw_text": "【フグ】 2026年09月24日（木） 予想通り底荒れ治ってバリバリ食い１０～４９尾上がりました！ トップ：49尾／その他38尾・28尾・25尾・20尾・15尾・10尾（2名）／船中合計195尾・平均24尾。魚種構成コモン70%・ショウサイ30%。店主体調不良のため更新遅れ、具体的な釣り場・水深の記載なし。",
+      "id": 3216,
+      "fetched_at": "2026-09-24 21:30"
     }
   ]
 }
