@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-30 21:20",
-  "count": 3448,
+  "generated_at": "2026-10-01 18:05",
+  "count": 3449,
   "records": [
     {
       "id": 958,
@@ -79305,6 +79305,29 @@
       "source_url": "https://www.tsurikou.com/search/RealtimeDetail/307436/",
       "raw_text": "他タチウオ(さくら丸)",
       "id": 3451
+    },
+    {
+      "funayado": "nakayamamaru",
+      "port": "川崎",
+      "date": "2026-10-01",
+      "course": "タチウオ船",
+      "species": "タチウオ",
+      "species_raw": "タチウオ(エサ)",
+      "size_min": 70,
+      "size_max": 118,
+      "size_unit": "cm",
+      "qty_min": 2,
+      "qty_max": 29,
+      "qty_unit": "本",
+      "ground_text": "走水周辺",
+      "depth_text": "60M",
+      "lat": 35.261,
+      "lon": 139.735,
+      "geocode_match": "gazetteer",
+      "source_url": "https://www.nakayamamaru.com/search/ChokaDetail/379192/",
+      "raw_text": "タチウオ(エサ) 70-118 cm 2-29 本 走水周辺 60M",
+      "fetched_at": "2026-10-01 18:05",
+      "id": 3452
     }
   ]
 }
