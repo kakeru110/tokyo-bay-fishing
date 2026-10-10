@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-10 18:05",
-  "count": 3754,
+  "generated_at": "2026-10-10 21:03",
+  "count": 3755,
   "records": [
     {
       "id": 958,
@@ -86343,6 +86343,29 @@
       "source_url": "https://www.ichiroumaru.jp/result/detail.html?1791616250",
       "raw_text": "アジ ６～２６匹 ２２～３７ｃｍ",
       "fetched_at": "2026-10-10 18:05"
+    },
+    {
+      "id": 3758,
+      "funayado": "iwataya",
+      "port": "浦安",
+      "date": "2026-10-08",
+      "course": "タチウオ",
+      "species": "タチウオ",
+      "species_raw": "タチウオ",
+      "size_min": 60,
+      "size_max": 115,
+      "size_unit": "cm",
+      "qty_min": 11,
+      "qty_max": 27,
+      "qty_unit": "本",
+      "ground_text": "走水沖",
+      "depth_text": null,
+      "lat": 35.25,
+      "lon": 139.78,
+      "geocode_match": "gazetteer",
+      "source_url": "https://iwataya-funayado.jp/tsuribune_blog/date/2026/10/10/28260/",
+      "raw_text": "ターゲット タチウオ 数 11～27本 大きさ 60～115cm ポイント 走水沖 外道 なし",
+      "fetched_at": "2026-10-10 21:03"
     }
   ]
 }
