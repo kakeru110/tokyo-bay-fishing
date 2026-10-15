@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-15 18:10",
-  "count": 3881,
+  "generated_at": "2026-10-15 21:20",
+  "count": 3882,
   "records": [
     {
       "id": 958,
@@ -89264,6 +89264,29 @@
       "source_url": "https://heisakumaru.jp/blog.php",
       "raw_text": "タチウオ 65～126cm 5～10匹 【釣り場】走水 65m",
       "fetched_at": "2026-10-15 18:10"
+    },
+    {
+      "id": 3885,
+      "funayado": "miyagawamaru",
+      "port": "木更津",
+      "date": "2026-10-15",
+      "course": "シロギス（堤防）",
+      "species": "シロギス",
+      "species_raw": "シロギス",
+      "size_min": 14,
+      "size_max": 19,
+      "size_unit": "cm",
+      "qty_min": 25,
+      "qty_max": 25,
+      "qty_unit": "匹",
+      "ground_text": "各堤防",
+      "depth_text": null,
+      "lat": 35.3833,
+      "lon": 139.9128,
+      "geocode_match": "fallback_port",
+      "source_url": "https://www.miyagawamaru.co.jp/90178.html",
+      "raw_text": "釣果：２５匹 大きさ：１４～１９cm 場所：各堤防",
+      "fetched_at": "2026-10-15 21:20"
     }
   ]
 }
