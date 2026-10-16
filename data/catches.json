@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-16 18:10",
-  "count": 3905,
+  "generated_at": "2026-10-16 21:05",
+  "count": 3907,
   "records": [
     {
       "id": 958,
@@ -89816,6 +89816,52 @@
       "raw_text": "ﾘﾚｰｱｼﾞ 23～35cm 2～17尾 観音崎沖40ｍ",
       "fetched_at": "2026-10-16 18:10",
       "id": 3908
+    },
+    {
+      "id": 3909,
+      "funayado": "hiranomaru",
+      "port": "富津",
+      "date": "2026-10-16",
+      "course": "タチウオ船",
+      "species": "タチウオ",
+      "species_raw": "タチウオ",
+      "size_min": 65,
+      "size_max": 103,
+      "size_unit": "cm",
+      "qty_min": 3,
+      "qty_max": 16,
+      "qty_unit": "本",
+      "ground_text": "",
+      "depth_text": "",
+      "lat": 35.318124,
+      "lon": 139.817614,
+      "geocode_match": "fallback_port",
+      "source_url": "https://www.hiranomaru.net/search/ChokaDetail/380286/",
+      "raw_text": "タチウオ 65-103 cm 3-16 本 テンビンの釣果",
+      "fetched_at": "2026-10-16 21:05"
+    },
+    {
+      "id": 3910,
+      "funayado": "hiranomaru",
+      "port": "富津",
+      "date": "2026-10-16",
+      "course": "タチウオ船",
+      "species": "タチウオ",
+      "species_raw": "タチウオ",
+      "size_min": 70,
+      "size_max": 95,
+      "size_unit": "cm",
+      "qty_min": 1,
+      "qty_max": 2,
+      "qty_unit": "本",
+      "ground_text": "",
+      "depth_text": "",
+      "lat": 35.318124,
+      "lon": 139.817614,
+      "geocode_match": "fallback_port",
+      "source_url": "https://www.hiranomaru.net/search/ChokaDetail/380286/",
+      "raw_text": "タチウオ 70-95 cm 1-2 本 テンヤの釣果",
+      "fetched_at": "2026-10-16 21:05"
     }
   ]
 }
