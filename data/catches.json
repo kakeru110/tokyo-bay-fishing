@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-17 18:01",
-  "count": 3949,
+  "generated_at": "2026-10-17 21:05",
+  "count": 3950,
   "records": [
     {
       "id": 958,
@@ -90828,6 +90828,29 @@
       "raw_text": "カワハギ 17～28cm 1～15匹 【釣り場】竹岡沖 15~25m",
       "fetched_at": "2026-10-17 18:01",
       "id": 3952
+    },
+    {
+      "id": 3953,
+      "funayado": "miyagawamaru",
+      "port": "木更津",
+      "date": "2026-10-17",
+      "course": "ブリ（堤防ルアー）",
+      "species": "ブリ",
+      "species_raw": "ブリ",
+      "size_min": 84,
+      "size_max": 84,
+      "size_unit": "cm",
+      "qty_min": 1,
+      "qty_max": 1,
+      "qty_unit": "本",
+      "ground_text": "各堤防",
+      "depth_text": null,
+      "lat": 35.3833,
+      "lon": 139.9128,
+      "geocode_match": "fallback_port",
+      "source_url": "https://www.miyagawamaru.co.jp/90193.html",
+      "raw_text": "釣果:１本 大きさ:８４cm 場所:各堤防",
+      "fetched_at": "2026-10-17 21:05"
     }
   ]
 }
