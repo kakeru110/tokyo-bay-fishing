@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-19 18:05",
-  "count": 3998,
+  "generated_at": "2026-10-19 21:11",
+  "count": 4000,
   "records": [
     {
       "id": 958,
@@ -91955,6 +91955,52 @@
       "raw_text": "カワハギ 18～28cm 1～10匹 【釣り場】久里浜沖～鴨居沖 25～35m",
       "fetched_at": "2026-10-19 18:05",
       "id": 4001
+    },
+    {
+      "funayado": "hiranomaru",
+      "port": "富津",
+      "date": "2026-10-19",
+      "course": "タチウオ船",
+      "species": "タチウオ",
+      "species_raw": "タチウオ",
+      "size_min": 65,
+      "size_max": 112,
+      "size_unit": "cm",
+      "qty_min": 1,
+      "qty_max": 12,
+      "qty_unit": "本",
+      "ground_text": "走水沖周辺",
+      "depth_text": "55〜70m",
+      "lat": 35.25,
+      "lon": 139.78,
+      "geocode_match": "gazetteer",
+      "source_url": "https://www.hiranomaru.net/search/ChokaDetail/380590/",
+      "raw_text": "タチウオ 65-112 cm 1-12 本 テンビンの釣果",
+      "fetched_at": "2026-10-19 21:11",
+      "id": 4002
+    },
+    {
+      "funayado": "hiranomaru",
+      "port": "富津",
+      "date": "2026-10-19",
+      "course": "タチウオ船",
+      "species": "タチウオ",
+      "species_raw": "タチウオ",
+      "size_min": 70,
+      "size_max": 105,
+      "size_unit": "cm",
+      "qty_min": 7,
+      "qty_max": 9,
+      "qty_unit": "本",
+      "ground_text": "走水沖周辺",
+      "depth_text": "55〜70m",
+      "lat": 35.25,
+      "lon": 139.78,
+      "geocode_match": "gazetteer",
+      "source_url": "https://www.hiranomaru.net/search/ChokaDetail/380590/",
+      "raw_text": "タチウオ 70-105 cm 7-9 本 テンヤの釣果",
+      "fetched_at": "2026-10-19 21:11",
+      "id": 4003
     }
   ]
 }
