@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-26 13:09",
-  "count": 4111,
+  "generated_at": "2026-10-26 18:02",
+  "count": 4113,
   "records": [
     {
       "id": 958,
@@ -94554,6 +94554,52 @@
       "source_url": "https://www.tsurikou.com/search/RealtimeDetail/308622/",
       "raw_text": "午前シロギス(第6さくら丸) 12cm〜22cm 2匹〜35匹",
       "fetched_at": "2026-10-26 13:09"
+    },
+    {
+      "id": 4115,
+      "funayado": "hiranomaru",
+      "port": "富津",
+      "date": "2026-10-26",
+      "course": "タチウオ船",
+      "species": "タチウオ",
+      "species_raw": "タチウオ",
+      "size_min": 65,
+      "size_max": 103,
+      "size_unit": "cm",
+      "qty_min": 4,
+      "qty_max": 16,
+      "qty_unit": "本",
+      "ground_text": "観音崎沖・走水沖",
+      "depth_text": "40〜60m",
+      "lat": 35.2485,
+      "lon": 139.7725,
+      "geocode_match": "gazetteer_compound",
+      "source_url": "https://www.hiranomaru.net/search/ChokaDetail/380969/",
+      "raw_text": "タチウオ 65-103cm 4-16本 テンビンの釣果",
+      "fetched_at": "2026-10-26 18:02"
+    },
+    {
+      "id": 4116,
+      "funayado": "hiranomaru",
+      "port": "富津",
+      "date": "2026-10-26",
+      "course": "タチウオ船",
+      "species": "タチウオ",
+      "species_raw": "タチウオ",
+      "size_min": 70,
+      "size_max": 114,
+      "size_unit": "cm",
+      "qty_min": 17,
+      "qty_max": 18,
+      "qty_unit": "本",
+      "ground_text": "観音崎沖・走水沖",
+      "depth_text": "40〜60m",
+      "lat": 35.2485,
+      "lon": 139.7725,
+      "geocode_match": "gazetteer_compound",
+      "source_url": "https://www.hiranomaru.net/search/ChokaDetail/380969/",
+      "raw_text": "タチウオ 70-114cm 17-18本 テンヤの釣果",
+      "fetched_at": "2026-10-26 18:02"
     }
   ]
 }
