@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-02 18:05",
-  "count": 4255,
+  "generated_at": "2026-11-02 21:15",
+  "count": 4257,
   "records": [
     {
       "id": 958,
@@ -97866,6 +97866,52 @@
       "source_url": "https://www.ichiroumaru.jp/result/detail.html?1793599781",
       "raw_text": "ふぐ 鴨居・大貫・下浦沖 ２～１８ 匹 １２～３０ｃｍ １０ｍ",
       "fetched_at": "2026-11-02 18:05"
+    },
+    {
+      "id": 4259,
+      "course": "ゴモク船",
+      "species": "イサキ",
+      "species_raw": "イサキ",
+      "size_min": 25,
+      "size_max": 38,
+      "size_unit": "cm",
+      "qty_min": 15,
+      "qty_max": 20,
+      "qty_unit": "匹",
+      "ground_text": "久里浜沖",
+      "depth_text": "40m",
+      "lat": 35.2,
+      "lon": 139.73,
+      "geocode_match": "gazetteer",
+      "raw_text": "イサキ 25～38cm 15～20匹 【釣り場】久里浜沖 40m",
+      "funayado": "heisakumaru",
+      "port": "久里浜港",
+      "date": "2026-11-01",
+      "source_url": "https://heisakumaru.jp/blog.php",
+      "fetched_at": "2026-11-02 21:15"
+    },
+    {
+      "id": 4260,
+      "course": "タチウオ船",
+      "species": "タチウオ",
+      "species_raw": "タチウオ",
+      "size_min": 65,
+      "size_max": 119,
+      "size_unit": "cm",
+      "qty_min": 1,
+      "qty_max": 6,
+      "qty_unit": "匹",
+      "ground_text": "走水",
+      "depth_text": "65m",
+      "lat": 35.261,
+      "lon": 139.735,
+      "geocode_match": "gazetteer",
+      "raw_text": "タチウオ 65～119cm 1～6匹 【釣り場】走水 65m",
+      "funayado": "heisakumaru",
+      "port": "久里浜港",
+      "date": "2026-11-01",
+      "source_url": "https://heisakumaru.jp/blog.php",
+      "fetched_at": "2026-11-02 21:15"
     }
   ]
 }
