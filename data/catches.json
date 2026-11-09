@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-08 21:05",
-  "count": 4410,
+  "generated_at": "2026-11-09 13:10",
+  "count": 4412,
   "records": [
     {
       "id": 958,
@@ -101428,6 +101428,52 @@
       "raw_text": "ﾘﾚｰｱｼﾞ 20～35cm 5～27尾 観音﨑沖60ｍ",
       "id": 4413,
       "fetched_at": "2026-11-08 21:05"
+    },
+    {
+      "funayado": "hiraimaru",
+      "port": "品川",
+      "date": "2026-11-08",
+      "course": "タチウオ乗合船",
+      "species": "タチウオ",
+      "species_raw": "タチウオ",
+      "size_min": 65,
+      "size_max": 105,
+      "size_unit": "cm",
+      "qty_min": 0,
+      "qty_max": 10,
+      "qty_unit": "本",
+      "ground_text": "本牧沖",
+      "depth_text": null,
+      "lat": 35.412,
+      "lon": 139.705,
+      "geocode_match": "gazetteer",
+      "source_url": "https://www.hiraimaru.net/search/ChokaDetail/381954/",
+      "raw_text": "タチウオ 65-105 cm 0-10 本 本牧沖",
+      "id": 4414,
+      "fetched_at": "2026-11-09 13:10"
+    },
+    {
+      "funayado": "suzufukumaru",
+      "port": "久里浜",
+      "date": "2026-11-08",
+      "course": "ビシアジ船",
+      "species": "マアジ",
+      "species_raw": "アジ",
+      "size_min": 23,
+      "size_max": 38,
+      "size_unit": "cm",
+      "qty_min": 10,
+      "qty_max": 51,
+      "qty_unit": "匹",
+      "ground_text": null,
+      "depth_text": null,
+      "lat": 35.2207,
+      "lon": 139.7138,
+      "geocode_match": "fallback_port",
+      "source_url": "https://www.suzufukumaru.com/search/ChokaDetail/381940/",
+      "raw_text": "アジ 23-38cm 10-51匹",
+      "id": 4415,
+      "fetched_at": "2026-11-09 13:10"
     }
   ]
 }
