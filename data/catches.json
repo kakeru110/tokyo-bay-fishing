@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-10 18:05",
-  "count": 4419,
+  "generated_at": "2026-11-10 21:05",
+  "count": 4420,
   "records": [
     {
       "id": 958,
@@ -101635,6 +101635,29 @@
       "raw_text": "ふぐ 鴨居・大貫・下浦沖 ２～９ 匹 １２～３２ｃｍ １０ｍ",
       "id": 4422,
       "fetched_at": "2026-11-10 18:05"
+    },
+    {
+      "funayado": "yamashitamaru",
+      "port": "久里浜・久比里",
+      "date": "2026-11-10",
+      "course": null,
+      "species": "カワハギ",
+      "species_raw": "カワハギ",
+      "size_min": 17,
+      "size_max": 30,
+      "size_unit": "cm",
+      "qty_min": 1,
+      "qty_max": 10,
+      "qty_unit": "匹",
+      "ground_text": "久里浜沖～下浦沖",
+      "depth_text": "15~20m",
+      "lat": 35.2025,
+      "lon": 139.7125,
+      "geocode_match": "gazetteer_compound",
+      "source_url": "https://yamashitamaru.jp/blog.php",
+      "raw_text": "カワハギ 17～30cm 1～10匹 【釣り場】久里浜沖～下浦沖 15~20m",
+      "id": 4423,
+      "fetched_at": "2026-11-10 21:05"
     }
   ]
 }
