@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-12 18:05",
-  "count": 4453,
+  "generated_at": "2026-11-12 21:05",
+  "count": 4454,
   "records": [
     {
       "id": 958,
@@ -102417,6 +102417,29 @@
       "raw_text": "アマダイ 28～43cm 0～3匹 【釣り場】剣崎沖~下浦沖 60~90m",
       "id": 4456,
       "fetched_at": "2026-11-12 18:05"
+    },
+    {
+      "funayado": "suzufukumaru",
+      "port": "久里浜",
+      "date": "2026-11-12",
+      "course": "ビシアジ船",
+      "species": "マアジ",
+      "species_raw": "アジ",
+      "size_min": 25,
+      "size_max": 38,
+      "size_unit": "cm",
+      "qty_min": 12,
+      "qty_max": 34,
+      "qty_unit": "匹",
+      "ground_text": null,
+      "depth_text": null,
+      "lat": 35.2207,
+      "lon": 139.7138,
+      "geocode_match": "fallback_port",
+      "source_url": "https://www.suzufukumaru.com/search/ChokaDetail/382142/",
+      "raw_text": "アジ 25-38cm 12-34匹",
+      "id": 4457,
+      "fetched_at": "2026-11-12 21:05"
     }
   ]
 }
