@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-19 13:08",
-  "count": 4587,
+  "generated_at": "2026-11-19 18:03",
+  "count": 4588,
   "records": [
     {
       "id": 958,
@@ -105499,6 +105499,29 @@
       "raw_text": "ターゲット タチウオ 数 0～8本 大きさ 75～105cm ポイント 湾奥",
       "id": 4590,
       "fetched_at": "2026-11-19 13:08"
+    },
+    {
+      "funayado": "nakayamamaru",
+      "port": "川崎",
+      "date": "2026-11-19",
+      "course": "LTアジ船",
+      "species": "マアジ",
+      "species_raw": "LTアジ ショート便",
+      "size_min": 17,
+      "size_max": 27,
+      "size_unit": "cm",
+      "qty_min": 10,
+      "qty_max": 74,
+      "qty_unit": "匹",
+      "ground_text": "川崎〜横浜沖",
+      "depth_text": "20M",
+      "lat": 35.4775,
+      "lon": 139.705,
+      "geocode_match": "gazetteer_compound",
+      "source_url": "https://www.nakayamamaru.com/search/ChokaDetail/382613/",
+      "raw_text": "LTアジ ショート便 17-27 cm 10-74 匹 川崎〜横浜沖 20M",
+      "id": 4591,
+      "fetched_at": "2026-11-19 18:03"
     }
   ]
 }
