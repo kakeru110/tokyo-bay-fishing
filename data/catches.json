@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-22 18:07",
-  "count": 4658,
+  "generated_at": "2026-11-22 21:07",
+  "count": 4659,
   "records": [
     {
       "id": 958,
@@ -107132,6 +107132,29 @@
       "raw_text": "タチウオ 60～129cm 0～6匹 【釣り場】走水 80m",
       "id": 4661,
       "fetched_at": "2026-11-22 18:07"
+    },
+    {
+      "funayado": "suzufukumaru",
+      "port": "久里浜",
+      "date": "2026-11-22",
+      "course": "ビシアジ船",
+      "species": "マアジ",
+      "species_raw": "アジ",
+      "size_min": 25,
+      "size_max": 38,
+      "size_unit": "cm",
+      "qty_min": 9,
+      "qty_max": 30,
+      "qty_unit": "匹",
+      "ground_text": null,
+      "depth_text": null,
+      "lat": 35.2207,
+      "lon": 139.7138,
+      "geocode_match": "fallback_port",
+      "source_url": "https://www.suzufukumaru.com/search/ChokaDetail/382808/",
+      "raw_text": "アジ 25-38cm 9-30匹",
+      "id": 4662,
+      "fetched_at": "2026-11-22 21:07"
     }
   ]
 }

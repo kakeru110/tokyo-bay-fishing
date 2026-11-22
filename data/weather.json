@@ -1972,6 +1972,24 @@
       "gust_kmh": 96.8,
       "pressure_hpa": 1002.7,
       "weathercode": 0
+    },
+    "2026-11-20": {
+      "tmax": 13.9,
+      "tmin": 11.2,
+      "precip_mm": 0.0,
+      "wind_kmh": 51.4,
+      "gust_kmh": 110.2,
+      "pressure_hpa": 1006.0,
+      "weathercode": 1
+    },
+    "2026-11-21": {
+      "tmax": 13.6,
+      "tmin": 9.8,
+      "precip_mm": 0.0,
+      "wind_kmh": 38.7,
+      "gust_kmh": 79.6,
+      "pressure_hpa": 1014.7,
+      "weathercode": 0
     }
   }
 }
