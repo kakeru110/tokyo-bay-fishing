@@ -1999,6 +1999,15 @@
       "gust_kmh": 62.6,
       "pressure_hpa": 1022.3,
       "weathercode": 0
+    },
+    "2026-11-23": {
+      "tmax": 14.2,
+      "tmin": 6.9,
+      "precip_mm": 0.0,
+      "wind_kmh": 31.0,
+      "gust_kmh": 60.1,
+      "pressure_hpa": 1027.7,
+      "weathercode": 2
     }
   }
 }
