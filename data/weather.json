@@ -2008,6 +2008,15 @@
       "gust_kmh": 60.1,
       "pressure_hpa": 1027.7,
       "weathercode": 2
+    },
+    "2026-11-24": {
+      "tmax": 19.4,
+      "tmin": 12.3,
+      "precip_mm": 8.4,
+      "wind_kmh": 49.1,
+      "gust_kmh": 97.9,
+      "pressure_hpa": 1011.1,
+      "weathercode": 63
     }
   }
 }
