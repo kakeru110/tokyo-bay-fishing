@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-26 18:04",
-  "count": 4736,
+  "generated_at": "2026-11-26 21:10",
+  "count": 4737,
   "records": [
     {
       "id": 958,
@@ -108926,6 +108926,29 @@
       "source_url": "https://yamashitamaru.jp/blog.php",
       "raw_text": "アマダイ 37～46cm 0～2匹 【釣り場】剣崎沖〜下浦沖 50〜85m 【水温】18℃",
       "fetched_at": "2026-11-26 18:04"
+    },
+    {
+      "funayado": "suzufukumaru",
+      "port": "久里浜",
+      "date": "2026-11-26",
+      "course": "ビシアジ船",
+      "species": "マアジ",
+      "species_raw": "アジ",
+      "size_min": 23,
+      "size_max": 35,
+      "size_unit": "cm",
+      "qty_min": 23,
+      "qty_max": 36,
+      "qty_unit": "匹",
+      "ground_text": null,
+      "depth_text": null,
+      "lat": 35.2207,
+      "lon": 139.7138,
+      "geocode_match": "fallback_port",
+      "source_url": "https://www.suzufukumaru.com/search/ChokaDetail/383061/",
+      "raw_text": "アジ 23-35cm 23-36匹 ショートアジ船で出船。派手な当たりないものの中型、良型アジ揃い。",
+      "id": 4740,
+      "fetched_at": "2026-11-26 21:10"
     }
   ]
 }
