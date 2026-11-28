@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-27 21:12",
-  "count": 4755,
+  "generated_at": "2026-11-28 13:08",
+  "count": 4756,
   "records": [
     {
       "id": 958,
@@ -109363,6 +109363,29 @@
       "qty_max": 8,
       "raw_text": "タチウオ 75-115 cm 8-8 本 テンヤの釣果！1名様！肉厚タチウオ主体！ 釣り場と水深: 湾奥沖 20M～27M",
       "fetched_at": "2026-11-27 21:12"
+    },
+    {
+      "id": 4759,
+      "funayado": "miyagawamaru",
+      "port": "木更津",
+      "date": "2026-11-27",
+      "course": "シーバス（堤防ルアー）",
+      "species": "シーバス",
+      "species_raw": "シーバス",
+      "size_min": 60,
+      "size_max": 75,
+      "size_unit": "cm",
+      "qty_min": 0,
+      "qty_max": 3,
+      "qty_unit": "本",
+      "ground_text": "各堤防",
+      "depth_text": null,
+      "lat": 35.3833,
+      "lon": 139.9128,
+      "geocode_match": "fallback_port",
+      "source_url": "https://www.miyagawamaru.co.jp/90496.html",
+      "raw_text": "釣 果 : ０～３本 大きさ : ６０～７５cm 場 所 : 各堤防 コメント 朝方アタリ多く良かったです。 シロギスはハゼ混じりで１１～２２センチ ２９匹 ブリは泳がせでバラシも何本かありました。",
+      "fetched_at": "2026-11-28 13:08"
     }
   ]
 }

@@ -2035,6 +2035,15 @@
       "gust_kmh": 27.7,
       "pressure_hpa": 1021.4,
       "weathercode": 3
+    },
+    "2026-11-27": {
+      "tmax": 18.2,
+      "tmin": 9.7,
+      "precip_mm": 0.0,
+      "wind_kmh": 22.7,
+      "gust_kmh": 44.3,
+      "pressure_hpa": 1021.7,
+      "weathercode": 3
     }
   }
 }
